@@ -1,0 +1,1864 @@
+[
+  {
+    "id": 1,
+    "paalId": 1,
+    "iyalId": 1,
+    "number": 1,
+    "nameTamil": "கடவுள் வாழ்த்து",
+    "nameEnglish": "The Praise of God",
+    "kuralRange": {
+      "start": 1,
+      "end": 10
+    },
+    "descriptionTamil": "இறைவனை வணங்குவதன் சிறப்பையும், அவனை முதலில் போற்றாமல் எந்தச் செயலும் நிறைவேறாது என்பதையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Opens the work by praising the Divine, establishing that nothing truly begins or succeeds without first honoring the source of all creation."
+  },
+  {
+    "id": 2,
+    "paalId": 1,
+    "iyalId": 1,
+    "number": 2,
+    "nameTamil": "வான் சிறப்பு",
+    "nameEnglish": "The Blessing of Rain",
+    "kuralRange": {
+      "start": 11,
+      "end": 20
+    },
+    "descriptionTamil": "மழையின்றி உலகம் இயங்காது என்பதையும், அனைத்து உயிர்களுக்கும் மழையே அடிப்படை ஆதாரம் என்பதையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Celebrates rain as the foundation of all life — without it, farming, food, and even virtue itself cannot sustain the world."
+  },
+  {
+    "id": 3,
+    "paalId": 1,
+    "iyalId": 1,
+    "number": 3,
+    "nameTamil": "நீத்தார் பெருமை",
+    "nameEnglish": "The Greatness of Ascetics",
+    "kuralRange": {
+      "start": 21,
+      "end": 30
+    },
+    "descriptionTamil": "பற்றுகளை துறந்த மேலோர்களின் உயர்ந்த குணங்களையும், அவர்களின் வாழ்க்கை உலகுக்கு எடுத்துக்காட்டாக அமைவதையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Honors those who have renounced worldly attachment, describing the elevated character that makes their lives a model for others."
+  },
+  {
+    "id": 4,
+    "paalId": 1,
+    "iyalId": 1,
+    "number": 4,
+    "nameTamil": "அறன் வலியுறுத்தல்",
+    "nameEnglish": "Assertion of the Might of Virtue",
+    "kuralRange": {
+      "start": 31,
+      "end": 40
+    },
+    "descriptionTamil": "அறத்தைப் பின்பற்றுவதே சிறந்த வாழ்க்கை வழி என்பதையும், அது தரும் நிலையான பயன்களையும் வலியுறுத்தும் அதிகாரம்.",
+    "descriptionEnglish": "Makes the case that living virtuously is the surest path in life, emphasizing the lasting rewards virtue alone can provide."
+  },
+  {
+    "id": 5,
+    "paalId": 1,
+    "iyalId": 2,
+    "number": 5,
+    "nameTamil": "இல்வாழ்க்கை",
+    "nameEnglish": "Domestic Life",
+    "kuralRange": {
+      "start": 41,
+      "end": 50
+    },
+    "descriptionTamil": "அறவழியில் குடும்ப வாழ்க்கை நடத்துவதே சிறந்த அறம் என்பதையும், மற்ற அனைவருக்கும் அதுவே துணையாக அமையும் என்பதையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Exalts householder life lived according to virtue as the foundational pillar supporting all other righteous paths."
+  },
+  {
+    "id": 6,
+    "paalId": 1,
+    "iyalId": 2,
+    "number": 6,
+    "nameTamil": "வாழ்க்கைத் துணைநலம்",
+    "nameEnglish": "The Worth of a Wife",
+    "kuralRange": {
+      "start": 51,
+      "end": 60
+    },
+    "descriptionTamil": "குடும்பத்தின் நன்மதிப்பிற்கும் உயர்விற்கும் காரணமாக விளங்கும் நல்ல மனைவியின் சிறப்புகளையும் பெருமையையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Praises the qualities and dignity of a virtuous wife, describing her as the central strength of a noble home."
+  },
+  {
+    "id": 7,
+    "paalId": 1,
+    "iyalId": 2,
+    "number": 7,
+    "nameTamil": "புதல்வரைப் பெறுதல்",
+    "nameEnglish": "The Possession of Children",
+    "kuralRange": {
+      "start": 61,
+      "end": 70
+    },
+    "descriptionTamil": "அறிவும் நற்பண்பும் மிக்க குழந்தைகளைப் பெறுவதே பெற்றோருக்கு மிகச்சிறந்த செல்வம் என்பதை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Describes wise, virtuous children as the greatest treasure parents can possess, bringing lasting joy and honor."
+  },
+  {
+    "id": 8,
+    "paalId": 1,
+    "iyalId": 2,
+    "number": 8,
+    "nameTamil": "அன்புடைமை",
+    "nameEnglish": "Possession of Love",
+    "kuralRange": {
+      "start": 71,
+      "end": 80
+    },
+    "descriptionTamil": "மக்களிடத்தில் அன்பு காட்டுவதே வாழ்க்கையின் உயிர்நாடி என்பதையும், அன்பில்லாத வாழ்க்கை பயனற்றது என்பதையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Highlights love as the essence of human life, without which existence is barren and devoid of true virtue."
+  },
+  {
+    "id": 9,
+    "paalId": 1,
+    "iyalId": 2,
+    "number": 9,
+    "nameTamil": "விருந்தோம்பல்",
+    "nameEnglish": "Hospitality",
+    "kuralRange": {
+      "start": 81,
+      "end": 90
+    },
+    "descriptionTamil": "வீட்டிற்கு வரும் விருந்தினரை இன்முகத்தோடு வரவேற்று உபசரிப்பதன் சிறப்பையும் அதனால் விளையும் நன்மைகளையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Extols the duty and noble joy of welcoming guests with warmth, generosity, and genuine grace."
+  },
+  {
+    "id": 10,
+    "paalId": 1,
+    "iyalId": 2,
+    "number": 10,
+    "nameTamil": "இனியவை கூறல்",
+    "nameEnglish": "Utterance of Pleasant Words",
+    "kuralRange": {
+      "start": 91,
+      "end": 100
+    },
+    "descriptionTamil": "அன்பான, பணிவான சொற்களைப் பேசுவதே பிறருக்கு மகிழ்ச்சியளிக்கும் சிறந்த பண்பு என்பதை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Emphasizes speaking soft, kind, and respectful words, describing gentle speech as a virtue that spreads happiness."
+  },
+  {
+    "id": 11,
+    "paalId": 1,
+    "iyalId": 2,
+    "number": 11,
+    "nameTamil": "செய்ந்நன்றி அறிதல்",
+    "nameEnglish": "Gratitude",
+    "kuralRange": {
+      "start": 101,
+      "end": 110
+    },
+    "descriptionTamil": "பிறர் செய்த உதவியை என்றும் மறவாமல் நன்றியோடு போற்றுவதன் மேன்மையை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Underscores the sacred duty of never forgetting a good turn, portraying gratitude as the highest of moral duties."
+  },
+  {
+    "id": 12,
+    "paalId": 1,
+    "iyalId": 2,
+    "number": 12,
+    "nameTamil": "நடுவு நிலைமை",
+    "nameEnglish": "Impartiality",
+    "kuralRange": {
+      "start": 111,
+      "end": 120
+    },
+    "descriptionTamil": "நண்பர், பகைவர், அயலார் அனைவரிடமும் நடுவுநிலைமையோடு நேர்மையாக நடந்துகொள்வதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Champions fairness, equity, and unyielding justice regardless of personal bonds or enmities."
+  },
+  {
+    "id": 13,
+    "paalId": 1,
+    "iyalId": 2,
+    "number": 13,
+    "nameTamil": "அடக்கமுடைமை",
+    "nameEnglish": "Possession of Self-Restraint",
+    "kuralRange": {
+      "start": 121,
+      "end": 130
+    },
+    "descriptionTamil": "மனம், மொழி, மெய்களை அடக்கி ஆள்வதன் சிறப்பையும், அடக்கம் ஒருவனுக்குத் தரும் பெருமையையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Focuses on self-control in thought, speech, and action as a protective shield that elevates human dignity."
+  },
+  {
+    "id": 14,
+    "paalId": 1,
+    "iyalId": 2,
+    "number": 14,
+    "nameTamil": "ஒழுக்கமுடைமை",
+    "nameEnglish": "Possession of Decorum",
+    "kuralRange": {
+      "start": 131,
+      "end": 140
+    },
+    "descriptionTamil": "ஒழுக்கமே உயிரை விட மேலானது என்பதையும், நன்னடத்தையே மனிதனுக்கு உண்மையான பெருமை தருவது என்பதையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Proclaims righteous conduct as more precious than life itself, establishing propriety as the true sign of nobility."
+  },
+  {
+    "id": 15,
+    "paalId": 1,
+    "iyalId": 2,
+    "number": 15,
+    "nameTamil": "பிறனில் விழையாமை",
+    "nameEnglish": "Not Coveting Another's Wife",
+    "kuralRange": {
+      "start": 141,
+      "end": 150
+    },
+    "descriptionTamil": "பிறனுடைய மனைவியை விரும்பாமல் வாழ்வதே சிறந்த ஆடவனின் ஒழுக்கம் என்பதை அறிவுறுத்தும் அதிகாரம்.",
+    "descriptionEnglish": "Warns sternly against coveting another's spouse, maintaining that purity of heart in desire is fundamental to honor."
+  },
+  {
+    "id": 16,
+    "paalId": 1,
+    "iyalId": 2,
+    "number": 16,
+    "nameTamil": "பொறையுடைமை",
+    "nameEnglish": "Possession of Forbearance",
+    "kuralRange": {
+      "start": 151,
+      "end": 160
+    },
+    "descriptionTamil": "பிறர் செய்யும் தீமைகளைப் பொறுத்துக்கொண்டு மன்னிக்கும் குணம் பெற்றிருப்பதே மேன்மை என்பதை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Celebrates patience and forgiveness, holding that bearing injuries with composure is superior to retaliation."
+  },
+  {
+    "id": 17,
+    "paalId": 1,
+    "iyalId": 2,
+    "number": 17,
+    "nameTamil": "அழுக்காறாமை",
+    "nameEnglish": "Avoidance of Envy",
+    "kuralRange": {
+      "start": 161,
+      "end": 170
+    },
+    "descriptionTamil": "பிறருடைய உயர்வைக்கண்டு பொறாமை கொள்ளாமல் வாழ்வதே மனத்தூய்மை தரும் என்பதை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Advises guarding the mind against jealousy, pointing out that envy destroys wealth, peace, and moral standing."
+  },
+  {
+    "id": 18,
+    "paalId": 1,
+    "iyalId": 2,
+    "number": 18,
+    "nameTamil": "வெஃகாமை",
+    "nameEnglish": "Avoidance of Covetousness",
+    "kuralRange": {
+      "start": 171,
+      "end": 180
+    },
+    "descriptionTamil": "பிறர் பொருளை ஆசைப்பட்டு கவர எண்ணாமல் இருப்பதே நேர்மையான வழி என்பதை அறிவுறுத்தும் அதிகாரம்.",
+    "descriptionEnglish": "Condemns greed for others' property, demonstrating that covetous desires undermine true prosperity."
+  },
+  {
+    "id": 19,
+    "paalId": 1,
+    "iyalId": 2,
+    "number": 19,
+    "nameTamil": "புறங்கூறாமை",
+    "nameEnglish": "Avoidance of Backbiting",
+    "kuralRange": {
+      "start": 181,
+      "end": 190
+    },
+    "descriptionTamil": "ஒருவர் இல்லாத இடத்தில் அவரைக் குறித்துத் தீமையாகப் பேசாமல் நேரில் நேர்மையாக நடப்பதன் மேன்மையை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Denounces slandering others behind their backs, advocating directness, honesty, and respectful speech."
+  },
+  {
+    "id": 20,
+    "paalId": 1,
+    "iyalId": 2,
+    "number": 20,
+    "nameTamil": "பயனில சொல்லாமை",
+    "nameEnglish": "Avoidance of Vain Speech",
+    "kuralRange": {
+      "start": 191,
+      "end": 200
+    },
+    "descriptionTamil": "பயனற்ற வீண் வார்த்தைகளைப் பேசாமல் பயனுள்ள சொற்களையே பேசுவதன் அவசியத்தை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Advises against idle, foolish, or meaningless talk, urging speech that is purposeful, wise, and constructive."
+  },
+  {
+    "id": 21,
+    "paalId": 1,
+    "iyalId": 2,
+    "number": 21,
+    "nameTamil": "தீவினையச்சம்",
+    "nameEnglish": "Dread of Evil Deeds",
+    "kuralRange": {
+      "start": 201,
+      "end": 210
+    },
+    "descriptionTamil": "தீய செயல்களைச் செய்ய அஞ்சி விலகி வாழ்வதே ஒருவனுக்குத் பாதுகாப்பு என்பதை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Instills a healthy dread of committing sinful or harmful actions, noting that bad deeds inevitably bring ruin."
+  },
+  {
+    "id": 22,
+    "paalId": 1,
+    "iyalId": 2,
+    "number": 22,
+    "nameTamil": "ஒப்புரவறிதல்",
+    "nameEnglish": "Recognizing One's Duty to Society",
+    "kuralRange": {
+      "start": 211,
+      "end": 220
+    },
+    "descriptionTamil": "சமூகத்திற்கு நன்மை செய்யும் உலக நடைமுறையை அறிந்து, பிறருக்கு உதவி வாழும் பண்பை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Urges living in harmony with social responsibility and actively contributing to the welfare of the community."
+  },
+  {
+    "id": 23,
+    "paalId": 1,
+    "iyalId": 2,
+    "number": 23,
+    "nameTamil": "ஈகை",
+    "nameEnglish": "Charity",
+    "kuralRange": {
+      "start": 221,
+      "end": 230
+    },
+    "descriptionTamil": "வறியவர்க்கும் இல்லாதவர்க்கும் கொடுத்து உதவும் கொடைப்பண்பின் சிறப்பை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Extols giving to the poor and needy without expectation, identifying charity as true wealth."
+  },
+  {
+    "id": 24,
+    "paalId": 1,
+    "iyalId": 2,
+    "number": 24,
+    "nameTamil": "புகழ்",
+    "nameEnglish": "Renown / Fame",
+    "kuralRange": {
+      "start": 231,
+      "end": 240
+    },
+    "descriptionTamil": "அறவழியில் வாழ்ந்து உலகத்தாருக்கு நன்மை செய்வதன் மூலம் நிலையான புகழைப் பெறுவதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Exalts a life lived so virtuously and generously that its memory earns enduring glory and praise."
+  },
+  {
+    "id": 25,
+    "paalId": 1,
+    "iyalId": 3,
+    "number": 25,
+    "nameTamil": "அருளுடைமை",
+    "nameEnglish": "Possession of Compassion",
+    "kuralRange": {
+      "start": 241,
+      "end": 250
+    },
+    "descriptionTamil": "எல்லா உயிர்களிடத்தும் கருணையும் அன்பும் செலுத்தும் அருள் நெறியின் சிறப்பை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Celebrates universal compassion and grace toward all living beings as the foundation of spiritual life."
+  },
+  {
+    "id": 26,
+    "paalId": 1,
+    "iyalId": 3,
+    "number": 26,
+    "nameTamil": "புலான் மறுத்தல்",
+    "nameEnglish": "Abstinence from Flesh",
+    "kuralRange": {
+      "start": 251,
+      "end": 260
+    },
+    "descriptionTamil": "உயிர்களைக் கொன்று உண்ணும் புலால் உணவைத் தவிர்ப்பதன் அவசியத்தையும் ஜீவகாருண்யத்தையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Advocates vegetarianism, emphasizing that refraining from consuming flesh is essential to non-violence."
+  },
+  {
+    "id": 27,
+    "paalId": 1,
+    "iyalId": 3,
+    "number": 27,
+    "nameTamil": "தவம்",
+    "nameEnglish": "Penance / Austerity",
+    "kuralRange": {
+      "start": 261,
+      "end": 270
+    },
+    "descriptionTamil": "துன்பங்களைப் பொறுத்துக்கொண்டு தவம் இயற்றுவதனால் அடையும் மனவலிமையையும் மேன்மையையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Focuses on self-discipline and austerity, demonstrating how enduring hardship yields immense spiritual strength."
+  },
+  {
+    "id": 28,
+    "paalId": 1,
+    "iyalId": 3,
+    "number": 28,
+    "nameTamil": "கூடாவொழுக்கம்",
+    "nameEnglish": "Imposture / Hypocrisy",
+    "kuralRange": {
+      "start": 271,
+      "end": 280
+    },
+    "descriptionTamil": "வெளிப்படைத் துறவு பூண்டு அகத்தில் தீய எண்ணங்களைக் கொண்டிருக்கும் போலித்தனத்தைக் கண்டிக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Exposes false asceticism and spiritual hypocrisy, condemning deceptive appearances that mask evil desires."
+  },
+  {
+    "id": 29,
+    "paalId": 1,
+    "iyalId": 3,
+    "number": 29,
+    "nameTamil": "கள்ளாமை",
+    "nameEnglish": "Absence of Fraud / Non-stealing",
+    "kuralRange": {
+      "start": 281,
+      "end": 290
+    },
+    "descriptionTamil": "பிறர் பொருளைத் திருட நினைக்காமல் நேர்மையாக வாழ்வதன் அவசியத்தை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Condemns theft and fraud in any form, upholding absolute honesty and respect for others' property."
+  },
+  {
+    "id": 30,
+    "paalId": 1,
+    "iyalId": 3,
+    "number": 30,
+    "nameTamil": "வாய்மை",
+    "nameEnglish": "Truthfulness",
+    "kuralRange": {
+      "start": 291,
+      "end": 300
+    },
+    "descriptionTamil": "எந்த உயிர்க்கும் தீங்கு தராத உண்மையைப் பேசுவதே வாய்மை என்பதை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Defines truthfulness as speech that harms no living creature, placing absolute truth among the highest virtues."
+  },
+  {
+    "id": 31,
+    "paalId": 1,
+    "iyalId": 3,
+    "number": 31,
+    "nameTamil": "வெகுளாமை",
+    "nameEnglish": "Restraint from Anger",
+    "kuralRange": {
+      "start": 301,
+      "end": 310
+    },
+    "descriptionTamil": "கோபத்தைக் கட்டுப்படுத்தி சினமடையாமல் இருப்பதன் மூலம் அமைதியும் நன்மையும் எய்துவதை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Urges complete control over anger, explaining how suppressing rage protects oneself and preserves peace."
+  },
+  {
+    "id": 32,
+    "paalId": 1,
+    "iyalId": 3,
+    "number": 32,
+    "nameTamil": "இன்னா செய்யாமை",
+    "nameEnglish": "Not Doing Harm",
+    "kuralRange": {
+      "start": 311,
+      "end": 320
+    },
+    "descriptionTamil": "எக்காரணம் கொண்டும் எந்த உயிர்க்கும் துன்பம் செய்யாமல் வாழும் அஹிம்சை நெறியை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Teaches total non-injury (ahimsa), insisting that one should never harm others even in return for evil."
+  },
+  {
+    "id": 33,
+    "paalId": 1,
+    "iyalId": 3,
+    "number": 33,
+    "nameTamil": "கொல்லாமை",
+    "nameEnglish": "Non-Killing",
+    "kuralRange": {
+      "start": 321,
+      "end": 330
+    },
+    "descriptionTamil": "எந்த உயிரையும் கொல்லாதிருத்தலே தலையாய அறம் என்பதை வலியுறுத்தும் அதிகாரம்.",
+    "descriptionEnglish": "Declares non-killing of any living being to be the single paramount virtue overriding all rituals."
+  },
+  {
+    "id": 34,
+    "paalId": 1,
+    "iyalId": 3,
+    "number": 34,
+    "nameTamil": "நிலையாமை",
+    "nameEnglish": "Impermanence",
+    "kuralRange": {
+      "start": 331,
+      "end": 340
+    },
+    "descriptionTamil": "உலகப் பொருட்களும் உடல் வாழ்க்கையும் நிலையற்றவை என்பதை உணர்ந்து நிலையான அறத்தைப் பின்பற்றுவதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Reflects on the fleeting nature of youth, wealth, and life itself, urging focus on lasting spiritual truth."
+  },
+  {
+    "id": 35,
+    "paalId": 1,
+    "iyalId": 3,
+    "number": 35,
+    "nameTamil": "துறவு",
+    "nameEnglish": "Renunciation",
+    "kuralRange": {
+      "start": 341,
+      "end": 350
+    },
+    "descriptionTamil": "உலகப் பற்றுகளிலிருந்து விடுபட்டுத் துறவறம் பூண்பதன் மூலம் அடையும் அமைதியை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Describes the peace and liberation found in shedding worldly attachments and inner desires."
+  },
+  {
+    "id": 36,
+    "paalId": 1,
+    "iyalId": 3,
+    "number": 36,
+    "nameTamil": "மெய்யுணர்தல்",
+    "nameEnglish": "Realization of Truth",
+    "kuralRange": {
+      "start": 351,
+      "end": 360
+    },
+    "descriptionTamil": "மயக்க நீங்கிப் பொருளின் உண்மையான தன்மையை உணர்ந்து ஞானம் பெறுவதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Focuses on spiritual enlightenment and perceiving the ultimate reality beyond worldly illusions."
+  },
+  {
+    "id": 37,
+    "paalId": 1,
+    "iyalId": 3,
+    "number": 37,
+    "nameTamil": "அவா அறுத்தல்",
+    "nameEnglish": "Eradication of Desire",
+    "kuralRange": {
+      "start": 361,
+      "end": 370
+    },
+    "descriptionTamil": "துன்பங்கள் அனைத்திற்கும் காரணமான பேராசையையும் அவாவையும் முற்றிலும் வேரறுப்பதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Advises extinguishing root desires, identifying craving as the origin of all human suffering."
+  },
+  {
+    "id": 38,
+    "paalId": 1,
+    "iyalId": 4,
+    "number": 38,
+    "nameTamil": "ஊழ்",
+    "nameEnglish": "Fate / Karma",
+    "kuralRange": {
+      "start": 371,
+      "end": 380
+    },
+    "descriptionTamil": "முன் வினைகளின் பயனாக அமையும் ஊழின் ஆற்றலையும், அதன் வழியிலேயே நிகழ்வுகள் நடப்பதையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Examines the irresistible power of karma and destiny, showing how past actions shape present outcomes."
+  },
+  {
+    "id": 39,
+    "paalId": 2,
+    "iyalId": 5,
+    "number": 39,
+    "nameTamil": "இறைமாட்சி",
+    "nameEnglish": "The Greatness of a King",
+    "kuralRange": {
+      "start": 381,
+      "end": 390
+    },
+    "descriptionTamil": "நாட்டை ஆளும் அரசனுக்கு இருக்க வேண்டிய நற்பண்புகளையும் மாண்புகளையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Outlines the necessary qualities of a noble sovereign, including courage, wisdom, and benevolence."
+  },
+  {
+    "id": 40,
+    "paalId": 2,
+    "iyalId": 5,
+    "number": 40,
+    "nameTamil": "கல்வி",
+    "nameEnglish": "Learning / Education",
+    "kuralRange": {
+      "start": 391,
+      "end": 400
+    },
+    "descriptionTamil": "நூல்களைக் கற்று அறிவைப் பெருக்குவதன் அவசியத்தையும் கல்வியின் அழியாத சிறப்பையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Stresses the lifelong value of thorough education and knowledge as an imperishable asset."
+  },
+  {
+    "id": 41,
+    "paalId": 2,
+    "iyalId": 5,
+    "number": 41,
+    "nameTamil": "கல்லாமை",
+    "nameEnglish": "Ignorance / Non-Learning",
+    "kuralRange": {
+      "start": 401,
+      "end": 410
+    },
+    "descriptionTamil": "கல்வி கல்லாதவனின் சிறுமையையும், அறிவில்லாதவன் சமூகத்தில் எதிர்கொள்ளும் அவமதிப்பையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Highlights the pitiful state of the uneducated, comparing lack of learning to spiritual blindness."
+  },
+  {
+    "id": 42,
+    "paalId": 2,
+    "iyalId": 5,
+    "number": 42,
+    "nameTamil": "கேள்வி",
+    "nameEnglish": "Listening / Learning by Hearing",
+    "kuralRange": {
+      "start": 411,
+      "end": 420
+    },
+    "descriptionTamil": "சான்றோர்களின் நல்லுரைகளைக் கேட்டு அறிவு பெறுவதன் சிறப்பை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Encourages listening to the counsel of wise elders, noting that attentive listening enriches the mind."
+  },
+  {
+    "id": 43,
+    "paalId": 2,
+    "iyalId": 5,
+    "number": 43,
+    "nameTamil": "அறிவுடைமை",
+    "nameEnglish": "Possession of Wisdom",
+    "kuralRange": {
+      "start": 421,
+      "end": 430
+    },
+    "descriptionTamil": "எதிர்காலத்தை கணித்துத் தீமைகளிலிருந்து காக்கும் உண்மையான அறிவின் தன்மையை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Defines true wisdom as foresight, self-governance, and the capacity to guard against danger."
+  },
+  {
+    "id": 44,
+    "paalId": 2,
+    "iyalId": 5,
+    "number": 44,
+    "nameTamil": "குற்றம் கடிதல்",
+    "nameEnglish": "Correction of Faults",
+    "kuralRange": {
+      "start": 431,
+      "end": 440
+    },
+    "descriptionTamil": "தன்னிடம் உள்ள கோபம், காமம், லோபம் போன்ற குற்றங்களை அறிந்து அவற்றைக் கடிந்து ஒதுக்குவதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Urges rulers and individuals to diligently identify and eliminate personal flaws before judging others."
+  },
+  {
+    "id": 45,
+    "paalId": 2,
+    "iyalId": 5,
+    "number": 45,
+    "nameTamil": "பெரியாரைத் துணைக்கோடல்",
+    "nameEnglish": "Gaining the Support of Great Men",
+    "kuralRange": {
+      "start": 441,
+      "end": 450
+    },
+    "descriptionTamil": "அறிவிலும் ஆற்றலிலும் பெரியவர்களைத் துணையாகக் கொண்டு அவர்களின் வழிகாட்டுதலில் இயங்குவதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Advises seeking the friendship and counsel of mature, virtuous elders to ensure good governance."
+  },
+  {
+    "id": 46,
+    "paalId": 2,
+    "iyalId": 5,
+    "number": 46,
+    "nameTamil": "சிற்றினம் சேராமை",
+    "nameEnglish": "Avoiding Mean Company",
+    "kuralRange": {
+      "start": 451,
+      "end": 460
+    },
+    "descriptionTamil": "தீய வழியில் செல்லும் கீழோரின் சேர்க்கையைத் தவிர்த்து நற்சேர்க்கையில் இருப்பதன் அவசியத்தைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Warns against associating with low, unprincipled companions, as company strongly shapes character."
+  },
+  {
+    "id": 47,
+    "paalId": 2,
+    "iyalId": 5,
+    "number": 47,
+    "nameTamil": "தெரிந்து செயல்வகை",
+    "nameEnglish": "Deliberation Before Action",
+    "kuralRange": {
+      "start": 461,
+      "end": 470
+    },
+    "descriptionTamil": "எந்த ஒரு செயலையும் தொடங்குவதற்கு முன் அதன் நன்மைகள், தீமைகள், வழிகளை ஆராய்ந்து செயல்படுவதை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Emphasizes careful planning, foresight, and risk calculation before embarking on any enterprise."
+  },
+  {
+    "id": 48,
+    "paalId": 2,
+    "iyalId": 5,
+    "number": 48,
+    "nameTamil": "வலியறிதல்",
+    "nameEnglish": "Assessing Strength",
+    "kuralRange": {
+      "start": 471,
+      "end": 480
+    },
+    "descriptionTamil": "தன் பலம், பகையின் பலம், வினையின் பலம், துணையின் பலம் அறிந்து செயல்படுவதன் அவசியத்தைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Advises accurately assessing one's own power, the adversary's strength, and available resources."
+  },
+  {
+    "id": 49,
+    "paalId": 2,
+    "iyalId": 5,
+    "number": 49,
+    "nameTamil": "காலமறிதல்",
+    "nameEnglish": "Knowing the Right Time",
+    "kuralRange": {
+      "start": 481,
+      "end": 490
+    },
+    "descriptionTamil": "செயலை வெற்றிபெறச் செய்வதற்கு ஏற்ற உரிய காலத்தை அறிந்து செயல்படுவதன் சிறப்பை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Highlights the critical importance of timing, showing that acting at the opportune moment ensures victory."
+  },
+  {
+    "id": 50,
+    "paalId": 2,
+    "iyalId": 5,
+    "number": 50,
+    "nameTamil": "இடமறிதல்",
+    "nameEnglish": "Knowing the Right Place",
+    "kuralRange": {
+      "start": 491,
+      "end": 500
+    },
+    "descriptionTamil": "செயலை ஆற்றுவதற்கு ஏற்ற தகுந்த இடத்தைத் தேர்ந்தெடுத்துச் செயல்படுவதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Underscores strategic location and terrain, noting that choosing the right field yields decisive advantage."
+  },
+  {
+    "id": 51,
+    "paalId": 2,
+    "iyalId": 5,
+    "number": 51,
+    "nameTamil": "தெரிந்து தெளிதல்",
+    "nameEnglish": "Testing and Choice of Personnel",
+    "kuralRange": {
+      "start": 501,
+      "end": 510
+    },
+    "descriptionTamil": "ஒருவரின் குணம், குற்றம், தகுதிகளை நன்கு ஆராய்ந்து தெளிந்த பின் அவரை நம்புவதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Recommends thoroughly testing individuals' character and loyalty before trusting them with responsibilities."
+  },
+  {
+    "id": 52,
+    "paalId": 2,
+    "iyalId": 5,
+    "number": 52,
+    "nameTamil": "தெரிந்து வினையாடல்",
+    "nameEnglish": "Testing and Employing Men",
+    "kuralRange": {
+      "start": 511,
+      "end": 520
+    },
+    "descriptionTamil": "ஆராய்ந்து தெளிந்த பின்னரே உரிய நபர் கையில் உரிய பொறுப்பைக் கொடுத்துச் செயல்பட விடுவதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Focuses on delegating specific tasks to proven, qualified individuals and granting them execution autonomy."
+  },
+  {
+    "id": 53,
+    "paalId": 2,
+    "iyalId": 5,
+    "number": 53,
+    "nameTamil": "சுற்றந்தழால்",
+    "nameEnglish": "Cherishing Relatives",
+    "kuralRange": {
+      "start": 521,
+      "end": 530
+    },
+    "descriptionTamil": "தன்னைச் சார்ந்த உறவினர்களையும் சுற்றத்தார்களையும் அன்போடு அரவணைத்து வாழ்வதன் சிறப்பை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Advocates embracing and nurturing one's kinsmen, fostering unity and mutual support."
+  },
+  {
+    "id": 54,
+    "paalId": 2,
+    "iyalId": 5,
+    "number": 54,
+    "nameTamil": "பொச்சாவாமை",
+    "nameEnglish": "Unforgetfulness / Vigilance",
+    "kuralRange": {
+      "start": 531,
+      "end": 540
+    },
+    "descriptionTamil": "மறதியின்றி விழிப்புணர்வோடு காரியங்களைச் செவ்வனே ஆற்றுவதன் அவசியத்தை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Warns against carelessness and forgetfulness, upholding constant vigilance as essential to success."
+  },
+  {
+    "id": 55,
+    "paalId": 2,
+    "iyalId": 5,
+    "number": 55,
+    "nameTamil": "செங்கோன்மை",
+    "nameEnglish": "Just Governance / Righteous Rule",
+    "kuralRange": {
+      "start": 541,
+      "end": 550
+    },
+    "descriptionTamil": "நீதி வழுவாமல் முறையான ஆட்சி நடத்தும் அரசனுடைய செங்கோல் சிறப்பை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Extols impartial justice and righteous rule as the true shield protecting both king and people."
+  },
+  {
+    "id": 56,
+    "paalId": 2,
+    "iyalId": 5,
+    "number": 56,
+    "nameTamil": "கொடுங்கோன்மை",
+    "nameEnglish": "Tyranny / Cruel Governance",
+    "kuralRange": {
+      "start": 551,
+      "end": 560
+    },
+    "descriptionTamil": "நீதியின்றிக் கொடுங்கோல் ஆட்சி செய்யும் அரசனால் நாட்டுக்கு விளையும் கேடுகளைக் கண்டிக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Denounces oppressive tyranny, warning that unjust rule inevitably invites rebellion and downfall."
+  },
+  {
+    "id": 57,
+    "paalId": 2,
+    "iyalId": 5,
+    "number": 57,
+    "nameTamil": "வெருவந்த செய்யாமை",
+    "nameEnglish": "Absence of Terror",
+    "kuralRange": {
+      "start": 561,
+      "end": 570
+    },
+    "descriptionTamil": "மக்களுக்கு அச்சம் தராத வகையில் இன்முகத்தோடு ஆட்சி புரிவதன் நன்மைகளை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Advises rulers against inspiring terror in subjects, promoting accessible, gentle leadership."
+  },
+  {
+    "id": 58,
+    "paalId": 2,
+    "iyalId": 5,
+    "number": 58,
+    "nameTamil": "கண்ணோட்டம்",
+    "nameEnglish": "Benignity / Compassionate Outlook",
+    "kuralRange": {
+      "start": 571,
+      "end": 580
+    },
+    "descriptionTamil": "எல்லோரிடமும் கண்ணியத்துடனும் இரக்கத்துடனும் பழகும் கண்ணோட்டப் பண்பின் சிறப்பை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Praises a kindly, gracious disposition that looks upon others with warmth and sympathetic understanding."
+  },
+  {
+    "id": 59,
+    "paalId": 2,
+    "iyalId": 5,
+    "number": 59,
+    "nameTamil": "ஒற்றாடல்",
+    "nameEnglish": "Espionage / Intelligence",
+    "kuralRange": {
+      "start": 581,
+      "end": 590
+    },
+    "descriptionTamil": "நாட்டின் நலனுக்காக ஒற்றர்களை நியமித்து உண்மைகளை அறிந்து செயல்படும் உளவு முறையை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Describes the efficient use of secret intelligence to stay informed of domestic and foreign affairs."
+  },
+  {
+    "id": 60,
+    "paalId": 2,
+    "iyalId": 5,
+    "number": 60,
+    "nameTamil": "ஊக்கமுடைமை",
+    "nameEnglish": "Possession of Energy / Zeal",
+    "kuralRange": {
+      "start": 591,
+      "end": 600
+    },
+    "descriptionTamil": "மனத்தளர்ச்சி இன்றி எப்போதும் செயலாற்றும் ஊக்கம் கொண்டிருப்பதே உண்மையான செல்வம் என்பதை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Praises inner drive, enthusiasm, and relentless zeal as the core engine of accomplishment."
+  },
+  {
+    "id": 61,
+    "paalId": 2,
+    "iyalId": 5,
+    "number": 61,
+    "nameTamil": "மடிமையின்மை",
+    "nameEnglish": "Absence of Sloth / Laziness",
+    "kuralRange": {
+      "start": 601,
+      "end": 610
+    },
+    "descriptionTamil": "சோம்பலைத் தவிர்த்துச் சுறுசுறுப்புடன் வாழும் பண்பின் சிறப்பை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Urges overcoming laziness and procrastination, identifying sloth as a fatal drag on progress."
+  },
+  {
+    "id": 62,
+    "paalId": 2,
+    "iyalId": 5,
+    "number": 62,
+    "nameTamil": "ஆள்வினையுடைமை",
+    "nameEnglish": "Manly Effort / Perseverance",
+    "kuralRange": {
+      "start": 611,
+      "end": 620
+    },
+    "descriptionTamil": "விடாமுயற்சியுடன் உழைப்பவர் விதியையும் வெல்வர் என்பதை வலியுறுத்தும் அதிகாரம்.",
+    "descriptionEnglish": "Exalts unyielding personal effort and perseverance, asserting that hard work can triumph over fate."
+  },
+  {
+    "id": 63,
+    "paalId": 2,
+    "iyalId": 5,
+    "number": 63,
+    "nameTamil": "இடுக்கண் அழியாமை",
+    "nameEnglish": "Unflinching in Distress",
+    "kuralRange": {
+      "start": 621,
+      "end": 630
+    },
+    "descriptionTamil": "துன்பங்கள் வரும்போது மனந்தளராமல் அவற்றை எதிர்த்து நின்று வெற்றிபெறுவதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Encourages maintaining courage and cheerfulness in adversity, treating hardship as a challenge to overcome."
+  },
+  {
+    "id": 64,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 64,
+    "nameTamil": "அமைச்சு",
+    "nameEnglish": "Ministers / Statecraft",
+    "kuralRange": {
+      "start": 631,
+      "end": 640
+    },
+    "descriptionTamil": "அரசனுக்கு நல்வழிகாட்டி செயலாற்றும் சிறந்த அமைச்சரின் தகுதிகளை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Outlines the essential qualifications of a wise minister, including sound judgment, tact, and loyalty."
+  },
+  {
+    "id": 65,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 65,
+    "nameTamil": "சொல்வன்மை",
+    "nameEnglish": "Power of Speech / Eloquence",
+    "kuralRange": {
+      "start": 641,
+      "end": 650
+    },
+    "descriptionTamil": "அவையில் தெளிவுடனும் நயத்துடனும் பேசும் பேச்சுத் திறனின் மேன்மையை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Praises persuasive, clear, and dignified speech as an indispensable tool in leadership and diplomacy."
+  },
+  {
+    "id": 66,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 66,
+    "nameTamil": "வினைத்தூய்மை",
+    "nameEnglish": "Purity of Action",
+    "kuralRange": {
+      "start": 651,
+      "end": 660
+    },
+    "descriptionTamil": "பழித்தரும் தீய வழிகளைத் தவிர்த்துத் தூய்மையான முறையில் காரியங்களைச் செய்வதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Demands moral integrity in execution, holding that worthy ends must never be pursued through corrupt means."
+  },
+  {
+    "id": 67,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 67,
+    "nameTamil": "வினைத்திட்பம்",
+    "nameEnglish": "Firmness of Action / Resoluteness",
+    "kuralRange": {
+      "start": 661,
+      "end": 670
+    },
+    "descriptionTamil": "தொடங்கிய செயலை உறுதியுடன் செய்து முடிக்கும் மனத்திட்பத்தின் சிறப்பை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Stresses mental toughness and unwavering commitment to see chosen tasks through to completion."
+  },
+  {
+    "id": 68,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 68,
+    "nameTamil": "வினைசெயல்வகை",
+    "nameEnglish": "Modes of Execution",
+    "kuralRange": {
+      "start": 671,
+      "end": 680
+    },
+    "descriptionTamil": "காரியங்களை நிறைவேற்றும் வழிமுறைகளையும் நுட்பங்களையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Discusses practical tactics, resource organization, and methodical execution strategies for complex tasks."
+  },
+  {
+    "id": 69,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 69,
+    "nameTamil": "தூது",
+    "nameEnglish": "Envoys / Ambassadors",
+    "kuralRange": {
+      "start": 681,
+      "end": 690
+    },
+    "descriptionTamil": "நாடுகளுக்கிடையே அமைதியையும் தூதரக உறவுகளையும் பேணும் தூதுவனின் தகுதிகளைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Defines the attributes of an ideal ambassador: high birth, deep learning, tact, and fearlessness."
+  },
+  {
+    "id": 70,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 70,
+    "nameTamil": "மன்னரைச் சேர்ந்தொழுகல்",
+    "nameEnglish": "Conduct in the Royal Presence",
+    "kuralRange": {
+      "start": 691,
+      "end": 700
+    },
+    "descriptionTamil": "அரசனிடமும் தலைவர்களிடமும் பழகும்போது கடைபிடிக்க வேண்டிய எல்லைகளையும் மரியாதையையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Advises courts and associates on maintaining balance, caution, and respectful decorum around powerful leaders."
+  },
+  {
+    "id": 71,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 71,
+    "nameTamil": "குறிப்பறிதல்",
+    "nameEnglish": "Divining Unspoken Thoughts",
+    "kuralRange": {
+      "start": 701,
+      "end": 710
+    },
+    "descriptionTamil": "பிறரின் முகக்குறிப்பைக் கண்டே அவர்களின் மன எண்ணங்களை அறியும் கூர்மையைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Appreciates the subtle skill of reading facial expressions and body language to discern hidden feelings."
+  },
+  {
+    "id": 72,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 72,
+    "nameTamil": "அவையறிதல்",
+    "nameEnglish": "Knowing the Council / Audience",
+    "kuralRange": {
+      "start": 711,
+      "end": 720
+    },
+    "descriptionTamil": "தான் பேசும் சபையின் தன்மையை அறிந்து அதற்கேற்ப சொற்களைப் பயன்படுத்துவதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Urges adapting speech and arguments to match the intelligence and disposition of one's audience."
+  },
+  {
+    "id": 73,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 73,
+    "nameTamil": "அவையஞ்சாமை",
+    "nameEnglish": "Courage Before Councils",
+    "kuralRange": {
+      "start": 721,
+      "end": 730
+    },
+    "descriptionTamil": "கற்றவர்கள் நிறைந்த அவையில் அஞ்சாமல் தன் கருத்துகளைத் தெளிவாக முன்வைப்பதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Exhorts confidence and composure when presenting ideas before august assemblies or critics."
+  },
+  {
+    "id": 74,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 74,
+    "nameTamil": "நாடு",
+    "nameEnglish": "The Territory / Country",
+    "kuralRange": {
+      "start": 731,
+      "end": 740
+    },
+    "descriptionTamil": "வளம், அமைதி, பாதுகாப்பு நிறைந்த சிறந்த நாட்டின் சிறப்புகளை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Describes the ideal nation: fertile, prosperous, peaceful, free from internal disease and external threats."
+  },
+  {
+    "id": 75,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 75,
+    "nameTamil": "அரண்",
+    "nameEnglish": "Fortress / Defense",
+    "kuralRange": {
+      "start": 741,
+      "end": 750
+    },
+    "descriptionTamil": "நாட்டைப் பாதுகாக்கும் அரணின் வலிமையையும் அதன் அமைப்பையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Focuses on strong fortifications, strategic barriers, and defensive readiness as critical to national security."
+  },
+  {
+    "id": 76,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 76,
+    "nameTamil": "பொருள்செயல்வகை",
+    "nameEnglish": "Ways of Accumulating Wealth",
+    "kuralRange": {
+      "start": 751,
+      "end": 760
+    },
+    "descriptionTamil": "அறவழியில் பொருளை ஈட்டி அதைச் சேமித்துப் பயன்படுத்தும் முறையை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Explores legitimate wealth creation, emphasizing that financial strength commands global respect."
+  },
+  {
+    "id": 77,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 77,
+    "nameTamil": "படைமாட்சி",
+    "nameEnglish": "The Excellence of an Army",
+    "kuralRange": {
+      "start": 761,
+      "end": 770
+    },
+    "descriptionTamil": "வீரமும் தியாகமும் மிக்க நாட்டின் படை வலிமையின் சிறப்பை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Honors a brave, disciplined military force capable of defending the realm with resolute valor."
+  },
+  {
+    "id": 78,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 78,
+    "nameTamil": "படைச்செருக்கு",
+    "nameEnglish": "Military Spirit / Valor",
+    "kuralRange": {
+      "start": 771,
+      "end": 780
+    },
+    "descriptionTamil": "போர்க்களத்தில் வீரர்கள் காட்டும் அஞ்சா நெஞ்சத்தையும் தியாக உணர்வையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Celebrates martial heroism and the noble pride of soldiers facing danger without stepping back."
+  },
+  {
+    "id": 79,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 79,
+    "nameTamil": "நட்பு",
+    "nameEnglish": "Friendship",
+    "kuralRange": {
+      "start": 781,
+      "end": 790
+    },
+    "descriptionTamil": "உண்மையான நட்பின் உயர்வையும் அது தரும் பலத்தையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Deeply explores friendship, defining true companionship as mutual support in times of trial."
+  },
+  {
+    "id": 80,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 80,
+    "nameTamil": "நட்பாராய்தல்",
+    "nameEnglish": "Testing Friendship",
+    "kuralRange": {
+      "start": 791,
+      "end": 800
+    },
+    "descriptionTamil": "ஒருவரை நண்பராக ஏற்றுக்கொள்ளும் முன் அவரின் குணங்களை நன்கு சோதித்தறியும் வழியைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Advises evaluating character carefully before entering into binding friendships."
+  },
+  {
+    "id": 81,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 81,
+    "nameTamil": "பழைமை",
+    "nameEnglish": "Intimacy / Old Friendship",
+    "kuralRange": {
+      "start": 801,
+      "end": 810
+    },
+    "descriptionTamil": "நெருங்கிய நீண்டகால நண்பர்களிடம் உரிமையுடன் பழகும் உரிமையின் சிறப்பைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Extols long-standing friendships where freedom and mutual tolerance withstand minor oversights."
+  },
+  {
+    "id": 82,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 82,
+    "nameTamil": "தீ நட்பு",
+    "nameEnglish": "Bad Friendship",
+    "kuralRange": {
+      "start": 811,
+      "end": 820
+    },
+    "descriptionTamil": "தீய எண்ணம் கொண்டவர்களின் நட்பால் வரும் கேடுகளை எச்சரிக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Warns against insincere, opportunistic friends who abandon companions in adversity."
+  },
+  {
+    "id": 83,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 83,
+    "nameTamil": "கூடா நட்பு",
+    "nameEnglish": "False Friendship",
+    "kuralRange": {
+      "start": 821,
+      "end": 830
+    },
+    "descriptionTamil": "வெளியில் நண்பராக நடித்து உள்ளே பகைமை கொண்டிருக்கும் கூடா நட்பைக் கண்டிக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Exposes treacherous associates who pretend affection while secretly harboring malicious designs."
+  },
+  {
+    "id": 84,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 84,
+    "nameTamil": "பேதைமை",
+    "nameEnglish": "Folly / Foolishness",
+    "kuralRange": {
+      "start": 831,
+      "end": 840
+    },
+    "descriptionTamil": "அறிவில்லாத செயல் எது என்பதையும் அதனால் விளையும் இழப்புகளையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Defines spiritual and practical folly as choosing harmful options despite knowing better."
+  },
+  {
+    "id": 85,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 85,
+    "nameTamil": "புல்லறிவாண்மை",
+    "nameEnglish": "Ignorance / Conceited Stupidity",
+    "kuralRange": {
+      "start": 841,
+      "end": 850
+    },
+    "descriptionTamil": "அறிவில்லாமல் இருந்தும் தான் எல்லாம் அறிந்தவன் என இறுமாப்புடன் திரியும் சிறுமையை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Critiques stubborn ignorance combined with arrogance, where a person refuses good counsel."
+  },
+  {
+    "id": 86,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 86,
+    "nameTamil": "இகல்",
+    "nameEnglish": "Hostility / Discord",
+    "kuralRange": {
+      "start": 851,
+      "end": 860
+    },
+    "descriptionTamil": "தேவையற்ற பகைமையையும் மனக்கசப்பையும் வளர்க்காமல் தவிர்ப்பதன் அவசியத்தைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Condemns petty hatred and needless discord, identifying harmony as essential to happiness."
+  },
+  {
+    "id": 87,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 87,
+    "nameTamil": "பகைமாட்சி",
+    "nameEnglish": "The Might of Hatred / Enmity",
+    "kuralRange": {
+      "start": 861,
+      "end": 870
+    },
+    "descriptionTamil": "பகைவர்களிடம் எவ்வாறு நடந்து கொள்ள வேண்டும் என்பதையும் பகையின் இயல்பையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Discusses strategic handling of enemies, noting when to oppose and when to diffuse hostility."
+  },
+  {
+    "id": 88,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 88,
+    "nameTamil": "பகைத்திறந்தெரிதல்",
+    "nameEnglish": "Appraising Enmity",
+    "kuralRange": {
+      "start": 871,
+      "end": 880
+    },
+    "descriptionTamil": "பகைவர்களின் வலிமையையும் சூழ்நிலையையும் ஆராய்ந்து அவர்களைக் கையாளுவதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Teaches discerning the real motives and capabilities of hostile forces to protect oneself."
+  },
+  {
+    "id": 89,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 89,
+    "nameTamil": "உட்பகை",
+    "nameEnglish": "Internal Enmity / Hidden Enemies",
+    "kuralRange": {
+      "start": 881,
+      "end": 890
+    },
+    "descriptionTamil": "வீட்டுக்குள்ளும் நாட்டுக்குள்ளும் இருக்கும் மறைமுகப் பகையினால் வரும் ஆபத்தைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Warns against internal traitors and hidden factions, describing inside threats as most dangerous."
+  },
+  {
+    "id": 90,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 90,
+    "nameTamil": "பெரியாரைப் பிழையாமை",
+    "nameEnglish": "Not Offending the Great",
+    "kuralRange": {
+      "start": 891,
+      "end": 900
+    },
+    "descriptionTamil": "ஆற்றல் மிக்க பெரியோர்களை அவமதிக்காமல் மரியாதையுடன் நடப்பதன் அவசியத்தைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Warns against insulting or antagonizing powerful, righteous leaders who possess great influence."
+  },
+  {
+    "id": 91,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 91,
+    "nameTamil": "பெண்வழிச்சேறல்",
+    "nameEnglish": "Being Led by Women / Henpeckedness",
+    "kuralRange": {
+      "start": 901,
+      "end": 910
+    },
+    "descriptionTamil": "தன் கடமைகளை மறந்து மனைவியின் தவறான விருப்பங்களுக்கு அடங்கி நடப்ப선의 சிறுமையை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Critiques abandoning duty and principle due to blind infatuation or weakness of mind."
+  },
+  {
+    "id": 92,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 92,
+    "nameTamil": "வரைவின் மகளிர்",
+    "nameEnglish": "Prostitutes / Loose Women",
+    "kuralRange": {
+      "start": 911,
+      "end": 920
+    },
+    "descriptionTamil": "பொருளுக்காக ஆசைப்படும் பரத்தையரிடம் மயங்கி அழியாமல் இருப்பதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Warns against mercenariness in lust, pointing out that transactional affection leads to moral ruin."
+  },
+  {
+    "id": 93,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 93,
+    "nameTamil": "கள்ளுண்ணாமை",
+    "nameEnglish": "Abstinence from Alcohol",
+    "kuralRange": {
+      "start": 921,
+      "end": 930
+    },
+    "descriptionTamil": "மது அருந்துவதால் உண்டாகும் அழிவுகளையும் மானக்கேட்டையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Strongly condemns drunkenness, showing how alcohol destroys clarity, reputation, and dignity."
+  },
+  {
+    "id": 94,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 94,
+    "nameTamil": "சூது",
+    "nameEnglish": "Gambling",
+    "kuralRange": {
+      "start": 931,
+      "end": 940
+    },
+    "descriptionTamil": "சூதாட்டத்தால் பெருஞ்செல்வமும் புகழும் அழிந்து போகும் என்பதை எச்சரிக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Exposes the ruinous nature of gambling, describing it as an addictive trap leading to poverty."
+  },
+  {
+    "id": 95,
+    "paalId": 2,
+    "iyalId": 6,
+    "number": 95,
+    "nameTamil": "மருந்து",
+    "nameEnglish": "Medicine / Health",
+    "kuralRange": {
+      "start": 941,
+      "end": 950
+    },
+    "descriptionTamil": "உடலையும் மனத்தையும் ஆரோக்கியமாக வைக்கும் உணவு மற்றும் மருத்துவ நெறிகளை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Provides timeless health wisdom: eating moderately according to bodily constitution prevents illness."
+  },
+  {
+    "id": 96,
+    "paalId": 2,
+    "iyalId": 7,
+    "number": 96,
+    "nameTamil": "குடிமை",
+    "nameEnglish": "Nobility of Birth / Pedigree",
+    "kuralRange": {
+      "start": 951,
+      "end": 960
+    },
+    "descriptionTamil": "உயர்ந்த குடும்பத்தில் பிறந்தவர்களின் நற்பண்புகளையும் ஒழுக்கத்தையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Focuses on hereditary honor and noble family culture defined by virtue, modesty, and truthfulness."
+  },
+  {
+    "id": 97,
+    "paalId": 2,
+    "iyalId": 7,
+    "number": 97,
+    "nameTamil": "மானம்",
+    "nameEnglish": "Honor / Self-Respect",
+    "kuralRange": {
+      "start": 961,
+      "end": 970
+    },
+    "descriptionTamil": "தன் தன்மானத்தை உயிராகக் கருதி ஒழுக்கத்தோடு வாழ்வதன் சிறப்பை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Exalts unblemished self-respect, holding that living without honor is worse than death."
+  },
+  {
+    "id": 98,
+    "paalId": 2,
+    "iyalId": 7,
+    "number": 98,
+    "nameTamil": "பெருமை",
+    "nameEnglish": "Greatness",
+    "kuralRange": {
+      "start": 971,
+      "end": 980
+    },
+    "descriptionTamil": "எல்லா உயிர்களும் பிறப்பால் சமம் என்றும், செயல்களாலேயே பெருமை உண்டாகும் என்றும் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Proclaims universal human equality at birth, asserting that greatness is earned purely through noble deeds."
+  },
+  {
+    "id": 99,
+    "paalId": 2,
+    "iyalId": 7,
+    "number": 99,
+    "nameTamil": "சான்றாண்மை",
+    "nameEnglish": "Perfect Goodness / Nobility",
+    "kuralRange": {
+      "start": 981,
+      "end": 990
+    },
+    "descriptionTamil": "நற்பண்புகள் அனைத்தும் நிறைந்த சான்றோர்களின் குணநலன்களை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Describes holistic moral excellence, combining love, modesty, helpfulness, and unwavering truth."
+  },
+  {
+    "id": 100,
+    "paalId": 2,
+    "iyalId": 7,
+    "number": 100,
+    "nameTamil": "பண்புடைமை",
+    "nameEnglish": "Possession of Courtesy / Civility",
+    "kuralRange": {
+      "start": 991,
+      "end": 1000
+    },
+    "descriptionTamil": "எல்லோரிடமும் அன்பாகவும் பண்பாகவும் பழகும் நாகரிகமான நடத்தையைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Extols politeness and refined courtesy, describing civil behavior as the oil that smoothes social life."
+  },
+  {
+    "id": 101,
+    "paalId": 2,
+    "iyalId": 7,
+    "number": 101,
+    "nameTamil": "நன்றியில் செல்வம்",
+    "nameEnglish": "Unprofitable Wealth",
+    "kuralRange": {
+      "start": 1001,
+      "end": 1010
+    },
+    "descriptionTamil": "தான் அனுபவிக்காமலும் பிறருக்குக் கொடுக்காமலும் பூட்டி வைக்கும் பயனில்லாச் செல்வத்தைக் கண்டிக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Condemns miserly hoarding of wealth, pointing out that unshared, unused riches are meaningless."
+  },
+  {
+    "id": 102,
+    "paalId": 2,
+    "iyalId": 7,
+    "number": 102,
+    "nameTamil": "நாணுடைமை",
+    "nameEnglish": "Possession of Modesty / Shame for Evil",
+    "kuralRange": {
+      "start": 1011,
+      "end": 1020
+    },
+    "descriptionTamil": "பழிச்செயல்களைச் செய்ய அஞ்சி வெட்கப்படும் உயர்ந்த மனநிலையை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Defines noble shame as an instinctive recoil from doing bad or dishonorable deeds."
+  },
+  {
+    "id": 103,
+    "paalId": 2,
+    "iyalId": 7,
+    "number": 103,
+    "nameTamil": "குடிசெயல்வகை",
+    "nameEnglish": "Ways of Swelling Family Honor",
+    "kuralRange": {
+      "start": 1021,
+      "end": 1030
+    },
+    "descriptionTamil": "தன் குடும்பத்தையும் சமுதாயத்தையும் உயர்த்த இடைவிடாது பாடுபடுவதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Urges active effort to elevate one's family and community through energetic, unselfish service."
+  },
+  {
+    "id": 104,
+    "paalId": 2,
+    "iyalId": 7,
+    "number": 104,
+    "nameTamil": "உழவு",
+    "nameEnglish": "Agriculture / Farming",
+    "kuralRange": {
+      "start": 1031,
+      "end": 1040
+    },
+    "descriptionTamil": "உலகிற்கே உணவளிக்கும் உழவுத் தொழிலின் முதன்மையான சிறப்பை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Praises agriculture as the backbone of all human society, honoring farmers who feed the world."
+  },
+  {
+    "id": 105,
+    "paalId": 2,
+    "iyalId": 7,
+    "number": 105,
+    "nameTamil": "நல்குரவு",
+    "nameEnglish": "Poverty",
+    "kuralRange": {
+      "start": 1041,
+      "end": 1050
+    },
+    "descriptionTamil": "வறுமையின் கொடுமையையும் அதனால் தோன்றும் துன்பங்களையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Depicts the crushing pain of severe poverty, urging societal empathy and relief for the needy."
+  },
+  {
+    "id": 106,
+    "paalId": 2,
+    "iyalId": 7,
+    "number": 106,
+    "nameTamil": "இரவு",
+    "nameEnglish": "Begging / Mendicancy",
+    "kuralRange": {
+      "start": 1051,
+      "end": 1060
+    },
+    "descriptionTamil": "வாழும் வழியின்றிப் பிறரிடம் யாசகம் கேட்பதன் அவலத்தைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Reflects on the humiliation of begging, noting that necessity alone forces humans into asking for alms."
+  },
+  {
+    "id": 107,
+    "paalId": 2,
+    "iyalId": 7,
+    "number": 107,
+    "nameTamil": "இரவச்சம்",
+    "nameEnglish": "Dread of Begging",
+    "kuralRange": {
+      "start": 1061,
+      "end": 1070
+    },
+    "descriptionTamil": "யாசகம் கேட்பதற்கு அஞ்சித் தன் சுயமரியாதையைக் காப்பதைப் பற்றிப் பேசும் அதிகாரம்.",
+    "descriptionEnglish": "Warns against falling into reliance on begging, exalting self-reliance and dignified independence."
+  },
+  {
+    "id": 108,
+    "paalId": 2,
+    "iyalId": 7,
+    "number": 108,
+    "nameTamil": "கயமை",
+    "nameEnglish": "Base Character / Vileness",
+    "kuralRange": {
+      "start": 1071,
+      "end": 1080
+    },
+    "descriptionTamil": "எந்த ஒழுக்கமும் இன்றித் தீய வழியில் நடக்கும் கயவர்களின் இழிவான குணங்களைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Vividly portrays base, unscrupulous characters, warning society against their shameless, selfish ways."
+  },
+  {
+    "id": 109,
+    "paalId": 3,
+    "iyalId": 8,
+    "number": 109,
+    "nameTamil": "தகையணங்குறுத்தல்",
+    "nameEnglish": "Beauty that Torments / Love's Agony",
+    "kuralRange": {
+      "start": 1081,
+      "end": 1090
+    },
+    "descriptionTamil": "தலைவியின் பேரழகைக் கண்டு தலைவன் வியந்து மயங்குவதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Captures the hero's sudden awe and emotional torment upon first beholding the heroine's enchanting beauty."
+  },
+  {
+    "id": 110,
+    "paalId": 3,
+    "iyalId": 8,
+    "number": 110,
+    "nameTamil": "குறிப்பறிதல்",
+    "nameEnglish": "Recognition of Signs / Deciphering Cues",
+    "kuralRange": {
+      "start": 1091,
+      "end": 1100
+    },
+    "descriptionTamil": "இருவரும் தங்கள் பார்வை மற்றும் குறிப்புகளால் மன விருப்பத்தை அறிந்து கொள்வதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Describes lovers silently communicating mutual attraction through subtle glances, smiles, and gestures."
+  },
+  {
+    "id": 111,
+    "paalId": 3,
+    "iyalId": 8,
+    "number": 111,
+    "nameTamil": "புணர்ச்சி மகிழ்தல்",
+    "nameEnglish": "Rejoicing in Union",
+    "kuralRange": {
+      "start": 1101,
+      "end": 1110
+    },
+    "descriptionTamil": "காதலர்கள் இணைந்து அடையும் இன்பத்தையும் மகிழ்ச்சியையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Celebrates the profound, transcendent joy experienced in the physical and emotional union of lovers."
+  },
+  {
+    "id": 112,
+    "paalId": 3,
+    "iyalId": 8,
+    "number": 112,
+    "nameTamil": "நலம்புனைந்துரைத்தல்",
+    "nameEnglish": "Extolling Her Beauty",
+    "kuralRange": {
+      "start": 1111,
+      "end": 1120
+    },
+    "descriptionTamil": "தலைவியின் எழிலையும் மென்மையையும் தலைவன் புகழ்ந்து பேசுவதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Poetically praises every aspect of the heroine's grace, delicate beauty, and gentle demeanour."
+  },
+  {
+    "id": 113,
+    "paalId": 3,
+    "iyalId": 8,
+    "number": 113,
+    "nameTamil": "காதற் சிறப்புரைத்தல்",
+    "nameEnglish": "Exalting Love's Greatness",
+    "kuralRange": {
+      "start": 1121,
+      "end": 1130
+    },
+    "descriptionTamil": "காதலின் பெருமையையும் அது இருவர் உள்ளத்திலும் ஏற்படுத்தும் பிணைப்பையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Exalts the unique intensity of romantic love, describing it as sweeter than any nectar."
+  },
+  {
+    "id": 114,
+    "paalId": 3,
+    "iyalId": 8,
+    "number": 114,
+    "nameTamil": "நாணுத் துறவுரைத்தல்",
+    "nameEnglish": "Shedding Modesty / Madal Ride",
+    "kuralRange": {
+      "start": 1131,
+      "end": 1140
+    },
+    "descriptionTamil": "காதல் மிகுதியால் நாணத்தை விட்டு மடலேறத் துணியும் தலைவனின் நிலையைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Portrays the hero declaring he will shed all social inhibition and public shame to win his love."
+  },
+  {
+    "id": 115,
+    "paalId": 3,
+    "iyalId": 8,
+    "number": 115,
+    "nameTamil": "அலரறிவுறுத்தல்",
+    "nameEnglish": "Announcement of Rumors / Public Talk",
+    "kuralRange": {
+      "start": 1141,
+      "end": 1150
+    },
+    "descriptionTamil": "ஊராரின் அலர் பேச்சு காதலை வளர்க்கும் மருந்தாக அமைவதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Reflects on town gossip about their love, showing how rumors only heighten their resolve and passion."
+  },
+  {
+    "id": 116,
+    "paalId": 3,
+    "iyalId": 9,
+    "number": 116,
+    "nameTamil": "பிரிவாற்றாமை",
+    "nameEnglish": "Inability to Bear Separation",
+    "kuralRange": {
+      "start": 1151,
+      "end": 1160
+    },
+    "descriptionTamil": "தலைவன் பிரிந்து செல்லும் சூழலைத் தாங்க முடியாமல் தலைவி வருந்துவதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Expresses the intense sorrow and dread felt by the heroine at the prospect of temporary separation."
+  },
+  {
+    "id": 117,
+    "paalId": 3,
+    "iyalId": 9,
+    "number": 117,
+    "nameTamil": "படர்மெலிந்திரங்கல்",
+    "nameEnglish": "Lamenting the Pining Sorrow",
+    "kuralRange": {
+      "start": 1161,
+      "end": 1170
+    },
+    "descriptionTamil": "பிரிவின் துயரால் மெலிந்து தவிக்கும் தலைவியின் ஏக்கத்தையும் வருத்தத்தையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Describes the lingering longing, physical weakness, and heartache during the hero's absence."
+  },
+  {
+    "id": 118,
+    "paalId": 3,
+    "iyalId": 9,
+    "number": 118,
+    "nameTamil": "கண்விதுப்பழிதல்",
+    "nameEnglish": "Eyes Languishing for Sight",
+    "kuralRange": {
+      "start": 1171,
+      "end": 1180
+    },
+    "descriptionTamil": "தலைவனைக் காணத் துடிக்கும் கண்கள் அழும் அழகையும் ஏக்கத்தையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Focuses on the heroine's weeping eyes, eager to catch a single glimpse of her beloved returning."
+  },
+  {
+    "id": 119,
+    "paalId": 3,
+    "iyalId": 9,
+    "number": 119,
+    "nameTamil": "பசப்புறுப்பருவரல்",
+    "nameEnglish": "Paleness of Complexion",
+    "kuralRange": {
+      "start": 1181,
+      "end": 1190
+    },
+    "descriptionTamil": "பிரிவுத் துயரால் தலைவியின் மேனியில் பசலை நிறம் படர்வதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Poetically describes the pale, sallow complexion spreading over the heroine due to romantic longing."
+  },
+  {
+    "id": 120,
+    "paalId": 3,
+    "iyalId": 9,
+    "number": 120,
+    "nameTamil": "தனிப்படர்மிகுதி",
+    "nameEnglish": "Solitary Anguish / Lonely Pining",
+    "kuralRange": {
+      "start": 1191,
+      "end": 1200
+    },
+    "descriptionTamil": "தனிமையில் இருக்கும்போது காதல் நினைவுகள் மிகுந்து துயருறுவதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Captures the acute agony of solitude, where love memories flood the lonely heart day and night."
+  },
+  {
+    "id": 121,
+    "paalId": 3,
+    "iyalId": 9,
+    "number": 121,
+    "nameTamil": "நினைத்தவர்புலம்பல்",
+    "nameEnglish": "Lamenting on Memories",
+    "kuralRange": {
+      "start": 1201,
+      "end": 1210
+    },
+    "descriptionTamil": "காதலனின் நினைவுகளை எண்ணி எண்ணி ஏங்கிப் பேசுவதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Portrays the heroine cherishing sweet past memories and talking affectionately to herself about her lover."
+  },
+  {
+    "id": 122,
+    "paalId": 3,
+    "iyalId": 9,
+    "number": 122,
+    "nameTamil": "கனவுநிலையுரைத்தல்",
+    "nameEnglish": "Relating Dream Experiences",
+    "kuralRange": {
+      "start": 1211,
+      "end": 1220
+    },
+    "descriptionTamil": "கனவில் காதலனைக் கண்டு தழுவிய இன்ப நிகழ்வுகளைக் கூறுவதைச் சொல்லும் அதிகாரம்.",
+    "descriptionEnglish": "Describes vivid dreams where the separated lovers meet, embrace, and find temporary solace."
+  },
+  {
+    "id": 123,
+    "paalId": 3,
+    "iyalId": 9,
+    "number": 123,
+    "nameTamil": "பொழுதுகண்டிரங்கல்",
+    "nameEnglish": "Lamenting at Eventide",
+    "kuralRange": {
+      "start": 1221,
+      "end": 1230
+    },
+    "descriptionTamil": "மாலைப் பொழுது வரும்போது பிரிவின் துயரம் மேலும் மிகுவதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Highlights dusk/evening as the most emotionally poignant time, intensifying the ache of separation."
+  },
+  {
+    "id": 124,
+    "paalId": 3,
+    "iyalId": 9,
+    "number": 124,
+    "nameTamil": "உறுப்புநலனழிதல்",
+    "nameEnglish": "Wasting Away of Charm",
+    "kuralRange": {
+      "start": 1231,
+      "end": 1240
+    },
+    "descriptionTamil": "பிரிவின் வேதனையால் தலைவியின் எழிலும் மேனியும் வாடித் தளர்வதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Describes the heroine's fading physical freshness and slipping bangles caused by grief."
+  },
+  {
+    "id": 125,
+    "paalId": 3,
+    "iyalId": 9,
+    "number": 125,
+    "nameTamil": "நெஞ்சொடு கிளத்தல்",
+    "nameEnglish": "Soliloquy / Talking to One's Heart",
+    "kuralRange": {
+      "start": 1241,
+      "end": 1250
+    },
+    "descriptionTamil": "தன் மனத்துடனே உரையாடித் தன் ஏக்கத்தையும் நிலையும் வெளிப்படுத்துவதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Features emotional soliloquies where the heroine or hero converses intimately with their own heart."
+  },
+  {
+    "id": 126,
+    "paalId": 3,
+    "iyalId": 9,
+    "number": 126,
+    "nameTamil": "நிறையழிதல்",
+    "nameEnglish": "Reserve Giving Way",
+    "kuralRange": {
+      "start": 1251,
+      "end": 1260
+    },
+    "descriptionTamil": "காதல் வெள்ளத்தை அடக்க முடியாமல் பெண்மையின் நாணம் உடைவதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Describes love overflowing all dams of modest reserve and self-restraint like a surging river."
+  },
+  {
+    "id": 127,
+    "paalId": 3,
+    "iyalId": 9,
+    "number": 127,
+    "nameTamil": "அவர்பவயின்விதும்பல்",
+    "nameEnglish": "Longing for Mutual Reunion",
+    "kuralRange": {
+      "start": 1261,
+      "end": 1270
+    },
+    "descriptionTamil": "இருவரும் ஒருவரையொருவர் விரைந்து காணத் துடிக்கும் ஆவலைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Captures the breathless impatience of both lovers yearning to reunite without delay."
+  },
+  {
+    "id": 128,
+    "paalId": 3,
+    "iyalId": 9,
+    "number": 128,
+    "nameTamil": "குறிப்பறிவுறுத்தல்",
+    "nameEnglish": "Signaling Intentions",
+    "kuralRange": {
+      "start": 1271,
+      "end": 1280
+    },
+    "descriptionTamil": "கண்களாலும் குறிப்புகளாலும் தன் மன உணர்வை உணர்த்துவதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Focuses on subtle facial signs and unspoken look revealing the desire for reconciliation."
+  },
+  {
+    "id": 129,
+    "paalId": 3,
+    "iyalId": 9,
+    "number": 129,
+    "nameTamil": "புணர்ச்சி விதும்பல்",
+    "nameEnglish": "Impatience for Embrace",
+    "kuralRange": {
+      "start": 1281,
+      "end": 1290
+    },
+    "descriptionTamil": "மீண்டும் இணைப்பதற்காக மனம் தவித்து ஏங்குவதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Expresses the passionate eagerness to embrace and reunite after enduring painful separation."
+  },
+  {
+    "id": 130,
+    "paalId": 3,
+    "iyalId": 9,
+    "number": 130,
+    "nameTamil": "நெஞ்சொடு புலத்தல்",
+    "nameEnglish": "Remonstrating with One's Heart",
+    "kuralRange": {
+      "start": 1291,
+      "end": 1300
+    },
+    "descriptionTamil": "காதலனின் தவறுகளை மறக்கத் துடிக்கும் தன் மனதோடு வாதிடுவதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Depicts a gentle inner quarrel with one's heart for being so quick to forgive the lover's absence."
+  },
+  {
+    "id": 131,
+    "paalId": 3,
+    "iyalId": 9,
+    "number": 131,
+    "nameTamil": "புலவி",
+    "nameEnglish": "Feigned Anger / Lover's Pout",
+    "kuralRange": {
+      "start": 1301,
+      "end": 1310
+    },
+    "descriptionTamil": "காதல் இன்பத்தைப் பெருக்கச் சிறிது நேரம் பிணங்கி ஊடல் கொள்வதைக் கூறும் அதிகாரம்.",
+    "descriptionEnglish": "Explores feigned sulking and play-fighting, which sweeten intimate companionship."
+  },
+  {
+    "id": 132,
+    "paalId": 3,
+    "iyalId": 9,
+    "number": 132,
+    "nameTamil": "புலவி நுணுக்கம்",
+    "nameEnglish": "Nuances of Lovers' Quarrel",
+    "kuralRange": {
+      "start": 1311,
+      "end": 1320
+    },
+    "descriptionTamil": "ஊடலின் போது நிகழும் நுட்பமான உணர்ச்சிகளையும் உரையாடல்களையும் விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Illustrates delicate nuances and witty exchanges during minor love spats between couples."
+  },
+  {
+    "id": 133,
+    "paalId": 3,
+    "iyalId": 9,
+    "number": 133,
+    "nameTamil": "ஊடலுவகை",
+    "nameEnglish": "The Joy of Feigned Anger / Reconciliation",
+    "kuralRange": {
+      "start": 1321,
+      "end": 1330
+    },
+    "descriptionTamil": "ஊடலுக்குப் பின் மீண்டும் கூடி முயங்குவதே இன்பத்தின் உச்சம் என்பதை விளக்கும் அதிகாரம்.",
+    "descriptionEnglish": "Concludes the work celebrating reconciliation after a pout as the sweetest peak of romantic bliss."
+  }
+]

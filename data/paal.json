@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "slug": "aram",
+        "order": 1,
+        "nameTamil": "அறத்துப்பால்",
+        "nameEnglish": "Aram — The Book of Virtue",
+        "iyalCount": 4,
+        "adhigaramCount": 38,
+        "kuralCount": 380,
+        "kuralRange": {
+            "start": 1,
+            "end": 380
+        },
+        "descriptionTamil": "அறம் என்பது நல்லொழுக்கம், கடமை, மற்றும் நேர்மையான வாழ்க்கை முறை பற்றியது. இல்லறம் மற்றும் துறவறம் இரண்டிலும் ஒரு மனிதன் எப்படி நல்லவனாக வாழலாம் என்பதை இப்பகுதி விளக்குகிறது.",
+        "descriptionEnglish": "Aram deals with virtue, moral duty, and righteous living. It explains how a person can lead a good life — both as a householder and as an ascetic — through honesty, compassion, and discipline."
+    },
+    {
+        "id": 2,
+        "slug": "porul",
+        "order": 2,
+        "nameTamil": "பொருட்பால்",
+        "nameEnglish": "Porul — The Book of Wealth & Polity",
+        "iyalCount": 3,
+        "adhigaramCount": 70,
+        "kuralCount": 700,
+        "kuralRange": {
+            "start": 381,
+            "end": 1080
+        },
+        "descriptionTamil": "பொருள் என்பது ஆட்சி, அரசியல், சமூக நடத்தை, மற்றும் வாழ்க்கையில் வெற்றி பெறுவதற்கான நடைமுறை அறிவு பற்றியது. இது தலைவர்கள், அமைச்சர்கள், நண்பர்கள் மற்றும் சமூக உறவுகள் பற்றி விரிவாகப் பேசுகிறது.",
+        "descriptionEnglish": "Porul covers governance, leadership, statecraft, and the practical wisdom needed to succeed in society and life. It speaks extensively about rulers, ministers, friendship, and social conduct."
+    },
+    {
+        "id": 3,
+        "slug": "inbam",
+        "order": 3,
+        "nameTamil": "இன்பத்துப்பால்",
+        "nameEnglish": "Inbam — The Book of Love",
+        "iyalCount": 2,
+        "adhigaramCount": 25,
+        "kuralCount": 250,
+        "kuralRange": {
+            "start": 1081,
+            "end": 1330
+        },
+        "descriptionTamil": "இன்பம் என்பது காதல், தாம்பத்திய உறவு, மற்றும் மனித உணர்வுகள் பற்றியது. இப்பகுதி காதலின் இனிமையையும், பிரிவின் வலியையும் கவிதை நயத்துடன் விவரிக்கிறது.",
+        "descriptionEnglish": "Inbam explores romantic love, marital bonds, and human emotion. This section captures the sweetness of love and the ache of separation with rare poetic tenderness."
+    }
+]

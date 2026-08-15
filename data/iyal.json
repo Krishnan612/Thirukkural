@@ -1,0 +1,173 @@
+[
+    {
+        "id": 1,
+        "paalId": 1,
+        "order": 1,
+        "nameTamil": "பாயிரவியல்",
+        "nameEnglish": "Payiraviyal — Prologue",
+        "adhigaramCount": 4,
+        "kuralCount": 40,
+        "adhigaramRange": {
+            "start": 1,
+            "end": 4
+        },
+        "kuralRange": {
+            "start": 1,
+            "end": 40
+        },
+        "descriptionTamil": "நூலின் தொடக்கப் பகுதி. கடவுள் வாழ்த்து, மழையின் சிறப்பு, துறவிகளின் பெருமை, அறத்தின் அவசியம் ஆகியவற்றை எடுத்துரைக்கிறது.",
+        "descriptionEnglish": "The opening section of the book — invocation to God, the glory of rain, the greatness of ascetics, and the importance of virtue."
+    },
+    {
+        "id": 2,
+        "paalId": 1,
+        "order": 2,
+        "nameTamil": "இல்லறவியல்",
+        "nameEnglish": "Illaraviyal — Domestic Virtue",
+        "adhigaramCount": 20,
+        "kuralCount": 200,
+        "adhigaramRange": {
+            "start": 5,
+            "end": 24
+        },
+        "kuralRange": {
+            "start": 41,
+            "end": 240
+        },
+        "descriptionTamil": "இல்வாழ்க்கை, மனைவி, விருந்தோம்பல், அன்பு, நன்றி, நேர்மை போன்ற ஒரு குடும்ப மனிதனின் அன்றாட நல்லொழுக்கத்தை விளக்கும் பகுதி.",
+        "descriptionEnglish": "Covers the everyday virtues of a householder — married life, hospitality, love, gratitude, and honesty."
+    },
+    {
+        "id": 3,
+        "paalId": 1,
+        "order": 3,
+        "nameTamil": "துறவறவியல்",
+        "nameEnglish": "Thuravaraviyal — Ascetic Virtue",
+        "adhigaramCount": 13,
+        "kuralCount": 130,
+        "adhigaramRange": {
+            "start": 25,
+            "end": 37
+        },
+        "kuralRange": {
+            "start": 241,
+            "end": 370
+        },
+        "descriptionTamil": "பற்று விடுதல், தவம், வாய்மை, அறவினை போன்ற துறவற வாழ்க்கைக்கு உரிய உயர்ந்த குணங்களை விளக்கும் பகுதி.",
+        "descriptionEnglish": "Describes the higher virtues suited to a renunciate's life — detachment, penance, truthfulness, and righteous conduct."
+    },
+    {
+        "id": 4,
+        "paalId": 1,
+        "order": 4,
+        "nameTamil": "ஊழியல்",
+        "nameEnglish": "Uzhiyal — Fate",
+        "adhigaramCount": 1,
+        "kuralCount": 10,
+        "adhigaramRange": {
+            "start": 38,
+            "end": 38
+        },
+        "kuralRange": {
+            "start": 371,
+            "end": 380
+        },
+        "descriptionTamil": "விதி அல்லது ஊழின் வலிமையையும், மனித முயற்சிக்கும் விதிக்கும் இடையேயான தொடர்பையும் விவரிக்கும் ஒற்றை அதிகாரப் பகுதி.",
+        "descriptionEnglish": "A single-chapter section on the power of fate and its relationship with human effort."
+    },
+    {
+        "id": 5,
+        "paalId": 2,
+        "order": 1,
+        "nameTamil": "அரசியல்",
+        "nameEnglish": "Arasiyal — Kingship",
+        "adhigaramCount": 25,
+        "kuralCount": 250,
+        "adhigaramRange": {
+            "start": 39,
+            "end": 63
+        },
+        "kuralRange": {
+            "start": 381,
+            "end": 630
+        },
+        "descriptionTamil": "ஆட்சி, தலைமைத்துவம், அரசனுக்குரிய கடமைகள், கல்வி, படை பலம் போன்ற ஆட்சி சார்ந்த அறிவை விளக்கும் பகுதி.",
+        "descriptionEnglish": "Covers governance, leadership qualities, a ruler's duties, learning, and the strength needed to rule well."
+    },
+    {
+        "id": 6,
+        "paalId": 2,
+        "order": 2,
+        "nameTamil": "அமைச்சியல்",
+        "nameEnglish": "Amaichiyal — Constituents of the State",
+        "adhigaramCount": 32,
+        "kuralCount": 320,
+        "adhigaramRange": {
+            "start": 64,
+            "end": 95
+        },
+        "kuralRange": {
+            "start": 631,
+            "end": 950
+        },
+        "descriptionTamil": "அமைச்சர், தூதுவர், நட்பு, குடும்ப நிர்வாகம், பொருளாதாரம் உள்ளிட்ட அரசு இயங்கக் தேவையான அங்கங்களை விளக்கும் பகுதி.",
+        "descriptionEnglish": "Explores the essential organs of a functioning state — ministers, envoys, friendship, household management, and economy."
+    },
+    {
+        "id": 7,
+        "paalId": 2,
+        "order": 3,
+        "nameTamil": "ஒழிபியல்",
+        "nameEnglish": "Ozhipiyal — Miscellaneous",
+        "adhigaramCount": 13,
+        "kuralCount": 130,
+        "adhigaramRange": {
+            "start": 96,
+            "end": 108
+        },
+        "kuralRange": {
+            "start": 951,
+            "end": 1080
+        },
+        "descriptionTamil": "பிற பகுதிகளில் அடங்காத, ஆனால் வாழ்க்கைக்கு முக்கியமான பல்வேறு நடைமுறை குணங்களையும் நிலைகளையும் தொகுக்கும் பகுதி.",
+        "descriptionEnglish": "A collection of important practical qualities and life situations that don't fit neatly into the other sections."
+    },
+    {
+        "id": 8,
+        "paalId": 3,
+        "order": 1,
+        "nameTamil": "களவியல்",
+        "nameEnglish": "Kalaviyal — Premarital Love",
+        "adhigaramCount": 7,
+        "kuralCount": 70,
+        "adhigaramRange": {
+            "start": 109,
+            "end": 115
+        },
+        "kuralRange": {
+            "start": 1081,
+            "end": 1150
+        },
+        "descriptionTamil": "திருமணத்திற்கு முன் உள்ள காதலின் தூய்மை, ஏக்கம், கள்ளக்காதலின் இனிமையான தருணங்களை கவிதை நயத்துடன் விளக்கும் பகுதி.",
+        "descriptionEnglish": "Captures the purity, longing, and tender moments of love before marriage, with rare poetic delicacy."
+    },
+    {
+        "id": 9,
+        "paalId": 3,
+        "order": 2,
+        "nameTamil": "கற்பியல்",
+        "nameEnglish": "Karpiyal — Marital Love",
+        "adhigaramCount": 18,
+        "kuralCount": 180,
+        "adhigaramRange": {
+            "start": 116,
+            "end": 133
+        },
+        "kuralRange": {
+            "start": 1151,
+            "end": 1330
+        },
+        "descriptionTamil": "திருமணத்திற்குப் பிந்தைய தாம்பத்திய அன்பு, பிரிவின் வலி, ஊடல், கூடல் ஆகியவற்றை உணர்வுபூர்வமாக விளக்கும் பகுதி.",
+        "descriptionEnglish": "Explores the emotional landscape of married love — devotion, the pain of separation, lovers' quarrels, and reunion."
+    }
+]
