@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SearchEngine } from '../components/SearchEngine.jsx';
+import kurals from '../../data/kurals.json';
+
+// Create a light search index to keep serialization sizes optimized
+const lightKurals = kurals.map(k => ({
+  id: k.id,
+  line1: k.tamil.line1,
+  line2: k.tamil.line2,
+  trans1: k.transliteration.line1,
+  trans2: k.transliteration.line2,
+  meaningTa: k.meaning.tamil,
+  meaningEn: k.meaning.english,
+  themes: k.themes,
+  lifeApps: k.lifeApplications,
+  keywords: k.searchKeywords
+}));
+---
+
+<Layout 
+  title="தேடல் | Search Verses — Thirukkural" 
+  description="Search for verses in Thirukkural using words, numbers, themes, or life applications in English and Tamil."
+  breadcrumbs={[{ label: "தேடல் (Search)" }]}
+>
+  <div class="space-y-6">
+    <SearchEngine client:load kurals={lightKurals} />
+  </div>
+</Layout>

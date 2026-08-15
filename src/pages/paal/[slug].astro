@@ -1,0 +1,120 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import paalsData from '../../../data/paal.json';
+import iyalsData from '../../../data/iyal.json';
+import adhigaramsData from '../../../data/adhigaram.json';
+
+export async function getStaticPaths() {
+  return paalsData.map(p => ({
+    params: { slug: p.slug },
+    props: { paalId: p.id }
+  }));
+}
+
+const { slug } = Astro.params;
+const { paalId } = Astro.props;
+
+const paal = paalsData.find(p => p.id === paalId);
+if (!paal) {
+  throw new Error(`Paal not found for slug: ${slug}`);
+}
+
+const iyals = iyalsData.filter(iy => iy.paalId === paalId);
+const adhigarams = adhigaramsData.filter(ad => ad.paalId === paalId);
+---
+
+<Layout 
+  title={`${paal.nameTamil} | ${paal.nameEnglish} — Thirukkural`}
+  description={paal.descriptionEnglish}
+  breadcrumbs={[{ label: "அதிகாரங்கள் (Browse)", url: "/browse" }, { label: paal.nameTamil }]}
+>
+  <div class="space-y-10 animate-fade-in">
+    
+    <!-- Paal Header Card -->
+    <div class="p-6 sm:p-8 bg-paper-card dark:bg-ink-card border border-paper-border dark:border-ink-border rounded-2xl shadow-sm relative overflow-hidden">
+      <div class="absolute top-0 right-0 p-6 opacity-5 text-6xl select-none">
+        {paal.id === 1 ? '⚖️' : paal.id === 2 ? '👑' : '💘'}
+      </div>
+      
+      <div class="space-y-4 max-w-2xl">
+        <span class="inline-block px-3 py-1 bg-terracotta/10 text-terracotta text-xs font-bold rounded-full tracking-widest uppercase font-mono">
+          {paal.slug}
+        </span>
+        
+        <h1 class="font-serif-tamil text-3xl sm:text-4xl font-bold text-ink-bg dark:text-paper-bg leading-tight">
+          {paal.nameTamil} <br />
+          <span class="text-xl sm:text-2xl font-sans text-ochre font-medium block mt-1">{paal.nameEnglish}</span>
+        </h1>
+        
+        <p class="text-sm sm:text-base text-ink-bg/80 dark:text-paper-bg/80 leading-relaxed font-sans-tamil" id="paal-desc">
+          {paal.descriptionTamil}
+        </p>
+
+        <div class="flex flex-wrap gap-4 pt-2 text-xs font-bold text-ink-bg/50 dark:text-paper-bg/50 uppercase font-mono">
+          <span>{paal.iyalCount} Sections</span>
+          <span>•</span>
+          <span>{paal.adhigaramCount} Chapters</span>
+          <span>•</span>
+          <span>{paal.kuralCount} Verses</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Iyals and their Adhigarams list -->
+    <div class="space-y-8">
+      {iyals.map(iyal => {
+        const iyalAdhigarams = adhigarams.filter(a => a.iyalId === iyal.id);
+        return (
+          <div class="p-6 bg-paper-card/40 dark:bg-ink-card/40 border border-paper-border/70 dark:border-ink-border/70 rounded-xl space-y-4">
+            <div class="border-b border-paper-border dark:border-ink-border pb-3">
+              <h2 class="font-serif-tamil text-xl font-bold text-ink-bg dark:text-paper-bg">
+                {iyal.nameTamil} <br />
+                <span class="text-xs sm:text-sm font-sans text-ochre font-medium block mt-0.5">{iyal.nameEnglish}</span>
+              </h2>
+              <p class="text-xs text-ink-bg/60 dark:text-paper-bg/60 mt-2 italic font-sans-tamil">
+                {iyal.descriptionTamil}
+              </p>
+            </div>
+
+            <!-- Adhigarams Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {iyalAdhigarams.map(ad => (
+                <a
+                  href={`/adhigaram/${ad.id}`}
+                  class="p-4 bg-paper-card dark:bg-ink-card border border-paper-border dark:border-ink-border hover:border-terracotta/60 rounded-lg transition-all duration-200 flex items-start space-x-3 group cursor-pointer"
+                >
+                  <span class="w-6 h-6 flex-shrink-0 flex items-center justify-center rounded bg-terracotta/10 text-terracotta text-xs font-mono font-bold group-hover:bg-terracotta group-hover:text-white transition-colors duration-200">
+                    {ad.id}
+                  </span>
+                  <div class="flex flex-col">
+                    <span class="font-serif-tamil font-bold text-ink-bg dark:text-paper-bg group-hover:text-terracotta transition-colors duration-150 text-sm">
+                      {ad.nameTamil}
+                    </span>
+                    <span class="text-[11px] text-ink-bg/60 dark:text-paper-bg/60 leading-normal mt-0.5">
+                      {ad.nameEnglish}
+                    </span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+  </div>
+
+  <script is:inline define:vars={{ tamilDesc: paal.descriptionTamil, englishDesc: paal.descriptionEnglish }}>
+    function updatePaalLanguage(lang) {
+      const desc = document.getElementById('paal-desc');
+      if (desc) desc.textContent = lang === 'ta' ? tamilDesc : englishDesc;
+    }
+
+    const currentLang = localStorage.getItem('lang') || 'ta';
+    updatePaalLanguage(currentLang);
+
+    window.addEventListener('lang-change', (e) => {
+      updatePaalLanguage(e.detail);
+    });
+  </script>
+</Layout>

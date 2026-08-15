@@ -1,0 +1,384 @@
+---
+import '../styles/global.css';
+import { LanguageToggle } from '../components/LanguageToggle.jsx';
+import { AIPopup } from '../components/AIPopup.jsx';
+import { ClientRouter } from 'astro:transitions';
+
+const { 
+  title = "திருக்குறள் | Thirukkural - Wisdom for Life", 
+  description = "Explore all 1,330 Tamil verses of Thirukkural with English translation, simple explanations, themes, life applications, and an interactive AI explanation companion.",
+  breadcrumbs = [],
+  ogImage = "/olai chuvadi.webp"
+} = Astro.props;
+
+// Determine current URL for active nav styling
+const currentPath = Astro.url.pathname;
+---
+
+<!DOCTYPE html>
+<html lang="ta" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/webp" href="/olai chuvadi.webp" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, Astro.url)} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(ogImage, Astro.url)} />
+
+    <!-- Fonts preconnect and import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Tamil:wght@300;400;500;600;700&family=Noto+Serif+Tamil:wght@400;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+
+    <!-- View Transitions Support -->
+    <ClientRouter />
+
+    <!-- Language Initialization -->
+    <script is:inline>
+      (function() {
+        const lang = localStorage.getItem('lang') || 'ta';
+        document.documentElement.classList.add('dark');
+        document.documentElement.setAttribute('lang', lang);
+        document.documentElement.style.colorScheme = 'dark';
+
+        const enforceMutedVideo = () => {
+          document.querySelectorAll('video').forEach((video) => {
+            video.muted = true;
+            video.defaultMuted = true;
+            video.setAttribute('muted', 'true');
+            if (video.autoplay) {
+              const playPromise = video.play();
+              if (playPromise && typeof playPromise.catch === 'function') {
+                playPromise.catch(() => {});
+              }
+            }
+          });
+        };
+
+        enforceMutedVideo();
+
+        document.addEventListener('astro:after-swap', () => {
+          const nextLang = localStorage.getItem('lang') || 'ta';
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('lang', nextLang);
+          document.documentElement.style.colorScheme = 'dark';
+          enforceMutedVideo();
+        });
+
+        document.addEventListener('astro:page-load', () => {
+          enforceMutedVideo();
+        });
+      })();
+    </script>
+    
+    <style is:global>
+      /* Base styling overrides using our palette */
+      body {
+        background-color: var(--color-paper-bg);
+        color: var(--color-ink-bg);
+      }
+
+      .text-glow {
+        text-shadow: 0 0 1px rgba(194, 89, 63, 0.2);
+      }
+
+      /* Custom slide transitions based on direction */
+      html[data-transition-direction="next"]::view-transition-old(root) {
+        animation: 250ms cubic-bezier(0.4, 0, 0.2, 1) both fade-out,
+                   250ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+      }
+      html[data-transition-direction="next"]::view-transition-new(root) {
+        animation: 250ms cubic-bezier(0.4, 0, 0.2, 1) both fade-in,
+                   250ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+      }
+
+      html[data-transition-direction="prev"]::view-transition-old(root) {
+        animation: 250ms cubic-bezier(0.4, 0, 0.2, 1) both fade-out,
+                   250ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-right;
+      }
+      html[data-transition-direction="prev"]::view-transition-new(root) {
+        animation: 250ms cubic-bezier(0.4, 0, 0.2, 1) both fade-in,
+                   250ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-left;
+      }
+
+      @keyframes fade-in {
+        from { opacity: 0; }
+      }
+      @keyframes fade-out {
+        to { opacity: 0; }
+      }
+      @keyframes slide-from-right {
+        from { transform: translateX(30px); }
+      }
+      @keyframes slide-to-left {
+        to { transform: translateX(-30px); }
+      }
+      @keyframes slide-from-left {
+        from { transform: translateX(-30px); }
+      }
+      @keyframes slide-to-right {
+        to { transform: translateX(30px); }
+      }
+
+      /* Respect prefers-reduced-motion */
+      @media (prefers-reduced-motion: reduce) {
+        ::view-transition-old(root),
+        ::view-transition-new(root) {
+          animation: none !important;
+        }
+      }
+    </style>
+  </head>
+  
+  <body class="min-h-screen flex flex-col selection:bg-terracotta/20 pb-16 md:pb-0 transition-colors duration-300">
+    
+    <!-- Top Decorative Line -->
+    <div class="h-1 bg-[#D2963B]"></div>
+    
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 border-b border-[#d9b36b]/60 bg-[#F9F0CF]/95 shadow-[0_10px_28px_rgba(74,40,15,0.08)] backdrop-blur-md">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 sm:h-20">
+          
+          <!-- Logo & Brand Title -->
+          <a href="/" class="flex items-center space-x-3 group">
+            <span class="text-2xl sm:text-3xl text-[#6F3D12] select-none leading-none group-hover:scale-105 transition-transform duration-200">📜</span>
+            <div class="flex flex-col">
+              <span class="font-serif-tamil text-lg sm:text-xl font-bold tracking-tight text-[#4A280F] leading-tight">திருக்குறள்</span>
+              <span class="text-[10px] tracking-[0.24em] text-[#8B5A1F] uppercase font-semibold">Thirukkural</span>
+            </div>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex items-center space-x-6 lg:space-x-8 font-sans-tamil font-medium text-sm sm:text-base">
+            <a href="/" class={`transition-colors duration-200 ${currentPath === '/' ? 'text-[#6F3D12] border-b-2 border-[#D2963B] pb-1' : 'text-[#4A280F]/80 hover:text-[#6F3D12]'}`} data-nav="home">முகப்பு</a>
+            <a href="/browse" class={`transition-colors duration-200 ${currentPath.startsWith('/browse') || currentPath.startsWith('/paal') || currentPath.startsWith('/adhigaram') || currentPath.startsWith('/kural') ? 'text-[#6F3D12] border-b-2 border-[#D2963B] pb-1' : 'text-[#4A280F]/80 hover:text-[#6F3D12]'}`} data-nav="browse">அதிகாரங்கள்</a>
+            <a href="/search" class={`transition-colors duration-200 ${currentPath.startsWith('/search') ? 'text-[#6F3D12] border-b-2 border-[#D2963B] pb-1' : 'text-[#4A280F]/80 hover:text-[#6F3D12]'}`} data-nav="search">தேடல்</a>
+            <a href="/favorites" class={`transition-colors duration-200 ${currentPath.startsWith('/favorites') ? 'text-[#6F3D12] border-b-2 border-[#D2963B] pb-1' : 'text-[#4A280F]/80 hover:text-[#6F3D12]'}`} data-nav="favorites">விருப்பங்கள்</a>
+            <a href="/about" class={`transition-colors duration-200 ${currentPath.startsWith('/about') ? 'text-[#6F3D12] border-b-2 border-[#D2963B] pb-1' : 'text-[#4A280F]/80 hover:text-[#6F3D12]'}`} data-nav="about">பற்றி</a>
+          </nav>
+
+          <!-- Controls -->
+          <div class="flex items-center space-x-3">
+            <LanguageToggle client:load />
+          </div>
+        </div>
+      </div>
+      
+      <!-- Sub-navigation Breadcrumbs (if present) -->
+      {breadcrumbs.length > 0 && (
+        <div class="bg-paper-card/50 dark:bg-ink-card/50 border-t border-b border-paper-border/70 dark:border-ink-border/50 py-2">
+          <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex items-center flex-wrap space-x-2 text-xs sm:text-sm font-sans-tamil text-ink-bg/60 dark:text-paper-bg/60" id="breadcrumbs-nav">
+              <a href="/" class="hover:text-terracotta transition-colors duration-200" id="breadcrumb-home">முகப்பு</a>
+              {breadcrumbs.map((crumb) => (
+                <div class="flex items-center space-x-2">
+                  <span class="text-ochre">/</span>
+                  {crumb.url ? (
+                    <a href={crumb.url} class="hover:text-terracotta transition-colors duration-200 font-medium">
+                      {crumb.label}
+                    </a>
+                  ) : (
+                    <span class="font-semibold text-ink-bg dark:text-paper-bg">{crumb.label}</span>
+                  )}
+                </div>
+              ))}
+            </nav>
+          </div>
+        </div>
+      )}
+    </header>
+
+    <!-- Mobile Navigation Tab Bar (Bottom) -->
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-paper-bg/95 dark:bg-ink-bg/95 border-t border-paper-border dark:border-ink-border flex items-center justify-around h-16 px-2 pb-safe shadow-lg transition-colors duration-200">
+      <a href="/" class={`flex flex-col items-center justify-center flex-1 h-full text-xs font-sans-tamil ${currentPath === '/' ? 'text-terracotta' : 'text-ink-bg/60 dark:text-paper-bg/60'}`}>
+        <span class="text-xl">🏠</span>
+        <span class="mt-0.5" data-mob-nav="home">முகப்பு</span>
+      </a>
+      <a href="/browse" class={`flex flex-col items-center justify-center flex-1 h-full text-xs font-sans-tamil ${currentPath.startsWith('/browse') || currentPath.startsWith('/paal') || currentPath.startsWith('/adhigaram') || currentPath.startsWith('/kural') ? 'text-terracotta' : 'text-ink-bg/60 dark:text-paper-bg/60'}`}>
+        <span class="text-xl">📖</span>
+        <span class="mt-0.5" data-mob-nav="browse">அதிகாரங்கள்</span>
+      </a>
+      <a href="/search" class={`flex flex-col items-center justify-center flex-1 h-full text-xs font-sans-tamil ${currentPath.startsWith('/search') ? 'text-terracotta' : 'text-ink-bg/60 dark:text-paper-bg/60'}`}>
+        <span class="text-xl">🔍</span>
+        <span class="mt-0.5" data-mob-nav="search">தேடல்</span>
+      </a>
+      <a href="/favorites" class={`flex flex-col items-center justify-center flex-1 h-full text-xs font-sans-tamil ${currentPath.startsWith('/favorites') ? 'text-terracotta' : 'text-ink-bg/60 dark:text-paper-bg/60'}`}>
+        <span class="text-xl">💖</span>
+        <span class="mt-0.5" data-mob-nav="favorites">விருப்பங்கள்</span>
+      </a>
+      <a href="/about" class={`flex flex-col items-center justify-center flex-1 h-full text-xs font-sans-tamil ${currentPath.startsWith('/about') ? 'text-terracotta' : 'text-ink-bg/60 dark:text-paper-bg/60'}`}>
+        <span class="text-xl">💡</span>
+        <span class="mt-0.5" data-mob-nav="about">பற்றி</span>
+      </a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow w-full mx-auto px-0 py-0">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto border-t border-[#d9b36b]/60 bg-[#F3E4BB] py-8 sm:py-12 text-[#4A280F] shadow-[0_-8px_24px_rgba(74,40,15,0.05)]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between space-y-6 md:space-y-0">
+          
+          <div class="flex flex-col space-y-2">
+            <div class="flex items-center space-x-2">
+              <span class="text-xl text-[#6F3D12]">📜</span>
+              <span class="font-serif-tamil font-bold text-lg text-[#4A280F]">திருக்குறள்</span>
+            </div>
+            <p class="text-sm font-sans-tamil text-[#6F3D12]" id="footer-tagline">
+              1330 குறள்களும் வாழ்வியல் வழிகாட்டியும்
+            </p>
+          </div>
+          
+          <div class="flex flex-col md:items-end space-y-4">
+            <div class="flex items-center space-x-6 text-sm font-sans-tamil text-[#4A280F]">
+              <a href="/" class="hover:text-[#6F3D12] transition-colors duration-200" data-nav="home">முகப்பு</a>
+              <a href="/browse" class="hover:text-[#6F3D12] transition-colors duration-200" data-nav="browse">அதிகாரங்கள்</a>
+              <a href="/search" class="hover:text-[#6F3D12] transition-colors duration-200" data-nav="search">தேடல்</a>
+              <a href="/favorites" class="hover:text-[#6F3D12] transition-colors duration-200" data-nav="favorites">விருப்பங்கள்</a>
+              <a href="/about" class="hover:text-[#6F3D12] transition-colors duration-200" data-nav="about">பற்றி</a>
+            </div>
+            <p class="text-xs text-[#6F3D12]/80 font-mono">
+              © {new Date().getFullYear()} Thirukkural App. <span id="footer-rights">அனைத்து உரிமைகளும் காப்பற்றப்பட்டன.</span>
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </footer>
+
+    <!-- AI Assistant Persistent Popup Island -->
+    <AIPopup client:load />
+
+    <!-- Script to handle language updates on layout layout elements -->
+    <script>
+      const labels = {
+        ta: {
+          home: "முகப்பு",
+          browse: "அதிகாரங்கள்",
+          search: "தேடல்",
+          favorites: "விருப்பங்கள்",
+          about: "பற்றி",
+          tagline: "1330 குறள்களும் வாழ்வியல் வழிகாட்டியும்",
+          rights: "அனைத்து உரிமைகளும் காப்பற்றப்பட்டன.",
+          breadcrumbHome: "முகப்பு",
+        },
+        en: {
+          home: "Home",
+          browse: "Browse",
+          search: "Search",
+          favorites: "Favorites",
+          about: "About",
+          tagline: "1330 verses of practical wisdom for life",
+          rights: "All rights reserved.",
+          breadcrumbHome: "Home",
+        }
+      };
+
+      function updateLayoutLanguage(lang) {
+        const navHome = document.querySelector('[data-nav="home"]');
+        const navBrowse = document.querySelector('[data-nav="browse"]');
+        const navSearch = document.querySelector('[data-nav="search"]');
+        const navFavorites = document.querySelector('[data-nav="favorites"]');
+        const navAbout = document.querySelector('[data-nav="about"]');
+
+        const mobHome = document.querySelector('[data-mob-nav="home"]');
+        const mobBrowse = document.querySelector('[data-mob-nav="browse"]');
+        const mobSearch = document.querySelector('[data-mob-nav="search"]');
+        const mobFavorites = document.querySelector('[data-mob-nav="favorites"]');
+        const mobAbout = document.querySelector('[data-mob-nav="about"]');
+
+        const footerTagline = document.getElementById('footer-tagline');
+        const footerRights = document.getElementById('footer-rights');
+        const bcHome = document.getElementById('breadcrumb-home');
+
+        if (lang === 'ta') {
+          if (navHome) navHome.textContent = labels.ta.home;
+          if (navBrowse) navBrowse.textContent = labels.ta.browse;
+          if (navSearch) navSearch.textContent = labels.ta.search;
+          if (navFavorites) navFavorites.textContent = labels.ta.favorites;
+          if (navAbout) navAbout.textContent = labels.ta.about;
+
+          if (mobHome) mobHome.textContent = labels.ta.home;
+          if (mobBrowse) mobBrowse.textContent = labels.ta.browse;
+          if (mobSearch) mobSearch.textContent = labels.ta.search;
+          if (mobFavorites) mobFavorites.textContent = labels.ta.favorites;
+          if (mobAbout) mobAbout.textContent = labels.ta.about;
+
+          if (footerTagline) footerTagline.textContent = labels.ta.tagline;
+          if (footerRights) footerRights.textContent = labels.ta.rights;
+          if (bcHome) bcHome.textContent = labels.ta.breadcrumbHome;
+        } else {
+          if (navHome) navHome.textContent = labels.en.home;
+          if (navBrowse) navBrowse.textContent = labels.en.browse;
+          if (navSearch) navSearch.textContent = labels.en.search;
+          if (navFavorites) navFavorites.textContent = labels.en.favorites;
+          if (navAbout) navAbout.textContent = labels.en.about;
+
+          if (mobHome) mobHome.textContent = labels.en.home;
+          if (mobBrowse) mobBrowse.textContent = labels.en.browse;
+          if (mobSearch) mobSearch.textContent = labels.en.search;
+          if (mobFavorites) mobFavorites.textContent = labels.en.favorites;
+          if (mobAbout) mobAbout.textContent = labels.en.about;
+
+          if (footerTagline) footerTagline.textContent = labels.en.tagline;
+          if (footerRights) footerRights.textContent = labels.en.rights;
+          if (bcHome) bcHome.textContent = labels.en.breadcrumbHome;
+        }
+      }
+
+      function initLayout() {
+        const currentLang = localStorage.getItem('lang') || 'ta';
+        updateLayoutLanguage(currentLang);
+      }
+
+      // Initialize on load/transitions
+      document.addEventListener('astro:page-load', initLayout);
+
+      // Listen to language changes from anywhere
+      window.addEventListener('lang-change', (e) => {
+        updateLayoutLanguage(e.detail);
+      });
+
+      // Handle slide transition direction logic
+      document.addEventListener('astro:before-preparation', (ev) => {
+        const from = window.location.pathname;
+        const to = ev.to.pathname;
+
+        const kuralMatchFrom = from.match(/\/kural\/(\d+)/);
+        const kuralMatchTo = to.match(/\/kural\/(\d+)/);
+
+        if (kuralMatchFrom && kuralMatchTo) {
+          const fromId = parseInt(kuralMatchFrom[1], 10);
+          const toId = parseInt(kuralMatchTo[1], 10);
+          if (toId > fromId) {
+            document.documentElement.setAttribute('data-transition-direction', 'next');
+          } else {
+            document.documentElement.setAttribute('data-transition-direction', 'prev');
+          }
+        } else {
+          document.documentElement.removeAttribute('data-transition-direction');
+        }
+      });
+    </script>
+  </body>
+</html>

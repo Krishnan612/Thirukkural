@@ -1,0 +1,212 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import paals from '../../../data/paal.json';
+import iyals from '../../../data/iyal.json';
+import adhigarams from '../../../data/adhigaram.json';
+import kurals from '../../../data/kurals.json';
+
+import { FavoriteButton } from '../../components/FavoriteButton.jsx';
+import { ExplainPanel } from '../../components/ExplainPanel.jsx';
+
+export async function getStaticPaths() {
+  return kurals.map(k => ({
+    params: { id: k.id.toString() }
+  }));
+}
+
+const { id } = Astro.params;
+const kuralId = Number(id);
+
+const kural = kurals.find(k => k.id === kuralId);
+if (!kural) {
+  throw new Error(`Kural not found for ID: ${id}`);
+}
+
+const adhigaram = adhigarams.find(a => a.id === kural.adhigaramId);
+const paal = paals.find(p => p.id === kural.paalId);
+const iyal = iyals.find(iy => iy.id === kural.iyalId);
+
+const prevId = kuralId > 1 ? kuralId - 1 : null;
+const nextId = kuralId < 1330 ? kuralId + 1 : null;
+---
+
+<Layout 
+  title={`குறள் ${kural.id} | Verse ${kural.id} — Thirukkural`}
+  description={kural.meaning.english}
+  breadcrumbs={[
+    { label: paal?.nameTamil || "Paal", url: `/paal/${paal?.slug}` },
+    { label: iyal?.nameTamil || "Iyal" },
+    { label: adhigaram?.nameTamil || "Adhigaram", url: `/adhigaram/${adhigaram?.id}` },
+    { label: `குறள் ${kural.id}` }
+  ]}
+>
+  <div class="max-w-2xl mx-auto space-y-8 animate-fade-in font-sans-tamil mb-24 md:mb-0">
+    
+    <!-- Kural Verse Card -->
+    <article class="p-6 sm:p-8 bg-paper-card dark:bg-ink-card border border-paper-border dark:border-ink-border rounded-2xl shadow-sm space-y-6">
+      
+      <!-- Top Badges and Favorite -->
+      <div class="flex justify-between items-center border-b border-paper-border/40 dark:border-ink-border/40 pb-3">
+        <span class="inline-block px-2.5 py-0.5 text-xs font-mono font-bold bg-terracotta/10 text-terracotta rounded">
+          குறள் / Verse {kural.id}
+        </span>
+        <div id="favorite-container">
+          <!-- FavoriteButton handles localStorage client-side -->
+          <FavoriteButton client:load kuralId={kural.id} />
+        </div>
+      </div>
+
+      <!-- Kural Verse Text -->
+      <div class="text-center py-4 space-y-4">
+        <h1 class="font-serif-tamil text-2xl sm:text-3xl font-bold leading-relaxed text-ink-bg dark:text-paper-bg italic text-glow">
+          <p>{kural.tamil.line1}</p>
+          <p>{kural.tamil.line2}</p>
+        </h1>
+        
+        <div class="text-xs sm:text-sm text-ink-bg/50 dark:text-paper-bg/50 font-mono tracking-wide italic leading-relaxed max-w-md mx-auto pt-2">
+          <p>{kural.transliteration.line1}</p>
+          <p>{kural.transliteration.line2}</p>
+        </div>
+      </div>
+
+      <!-- Dynamic Meanings -->
+      <div class="border-t border-paper-border/60 dark:border-ink-border/60 pt-6 space-y-4 text-sm sm:text-base">
+        
+        <div class="space-y-1">
+          <span class="text-xs font-bold text-ochre tracking-wide block uppercase">உரை / Meaning:</span>
+          <p class="text-ink-bg/85 dark:text-paper-bg/85 font-sans-tamil italic leading-relaxed" id="kural-meaning">
+            {kural.meaning.tamil}
+          </p>
+        </div>
+        
+        <div class="space-y-1 pt-3 border-t border-paper-border/30 dark:border-ink-border/30">
+          <span class="text-xs font-bold text-ochre tracking-wide block uppercase" id="understand-label">புரிதல் / Understand:</span>
+          <p class="text-ink-bg/85 dark:text-paper-bg/85 leading-relaxed font-sans-tamil" id="kural-explanation">
+            {kural.explanation.simple.tamil}
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Themes & Life Applications Section -->
+      <div class="border-t border-paper-border/60 dark:border-ink-border/60 pt-4 space-y-3">
+        <span class="text-xs font-bold text-ochre tracking-wide block uppercase" id="apply-label">வாழ்வியல் பயன்பாடு / Apply This Wisdom:</span>
+        <div class="flex flex-wrap gap-2">
+          {kural.themes.map(theme => (
+            <a 
+              href={`/search?theme=${theme}`}
+              class="px-2.5 py-1 text-xs font-semibold rounded bg-paper-bg dark:bg-ink-bg border border-paper-border dark:border-ink-border text-ink-bg/70 dark:text-paper-bg/70 hover:border-terracotta hover:text-terracotta transition-colors duration-150 cursor-pointer select-none"
+            >
+              #{theme}
+            </a>
+          ))}
+          {kural.lifeApplications.map(app => (
+            <a 
+              href={`/search?theme=${app}`}
+              class="px-2.5 py-1 text-xs font-semibold rounded bg-paper-bg dark:bg-ink-bg border border-paper-border dark:border-ink-border text-ink-bg/70 dark:text-paper-bg/70 hover:border-ochre hover:text-ochre transition-colors duration-150 cursor-pointer select-none"
+            >
+              🌱 {app}
+            </a>
+          ))}
+        </div>
+      </div>
+
+    </article>
+
+    <!-- AI Explain Drawer (client:load to enable interactive API loading) -->
+    <div id="explain-panel-container">
+      <ExplainPanel client:load kuralId={kural.id} />
+    </div>
+
+    <!-- Desktop Prev / Next Nav Links -->
+    <div class="hidden sm:flex justify-between items-center pt-6 border-t border-paper-border dark:border-ink-border">
+      {prevId ? (
+        <a 
+          href={`/kural/${prevId}`}
+          class="px-4 py-2.5 rounded-lg border border-paper-border dark:border-ink-border bg-paper-card dark:bg-ink-card hover:border-terracotta text-sm font-bold cursor-pointer"
+        >
+          ◀ முந்தைய குறள் (Prev)
+        </a>
+      ) : (
+        <div class="w-[120px]"></div>
+      )}
+
+      <a 
+        href={`/adhigaram/${kural.adhigaramId}`}
+        class="px-5 py-2.5 rounded-lg border border-paper-border dark:border-ink-border text-center text-sm font-bold bg-paper-card dark:bg-ink-card hover:border-terracotta cursor-pointer"
+      >
+        அதிகாரம் / Chapter
+      </a>
+
+      {nextId ? (
+        <a 
+          href={`/kural/${nextId}`}
+          class="px-4 py-2.5 rounded-lg border border-paper-border dark:border-ink-border bg-paper-card dark:bg-ink-card hover:border-terracotta text-sm font-bold cursor-pointer"
+        >
+          அடுத்த குறள் (Next) ▶
+        </a>
+      ) : (
+        <div class="w-[120px]"></div>
+      )}
+    </div>
+
+    <!-- Mobile Sticky Prev / Next Nav (Bottom) -->
+    <div class="sm:hidden fixed bottom-16 left-0 right-0 z-30 bg-paper-bg/95 dark:bg-ink-bg/95 border-t border-paper-border dark:border-ink-border flex justify-between items-center h-12 px-4 shadow transition-colors duration-200">
+      {prevId ? (
+        <a 
+          href={`/kural/${prevId}`}
+          class="text-xs font-bold text-terracotta cursor-pointer"
+        >
+          ◀ முந்தையது (Prev)
+        </a>
+      ) : (
+        <div></div>
+      )}
+
+      <a 
+        href={`/adhigaram/${kural.adhigaramId}`}
+        class="text-xs font-bold text-ink-bg/60 dark:text-paper-bg/60 cursor-pointer"
+      >
+        அதிகாரம் (Chapter)
+      </a>
+
+      {nextId ? (
+        <a 
+          href={`/kural/${nextId}`}
+          class="text-xs font-bold text-terracotta cursor-pointer"
+        >
+          அடுத்தது (Next) ▶
+        </a>
+      ) : (
+        <div></div>
+      )}
+    </div>
+
+  </div>
+
+  <script is:inline define:vars={{ tamilMeaning: kural.meaning.tamil, englishMeaning: kural.meaning.english, tamilExp: kural.explanation.simple.tamil, englishExp: kural.explanation.simple.english }}>
+    function updateKuralLanguage(lang) {
+      const meaning = document.getElementById('kural-meaning');
+      const exp = document.getElementById('kural-explanation');
+      const understandLabel = document.getElementById('understand-label');
+      const applyLabel = document.getElementById('apply-label');
+
+      if (meaning) meaning.textContent = lang === 'ta' ? tamilMeaning : englishMeaning;
+      if (exp) exp.textContent = lang === 'ta' ? tamilExp : englishExp;
+      
+      if (understandLabel) {
+        understandLabel.textContent = lang === 'ta' ? 'புரிதல் / Understand:' : 'Understand:';
+      }
+      if (applyLabel) {
+        applyLabel.textContent = lang === 'ta' ? 'வாழ்வியல் பயன்பாடு / Apply This Wisdom:' : 'Apply This Wisdom:';
+      }
+    }
+
+    const currentLang = localStorage.getItem('lang') || 'ta';
+    updateKuralLanguage(currentLang);
+
+    window.addEventListener('lang-change', (e) => {
+      updateKuralLanguage(e.detail);
+    });
+  </script>
+</Layout>

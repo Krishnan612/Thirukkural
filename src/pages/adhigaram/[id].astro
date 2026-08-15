@@ -1,0 +1,159 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import paals from '../../../data/paal.json';
+import iyals from '../../../data/iyal.json';
+import adhigarams from '../../../data/adhigaram.json';
+import kurals from '../../../data/kurals.json';
+
+export async function getStaticPaths() {
+  return adhigarams.map(ad => ({
+    params: { id: ad.id.toString() }
+  }));
+}
+
+const { id } = Astro.params;
+const adhigaramId = Number(id);
+
+const adhigaram = adhigarams.find(a => a.id === adhigaramId);
+if (!adhigaram) {
+  throw new Error(`Adhigaram not found for ID: ${id}`);
+}
+
+const paal = paals.find(p => p.id === adhigaram.paalId);
+const iyal = iyals.find(iy => iy.id === adhigaram.iyalId);
+
+// Filter the 10 Kurals belonging to this Adhigaram
+const chapterKurals = kurals.filter(k => k.adhigaramId === adhigaramId);
+
+const prevId = adhigaramId > 1 ? adhigaramId - 1 : null;
+const nextId = adhigaramId < 133 ? adhigaramId + 1 : null;
+
+const prevAdhigaram = prevId ? adhigarams.find(a => a.id === prevId) : null;
+const nextAdhigaram = nextId ? adhigarams.find(a => a.id === nextId) : null;
+---
+
+<Layout 
+  title={`${adhigaram.nameTamil} | ${adhigaram.nameEnglish} — Thirukkural`}
+  description={adhigaram.descriptionEnglish}
+  breadcrumbs={[
+    { label: paal?.nameTamil || "Paal", url: `/paal/${paal?.slug}` },
+    { label: iyal?.nameTamil || "Iyal" },
+    { label: adhigaram.nameTamil }
+  ]}
+>
+  <div class="space-y-10 animate-fade-in font-sans-tamil">
+    
+    <!-- Chapter Info Header -->
+    <div class="p-6 sm:p-8 bg-paper-card dark:bg-ink-card border border-paper-border dark:border-ink-border rounded-2xl shadow-sm text-center space-y-4">
+      <span class="inline-block px-3 py-1 bg-ochre/10 text-ochre text-xs font-bold rounded-full tracking-widest uppercase font-mono">
+        அதிகாரம் / Chapter {adhigaram.id}
+      </span>
+      
+      <h1 class="font-serif-tamil text-3xl sm:text-4xl font-bold text-ink-bg dark:text-paper-bg leading-tight">
+        {adhigaram.nameTamil} <br />
+        <span class="text-lg sm:text-xl font-sans text-ochre font-medium block mt-1">{adhigaram.nameEnglish}</span>
+      </h1>
+      
+      <p class="text-xs sm:text-sm text-ink-bg/70 dark:text-paper-bg/70 leading-relaxed max-w-xl mx-auto italic" id="adhigaram-desc">
+        {adhigaram.descriptionTamil}
+      </p>
+    </div>
+
+    <!-- 10 Kurals List -->
+    <div class="space-y-6">
+      {chapterKurals.map(k => (
+        <div class="p-6 bg-paper-card/45 dark:bg-ink-card/45 border border-paper-border/80 dark:border-ink-border/80 hover:border-terracotta/40 rounded-xl transition-all duration-200">
+          <div class="flex justify-between items-start mb-4 border-b border-paper-border/40 dark:border-ink-border/40 pb-2">
+            <span class="inline-block px-2 py-0.5 text-xs font-mono font-bold bg-terracotta/10 text-terracotta rounded">
+              குறள் / Verse {k.id}
+            </span>
+            <a 
+              href={`/kural/${k.id}`}
+              class="text-xs font-bold text-terracotta hover:underline cursor-pointer"
+            >
+              விளக்கம் & AI ➔
+            </a>
+          </div>
+
+          <div class="space-y-4">
+            <!-- Verse Text -->
+            <p class="font-serif-tamil text-lg sm:text-xl font-bold leading-relaxed text-ink-bg dark:text-paper-bg italic text-glow">
+              {k.tamil.line1} <br />
+              {k.tamil.line2}
+            </p>
+            
+            <p class="text-xs text-ink-bg/50 dark:text-paper-bg/50 font-mono tracking-wide italic leading-normal">
+              {k.transliteration.line1} <br />
+              {k.transliteration.line2}
+            </p>
+
+            <!-- Verse Translation -->
+            <div class="pt-2 border-t border-paper-border/30 dark:border-ink-border/30 space-y-1 text-sm sm:text-base">
+              <p class="text-ink-bg/85 dark:text-paper-bg/85 italic font-sans-tamil" data-meaning-ta={k.meaning.tamil} data-meaning-en={k.meaning.english}>
+                {k.meaning.tamil}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Prev / Next Navigation Footer -->
+    <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-6 border-t border-paper-border dark:border-ink-border">
+      {prevId ? (
+        <a 
+          href={`/adhigaram/${prevId}`}
+          class="w-full sm:w-auto px-5 py-3 rounded-lg border border-paper-border dark:border-ink-border bg-paper-card dark:bg-ink-card hover:border-terracotta text-left sm:text-right text-xs sm:text-sm font-bold flex flex-col justify-center cursor-pointer hover:shadow-sm"
+        >
+          <span class="text-[10px] text-ochre uppercase font-mono tracking-wider">◀ முந்தைய அதிகாரம் / Prev Chapter</span>
+          <span class="font-serif-tamil text-ink-bg dark:text-paper-bg mt-1">{prevAdhigaram?.nameTamil}</span>
+        </a>
+      ) : (
+        <div class="hidden sm:block w-[180px]"></div>
+      )}
+
+      <a 
+        href="/browse"
+        class="w-full sm:w-auto px-6 py-3 rounded-lg border border-paper-border dark:border-ink-border text-center text-xs sm:text-sm font-bold bg-paper-card dark:bg-ink-card hover:border-terracotta cursor-pointer"
+      >
+        அதிகாரப் பட்டியல் / Browse All
+      </a>
+
+      {nextId ? (
+        <a 
+          href={`/adhigaram/${nextId}`}
+          class="w-full sm:w-auto px-5 py-3 rounded-lg border border-paper-border dark:border-ink-border bg-paper-card dark:bg-ink-card hover:border-terracotta text-left text-xs sm:text-sm font-bold flex flex-col justify-center cursor-pointer hover:shadow-sm"
+        >
+          <span class="text-[10px] text-ochre uppercase font-mono tracking-wider">அடுத்த அதிகாரம் / Next Chapter ▶</span>
+          <span class="font-serif-tamil text-ink-bg dark:text-paper-bg mt-1">{nextAdhigaram?.nameTamil}</span>
+        </a>
+      ) : (
+        <div class="hidden sm:block w-[180px]"></div>
+      )}
+    </div>
+
+  </div>
+
+  <script is:inline define:vars={{ tamilDesc: adhigaram.descriptionTamil, englishDesc: adhigaram.descriptionEnglish }}>
+    function updateAdhigaramLanguage(lang) {
+      // Update description
+      const desc = document.getElementById('adhigaram-desc');
+      if (desc) desc.textContent = lang === 'ta' ? tamilDesc : englishDesc;
+
+      // Update Kural meanings
+      const meanings = document.querySelectorAll('[data-meaning-ta]');
+      meanings.forEach(m => {
+        const ta = m.getAttribute('data-meaning-ta');
+        const en = m.getAttribute('data-meaning-en');
+        m.textContent = lang === 'ta' ? ta : en;
+      });
+    }
+
+    const currentLang = localStorage.getItem('lang') || 'ta';
+    updateAdhigaramLanguage(currentLang);
+
+    window.addEventListener('lang-change', (e) => {
+      updateAdhigaramLanguage(e.detail);
+    });
+  </script>
+</Layout>

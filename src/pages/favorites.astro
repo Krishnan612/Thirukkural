@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { FavoritesList } from '../components/FavoritesList.jsx';
+import kurals from '../../data/kurals.json';
+
+const lightKurals = kurals.map(k => ({
+  id: k.id,
+  line1: k.tamil.line1,
+  line2: k.tamil.line2,
+  meaningTa: k.meaning.tamil,
+  meaningEn: k.meaning.english
+}));
+---
+
+<Layout 
+  title="விருப்பங்கள் | Saved Verses — Thirukkural" 
+  description="Your curated list of saved Thirukkural verses and wisdom passages."
+  breadcrumbs={[{ label: "விருப்பங்கள் (Saved)" }]}
+>
+  <div class="space-y-6">
+    <div class="text-center max-w-2xl mx-auto space-y-2">
+      <h1 class="font-serif-tamil text-3xl font-bold tracking-tight text-ink-bg dark:text-paper-bg" id="fav-title">
+        விருப்பமான குறள்கள்
+      </h1>
+      <p class="text-sm text-ink-bg/60 dark:text-paper-bg/60" id="fav-subtitle">
+        நீங்கள் சேமித்து வைத்த குறள்களின் தொகுப்பு.
+      </p>
+    </div>
+    
+    <FavoritesList client:load kurals={lightKurals} />
+  </div>
+
+  <script is:inline>
+    const favLabels = {
+      ta: {
+        title: "விருப்பமான குறள்கள்",
+        subtitle: "நீங்கள் சேமித்து வைத்த குறள்களின் தொகுப்பு."
+      },
+      en: {
+        title: "Saved Verses",
+        subtitle: "Your curated list of saved Thirukkural verses and wisdom passages."
+      }
+    };
+
+    function updateFavLanguage(lang) {
+      const title = document.getElementById('fav-title');
+      const subtitle = document.getElementById('fav-subtitle');
+      if (title) title.textContent = favLabels[lang].title;
+      if (subtitle) subtitle.textContent = favLabels[lang].subtitle;
+    }
+
+    const currentLang = localStorage.getItem('lang') || 'ta';
+    updateFavLanguage(currentLang);
+
+    window.addEventListener('lang-change', (e) => {
+      updateFavLanguage(e.detail);
+    });
+  </script>
+</Layout>

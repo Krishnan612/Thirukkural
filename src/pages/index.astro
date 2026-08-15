@@ -1,0 +1,307 @@
+---
+import Layout from '../layouts/Layout.astro';
+import kurals from '../../data/kurals.json';
+import adhigarams from '../../data/adhigaram.json';
+
+// Deterministic daily Kural calculation
+const now = new Date();
+const startOfYear = new Date(now.getFullYear(), 0, 0);
+// @ts-ignore
+const diff = now - startOfYear;
+const oneDay = 1000 * 60 * 60 * 24;
+const dayOfYear = Math.floor(diff / oneDay);
+
+const dailyKuralId = (dayOfYear % 1330) + 1;
+const dailyKural = kurals.find(k => k.id === dailyKuralId) || kurals[0];
+const dailyAdhigaram = adhigarams.find(a => a.id === dailyKural.adhigaramId);
+
+// Pre-defined static narrative for Kural 1 showcase
+const kural1Narrative = {
+  ta: {
+    hook: "கரும்பலகையின் முன் நிற்கும் ஒரு சிறுவன், வெள்ளைச் சுண்ணாம்பின் முதல் கீற்றை ஆச்சரியத்துடன் பார்க்கிறான். அது 'அ' என்னும் எழுத்து - வாயைத் திறக்கும் போது பிறக்கும் முதல் ஒலி, மொழியின் தொடக்கம்.",
+    situation: "ஒரு பயணி உயரமான மலைத் தொடரின் அடிவாரத்தில் நிற்கிறார். அவர் கையில் பல வரைபடங்கள் இருக்கலாம், பல திசைகாட்டிகள் இருக்கலாம். ஆனால், அவர் எடுத்து வைக்கும் அந்த முதல் அடிதான் மலையேற்றத்தின் தொடக்கம். முதல் அடி இல்லாமல் எந்தப் பயணமும் இல்லை.",
+    connection: "வள்ளுவர் தன் 1,330 குறள்களையும் 'அ' என்னும் எழுத்தில் தொடங்குகிறார்: 'அகர முதல எழுத்தெல்லாம் ஆதி பகவன் முதற்றே உலகு.' உலக மொழிகளின் அனைத்து எழுத்துகளும் 'அ' என்னும் ஒலியில் தொடங்குவது போல, நாம் காணும் இந்த பிரபஞ்சமும் ஒரு ஆதி மூலத்திலிருந்தே தொடங்குகிறது.",
+    deeperMeaning: "அகரம் (அ) என்பது மற்ற அனைத்து எழுத்துகளுக்கும் அடித்தளமாகவும் இயக்கமாகவும் இருக்கிறது. அதுபோல, இந்த பிரபஞ்சத்திற்கும் இயக்கத்திற்கும் ஒரு மூலப்பொருள் இருக்கிறது. அதை வள்ளுவர் 'ஆதி பகவன்' என்கிறார். இது மதங்களைக் கடந்த ஒரு படைப்புத் தத்துவம் - எந்த ஒரு அமைப்புக்கும் ஒரு தொடக்கப்புள்ளி தேவை என்பதை உணர்த்துகிறது.",
+    modernApplication: "இன்றைய பரபரப்பான நவீன வாழ்க்கையில் நாம் பல பொறுப்புகள், பதவிகள், இலக்குகளை நோக்கி ஓடுகிறோம். ஆனால் இந்த குறள் நம்மை நம் அடித்தளத்திற்குத் திரும்பச் சொல்கிறது. ஒரு பெரிய வீட்டைக் கட்டுவதற்கு முன் அஸ்திவாரம் எவ்வளவு முக்கியமோ, அதுபோல உங்கள் வாழ்க்கையை அமைப்பதற்கு முன் ஒழுக்கம், நேர்மை போன்ற அடிப்படைப் பண்புகளை வலுப்படுத்துங்கள்.",
+    takeaway: "எழுத்துக்கள் அகரத்தில் தொடங்குவது போல, தரம் வாய்ந்த வாழ்வு நம் அக ஒழுக்கத்தில் இருந்தே தொடங்குகிறது."
+  },
+  en: {
+    hook: "A child stands before a clean blackboard, staring at a single chalk stroke. The letter 'A'. It is the first sound we make, the opening of the mouth, the birth of language itself.",
+    situation: "Consider a traveler standing at the foot of a towering mountain range. They carry maps, GPS devices, and books on geology. But before the first step is taken, the mountain is just a concept. The journey requires a starting point, a first step, and a belief that there is a path.",
+    connection: "Valluvar begins his monumental 1,330 verses with the letter 'A' (Agaram). He writes: 'As all letters begin with A, so does the world begin with the Eternal Divine.' Just as every spoken word and written sentence on Earth begins with this single sound, the entire canvas of existence begins with a single, eternal source.",
+    deeperMeaning: "Agaram (A) is the foundation of all letters. Without it, language falls silent. In the same way, the universe has a source, a baseline. Valluvar calls it 'Aadhi Bhagavan' — the primal source, the ultimate origin. It is the canvas upon which the story of life is painted, reminding us that every complex system has a fundamental core.",
+    modernApplication: "In our modern lives, we often get lost in the complexity of our 'letters' — our jobs, our screens, our daily anxieties. We build elaborate structures of thoughts and systems. But this Kural reminds us to return to the source. It is about foundations. Before you build a career, build character. Before you master a science, master yourself. Remember the 'A' that makes the rest of the alphabet possible.",
+    takeaway: "Every language begins with a single letter; every life begins with a single truth."
+  }
+};
+---
+
+<Layout title="திருக்குறள் | Wisdom for Life" description="An interactive bilingual platform designed to help you discover, understand, and apply the timeless wisdom of Thirukkural.">
+  
+  <div class="space-y-12 sm:space-y-16">
+    <section class="relative overflow-hidden border-y border-[#d7a556] bg-[#1c120d] shadow-[0_28px_80px_rgba(30,20,18,0.28)] w-full">
+      <video 
+        autoplay 
+        muted 
+        loop 
+        playsinline 
+        poster="/olai chuvadi.webp" 
+        class="absolute inset-0 h-full w-full object-cover opacity-55 contrast-110 saturate-80"
+      >
+        <source src="/cinematic.mp4" type="video/mp4" />
+      </video>
+      <div class="absolute inset-0 bg-gradient-to-r from-[#21170f]/88 via-[#21170f]/76 to-[#21170f]/68"></div>
+      <div class="relative z-10 grid min-h-[calc(100vh-96px)] items-center px-4 py-8 sm:px-6 md:grid-cols-[1.2fr_0.8fr] md:px-10 lg:px-14">
+        <div class="max-w-2xl text-[#F9F0CF]">
+          <div class="mb-5 inline-flex items-center rounded-full border border-[#E6B24F]/50 bg-[#6F3D12]/25 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#F1CC6F]">
+            Tamil Literary Heritage
+          </div>
+          <h1 id="hero-title" class="font-serif-tamil text-4xl font-bold leading-[1.1] tracking-tight text-[#F9F0CF] sm:text-5xl md:text-6xl">
+            வார்த்தைகள் அல்ல, <span class="text-[#E6B24F]">வாழ்க்கைக்கான வழிகாட்டி</span>
+          </h1>
+          <p id="hero-description" class="mt-5 max-w-xl text-sm leading-7 text-[#F2DD9D] sm:text-base">
+            திருக்குறளின் 1,330 வாழ்வியல் நெறிமுறைகளை, சிந்தனையில் நன்றாகப் பதிந்துள்ள கலைமிகு அர்த்தங்களாக இங்கே வாசிக்கிறோம்.
+          </p>
+          <form action="/search" method="GET" class="mt-8 flex max-w-lg flex-col gap-3 sm:flex-row">
+            <input id="hero-search-input" type="text" name="q" placeholder="சொல், குறள் எண், அறம், அன்பு..." class="w-full rounded-full border border-[#F1CC6F]/30 bg-[#1f140f]/80 px-4 py-3 text-sm text-[#F9F0CF] placeholder:text-[#F2DD9D]/75 outline-none ring-0 transition focus:border-[#E6B24F]" />
+            <button id="hero-search-btn" type="submit" class="rounded-full bg-[#E6B24F] px-6 py-3 text-sm font-semibold text-[#4A280F] shadow-[0_12px_24px_rgba(230,178,79,0.32)] transition hover:bg-[#F1CC6F] focus:outline-none focus:ring-2 focus:ring-[#F1CC6F]/70">
+              தேடுக
+            </button>
+          </form>
+        </div>
+        <div class="relative mt-8 md:mt-0">
+          <div class="card-surface rounded-[24px] border border-[#D2963B]/40 bg-[#201712]/85 p-5 text-[#F9F0CF] shadow-[0_24px_42px_rgba(32,22,18,0.22)] backdrop-blur-sm">
+            <div class="flex items-center justify-between border-b border-[#D2963B]/30 pb-3">
+              <div>
+                <p class="text-[10px] font-semibold uppercase tracking-[0.26em] text-[#F1CC6F]">Today</p>
+                <h2 id="daily-kural-title" class="mt-1 font-serif-tamil text-xl font-bold text-[#F9F0CF]">இன்றைய குறள்</h2>
+              </div>
+              <span class="rounded-full bg-[#F2DD9D]/10 px-2.5 py-1 text-[10px] font-semibold tracking-[0.18em] text-[#F1CC6F] border border-[#D2963B]/35">#{dailyKural.id}</span>
+            </div>
+            <div class="mt-5 space-y-4">
+              <p class="font-serif-tamil text-lg leading-relaxed text-[#F9F0CF]">{dailyKural.tamil.line1}<br />{dailyKural.tamil.line2}</p>
+              <p class="text-[11px] uppercase tracking-[0.18em] text-[#F2DD9D]">{dailyAdhigaram ? dailyAdhigaram.nameTamil : 'அதிகாரம்'}</p>
+              <p id="daily-kural-meaning" class="text-sm leading-7 text-[#F2DD9D]">{dailyKural.meaning.tamil}</p>
+              <a href={`/kural/${dailyKural.id}`} id="daily-kural-read" class="inline-flex items-center gap-2 text-sm font-semibold text-[#F1CC6F]">விளக்கம் வாசிக்க <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card-surface max-w-3xl mx-auto rounded-[26px] p-6 sm:p-8">
+      <div class="text-center">
+        <p class="text-[10px] font-semibold uppercase tracking-[0.26em] text-[#9e6d2e]">Featured verse</p>
+        <h2 class="mt-3 font-serif-tamil text-3xl font-bold text-[#1f1a16] dark:text-[#f6efe6]">குறள் 1</h2>
+      </div>
+      <div class="mt-6 space-y-5 text-sm leading-8 text-[#312d2a] dark:text-[#efe7df]">
+        <p class="border-l-4 border-[#b8573b]/55 pl-4 text-base italic text-[#b8573b]">"{kural1Narrative.ta.hook}"</p>
+        <p>{kural1Narrative.ta.situation}</p>
+        <p>{kural1Narrative.ta.connection}</p>
+        <p>{kural1Narrative.ta.deeperMeaning}</p>
+      </div>
+    </section>
+
+    <!-- Decorative Glyph/Kolam Divider -->
+    <div class="flex items-center justify-center space-x-4 max-w-xl mx-auto opacity-30 select-none">
+      <div class="h-[1px] bg-terracotta flex-grow"></div>
+      <span class="text-terracotta font-serif text-lg leading-none">❖ 🏵️ ❖</span>
+      <div class="h-[1px] bg-terracotta flex-grow"></div>
+    </div>
+
+    <!-- Kural 1 Showcase (Featured AI Narrative Explanation) -->
+    <section class="max-w-3xl mx-auto space-y-6">
+      <div class="text-center space-y-2">
+        <h2 class="text-2xl font-serif-tamil font-bold text-ink-bg dark:text-paper-bg" id="showcase-title">
+          விளக்கங்கள் எவ்வாறிருக்கும்?
+        </h2>
+        <p class="text-xs sm:text-sm text-ink-bg/60 dark:text-paper-bg/60" id="showcase-sub">
+          வள்ளுவரின் குறள் 1-ஐ வைத்து ஒரு மாதிரி விளக்கக் கண்ணோட்டம் (Cinematic Narrative Showcase)
+        </p>
+      </div>
+
+      <div class="p-6 sm:p-8 bg-paper-card dark:bg-ink-card border border-paper-border dark:border-ink-border rounded-2xl shadow-sm space-y-6">
+        <div class="text-center border-b border-paper-border/60 dark:border-ink-border/60 pb-4">
+          <span class="text-xs font-mono font-bold text-ochre uppercase tracking-widest block mb-1">குறள் 1 / Verse 1</span>
+          <p class="font-serif-tamil text-lg sm:text-xl font-bold leading-relaxed text-ink-bg dark:text-paper-bg">
+            அகர முதல எழுத்தெல்லாம் ஆதி <br />
+            பகவன் முதற்றே உலகு.
+          </p>
+        </div>
+
+        <!-- Rendered Narrative Structure -->
+        <div class="space-y-6 font-sans-tamil text-sm sm:text-base text-ink-bg/95 dark:text-paper-bg/95 leading-relaxed" id="showcase-content-area">
+          
+          <div class="border-l-4 border-terracotta/40 pl-4 py-1 italic text-terracotta text-base sm:text-lg" id="showcase-hook">
+            "{kural1Narrative.ta.hook}"
+          </div>
+
+          <div class="space-y-1">
+            <span class="block text-xs font-bold text-ochre tracking-wider uppercase" id="showcase-sit-label">🎭 வாழ்வியல் சூழல் (The Situation)</span>
+            <p id="showcase-situation">{kural1Narrative.ta.situation}</p>
+          </div>
+
+          <div class="space-y-1 bg-paper-bg/40 dark:bg-ink-bg/40 p-4 rounded-lg border-l-2 border-terracotta">
+            <span class="block text-xs font-bold text-ochre tracking-wider uppercase mb-1" id="showcase-conn-label">🔗 குறளுடனான இணைப்பு (The Connection)</span>
+            <p id="showcase-connection">{kural1Narrative.ta.connection}</p>
+          </div>
+
+          <div class="space-y-1">
+            <span class="block text-xs font-bold text-ochre tracking-wider uppercase" id="showcase-deep-label">🧠 ஆழமான பொருள் (Deeper Meaning)</span>
+            <p id="showcase-deeper">{kural1Narrative.ta.deeperMeaning}</p>
+          </div>
+
+          <div class="space-y-1">
+            <span class="block text-xs font-bold text-ochre tracking-wider uppercase" id="showcase-app-label">🌱 நடைமுறைப் பயன்பாடு (Modern Application)</span>
+            <div class="space-y-1.5 mt-1" id="showcase-application">
+              {kural1Narrative.ta.modernApplication.split('\n').map((line, i) => (
+                <div key={i} class="flex items-start space-x-2">
+                  <span class="text-terracotta select-none mt-0.5">✓</span>
+                  <span>{line.replace(/^[0-9*.\s-]+\s*/, '')}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-paper-border/50 dark:border-ink-border/50">
+            <div class="p-4 bg-terracotta/5 border border-terracotta/25 rounded-xl text-center">
+              <span class="block text-[10px] tracking-wider uppercase font-bold text-terracotta mb-1" id="showcase-takeaway-label">💭 முக்கியக் கருத்து (Takeaway)</span>
+              <p class="font-serif-tamil text-base sm:text-lg font-bold text-ink-bg dark:text-paper-bg" id="showcase-takeaway">
+                {kural1Narrative.ta.takeaway}
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Dynamic script to handle English/Tamil translation for static homepage elements -->
+  <script is:inline define:vars={{ kural1Narrative }}>
+    const homeLabels = {
+      ta: {
+        title: 'வார்த்தைகள் அல்ல, <span class="text-terracotta">வாழ்க்கைக்கான வழிகாட்டி</span>',
+        description: "திருக்குறளின் 1,330 வாழ்வியல் நெறிமுறைகளை வெறும் தகவல்களாக அல்லாமல், நம் அன்றாட வாழ்வில் சிந்தித்துப் பயன்படுத்தும் வகையில் வடிவமைக்கப்பட்ட கவித்துவக் தளம்.",
+        searchPlaceholder: "சொல், குறள் எண் கொண்டு தேடுக...",
+        searchBtn: "தேடுக",
+        dailyTitle: "இன்றைய குறள் / Today's Kural",
+        dailyRead: "விளக்கம் வாசிக்க ➔",
+        dailyChapterLabel: "அதிகாரம் / Chapter:",
+        dailyMeaningLabel: "விளக்கம் / Meaning:",
+        showcaseTitle: "விளக்கங்கள் எவ்வாறிருக்கும்?",
+        showcaseSub: "வள்ளுவரின் குறள் 1-ஐ வைத்து ஒரு மாதிரி விளக்கக் கண்ணோட்டம் (Cinematic Narrative Showcase)",
+        showcaseSitLabel: "🎭 வாழ்வியல் சூழல் (The Situation)",
+        showcaseConnLabel: "🔗 குறளுடனான இணைப்பு (The Connection)",
+        showcaseDeepLabel: "🧠 ஆழமான பொருள் (Deeper Meaning)",
+        showcaseAppLabel: "🌱 நடைமுறைப் பயன்பாடு (Modern Application)",
+        showcaseTakeawayLabel: "💭 முக்கியக் கருத்து (Takeaway)"
+      },
+      en: {
+        title: 'Not Words, But <span class="text-terracotta">A Guide to Life</span>',
+        description: "A poetry-first, quiet space designed to help you discover, digest, and apply the 1,330 life principles of Thirukkural directly to your modern life, step-by-step.",
+        searchPlaceholder: "Search by word or Kural number...",
+        searchBtn: "Search",
+        dailyTitle: "Today's Kural / இன்றைய குறள்",
+        dailyRead: "Explore Explanation ➔",
+        dailyChapterLabel: "Chapter / அதிகாரம்:",
+        dailyMeaningLabel: "Meaning / விளக்கம்:",
+        showcaseTitle: "How Do Explanations Work?",
+        showcaseSub: "A narrative preview showcasing the structure using Verse 1",
+        showcaseSitLabel: "🎭 The Situation",
+        showcaseConnLabel: "🔗 The Connection",
+        showcaseDeepLabel: "🧠 Deeper Meaning",
+        showcaseAppLabel: "🌱 Modern Application",
+        showcaseTakeawayLabel: "💭 Takeaway"
+      }
+    };
+
+    function updateHomeLanguage(lang) {
+      const heroTitle = document.getElementById('hero-title');
+      const heroDesc = document.getElementById('hero-description');
+      const searchInput = document.getElementById('hero-search-input');
+      const searchBtn = document.getElementById('hero-search-btn');
+
+      const dailyTitle = document.getElementById('daily-kural-title');
+      const dailyRead = document.getElementById('daily-kural-read');
+      const dailyMeaning = document.getElementById('daily-kural-meaning');
+      const dailyMeaningLabel = document.getElementById('daily-kural-meaning-label');
+      const dailyChapterLabel = document.getElementById('daily-kural-chapter-label');
+      const dailyChapterLink = document.getElementById('daily-kural-chapter-link');
+
+      const showcaseTitle = document.getElementById('showcase-title');
+      const showcaseSub = document.getElementById('showcase-sub');
+      const showcaseHook = document.getElementById('showcase-hook');
+      const showcaseSituation = document.getElementById('showcase-situation');
+      const showcaseConnection = document.getElementById('showcase-connection');
+      const showcaseDeeper = document.getElementById('showcase-deeper');
+      const showcaseApplication = document.getElementById('showcase-application');
+      const showcaseTakeaway = document.getElementById('showcase-takeaway');
+
+      const showcaseSitLabel = document.getElementById('showcase-sit-label');
+      const showcaseConnLabel = document.getElementById('showcase-conn-label');
+      const showcaseDeepLabel = document.getElementById('showcase-deep-label');
+      const showcaseAppLabel = document.getElementById('showcase-app-label');
+      const showcaseTakeawayLabel = document.getElementById('showcase-takeaway-label');
+
+      // Update Hero Content
+      if (heroTitle) heroTitle.innerHTML = homeLabels[lang].title;
+      if (heroDesc) heroDesc.textContent = homeLabels[lang].description;
+      if (searchInput) searchInput.placeholder = homeLabels[lang].searchPlaceholder;
+      if (searchBtn) searchBtn.textContent = homeLabels[lang].searchBtn;
+
+      // Update Daily Kural
+      if (dailyTitle) dailyTitle.textContent = homeLabels[lang].dailyTitle;
+      if (dailyRead) dailyRead.textContent = homeLabels[lang].dailyRead;
+      if (dailyMeaningLabel) dailyMeaningLabel.textContent = homeLabels[lang].dailyMeaningLabel;
+      if (dailyChapterLabel) dailyChapterLabel.textContent = homeLabels[lang].dailyChapterLabel;
+      
+      if (dailyMeaning) {
+        const taMean = dailyMeaning.getAttribute('data-meaning-ta');
+        const enMean = dailyMeaning.getAttribute('data-meaning-en');
+        dailyMeaning.textContent = lang === 'ta' ? taMean : enMean;
+      }
+      if (dailyChapterLink) {
+        const taName = dailyChapterLink.getAttribute('data-name-ta');
+        const enName = dailyChapterLink.getAttribute('data-name-en');
+        dailyChapterLink.textContent = lang === 'ta' ? taName : enName;
+      }
+
+      // Update Showcase Section
+      if (showcaseTitle) showcaseTitle.textContent = homeLabels[lang].showcaseTitle;
+      if (showcaseSub) showcaseSub.textContent = homeLabels[lang].showcaseSub;
+      
+      if (showcaseHook) showcaseHook.textContent = `"${kural1Narrative[lang].hook}"`;
+      if (showcaseSituation) showcaseSituation.textContent = kural1Narrative[lang].situation;
+      if (showcaseConnection) showcaseConnection.textContent = kural1Narrative[lang].connection;
+      if (showcaseDeeper) showcaseDeeper.textContent = kural1Narrative[lang].deeperMeaning;
+      if (showcaseTakeaway) showcaseTakeaway.textContent = kural1Narrative[lang].takeaway;
+
+      if (showcaseSitLabel) showcaseSitLabel.textContent = homeLabels[lang].showcaseSitLabel;
+      if (showcaseConnLabel) showcaseConnLabel.textContent = homeLabels[lang].showcaseConnLabel;
+      if (showcaseDeepLabel) showcaseDeepLabel.textContent = homeLabels[lang].showcaseDeepLabel;
+      if (showcaseAppLabel) showcaseAppLabel.textContent = homeLabels[lang].showcaseAppLabel;
+      if (showcaseTakeawayLabel) showcaseTakeawayLabel.textContent = homeLabels[lang].showcaseTakeawayLabel;
+
+      if (showcaseApplication) {
+        const lines = kural1Narrative[lang].modernApplication.split('\n');
+        showcaseApplication.innerHTML = lines.map(line => `
+          <div class="flex items-start space-x-2">
+            <span class="text-terracotta select-none mt-0.5">✓</span>
+            <span>${line.replace(/^[0-9*.\s-]+\s*/, '')}</span>
+          </div>
+        `).join('');
+      }
+    }
+
+    // Initialize
+    const currentLang = localStorage.getItem('lang') || 'ta';
+    updateHomeLanguage(currentLang);
+
+    window.addEventListener('lang-change', (e) => {
+      updateHomeLanguage(e.detail);
+    });
+  </script>
+  
+</Layout>

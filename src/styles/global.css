@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper-bg: #F9F0CF;
+  --color-paper-card: #F7E9BA;
+  --color-paper-soft: #F2DD9D;
+  --color-ink-bg: #4A280F;
+  --color-ink-card: #2B1A12;
+  --color-terracotta: #D2963B;
+  --color-ochre: #E6B24F;
+  --color-olive: #6f7d5d;
+  --color-sand: #F1CC6F;
+  --color-paper-border: rgba(111, 61, 18, 0.18);
+  --color-ink-border: rgba(249, 240, 207, 0.18);
+  --font-serif-tamil: "Noto Serif Tamil", "Noto Serif", serif;
+  --font-sans-tamil: "Noto Sans Tamil", "Inter", sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+  --page-shell: #F9F0CF;
+  --page-card: rgba(255, 249, 232, 0.7);
+  --page-shadow: rgba(74,40,15,0.1);
+  --page-border: rgba(111, 61, 18, 0.14);
+  --page-ink: #4A280F;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #F9F0CF;
+}
+
+html.dark {
+  color-scheme: dark;
+  --page-shell: #1d130e;
+  --page-card: rgba(38, 26, 19, 0.84);
+  --page-shadow: rgba(0,0,0,0.32);
+  --page-border: rgba(249, 240, 207, 0.12);
+  --page-ink: #F9F0CF;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans-tamil);
+  background:
+    linear-gradient(rgba(249, 240, 207, 0.88), rgba(243, 228, 186, 0.9)),
+    url('/olai chuvadi.webp') center top / cover fixed no-repeat;
+  color: var(--page-ink);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+html.dark body {
+  background:
+    linear-gradient(rgba(29, 19, 14, 0.82), rgba(36, 26, 20, 0.88)),
+    url('/olai chuvadi.webp') center top / cover fixed no-repeat;
+  color: var(--page-ink);
+}
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+}
+
+main, .page-shell {
+  position: relative;
+}
+
+.kolam-divider {
+  background-image: radial-gradient(var(--color-terracotta) 1px, transparent 0);
+  background-size: 8px 8px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.card-surface {
+  background: var(--page-card);
+  border: 1px solid var(--page-border);
+  box-shadow: 0 14px 40px var(--page-shadow);
+  backdrop-filter: blur(8px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(184, 87, 59, 0.42);
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(233, 197, 150, 0.28);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(184, 87, 59, 0.68);
+}

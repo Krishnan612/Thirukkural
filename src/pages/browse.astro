@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { BrowseTree } from '../components/BrowseTree.jsx';
+---
+
+<Layout 
+  title="அதிகாரங்கள் | Browse Chapters — Thirukkural" 
+  description="Browse all 133 chapters of Thirukkural sorted hierarchically by Section (Paal) and Subsection (Iyal)."
+  breadcrumbs={[{ label: "அதிகாரங்கள் (Browse)" }]}
+>
+  <div class="space-y-6">
+    <div class="text-center max-w-2xl mx-auto space-y-2">
+      <h1 class="font-serif-tamil text-3xl font-bold tracking-tight text-ink-bg dark:text-paper-bg" id="browse-title">
+        அதிகாரங்களை ஆராய்க
+      </h1>
+      <p class="text-sm text-ink-bg/60 dark:text-paper-bg/60" id="browse-subtitle">
+        முப்பாலையும் அதன் இயல் மற்றும் அதிகாரங்களின் படி பிரித்து ஆராயும் கட்டமைப்பு.
+      </p>
+    </div>
+    
+    <!-- Render the React island BrowseTree client-side -->
+    <BrowseTree client:load />
+  </div>
+
+  <script is:inline>
+    const browseLabels = {
+      ta: {
+        title: "அதிகாரங்களை ஆராய்க",
+        subtitle: "முப்பாலையும் அதன் இயல் மற்றும் அதிகாரங்களின் படி பிரித்து ஆராயும் கட்டமைப்பு."
+      },
+      en: {
+        title: "Browse Chapters",
+        subtitle: "Explore the structure of Thirukkural divided by the three Books (Paal) and Sections (Iyal)."
+      }
+    };
+
+    function updateBrowseLanguage(lang) {
+      const title = document.getElementById('browse-title');
+      const subtitle = document.getElementById('browse-subtitle');
+      if (title) title.textContent = browseLabels[lang].title;
+      if (subtitle) subtitle.textContent = browseLabels[lang].subtitle;
+    }
+
+    const currentLang = localStorage.getItem('lang') || 'ta';
+    updateBrowseLanguage(currentLang);
+
+    window.addEventListener('lang-change', (e) => {
+      updateBrowseLanguage(e.detail);
+    });
+  </script>
+</Layout>
