@@ -7,7 +7,7 @@ import Layout from '../layouts/Layout.astro';
   description="Explore the life of Sage Thiruvalluvar, the rich literary tradition of the Tamil language, and how classical texts were preserved on Olai Chuvadi (palm-leaf manuscripts)."
   breadcrumbs={[{ label: "பற்றி (About)" }]}
 >
-  <div class="mx-auto mb-20 max-w-5xl space-y-12 font-sans-tamil">
+  <div class="mx-auto mb-20 max-w-5xl px-4 sm:px-6 lg:px-8 space-y-12 font-sans-tamil">
     <section class="card-surface overflow-hidden rounded-[28px] p-6 sm:p-8 lg:p-10">
       <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div class="space-y-5">
@@ -33,11 +33,11 @@ import Layout from '../layouts/Layout.astro';
             திருவள்ளுவர், தமிழ்ச் சங்ககாலத்தில் வாழ்ந்த ஒரு மானுடவியலாளரும், தத்துவக்கவிஞரும், ஒழுக்கநெறிக் கோட்பாட்டாளரும் ஆவார். அவரது <em>திருக்குறள்</em> அறம், பொருள், இன்பம் என்ற மூன்று துறைகளிலும் மனித வாழ்வின் எல்லா பரிமாணங்களையும் சுருக்கமாகப் பேசுகிறது. மதம், மொழி, இனம் போன்ற எல்லாக் கூறுகளையும் தாண்டி, ஆழமான மனிதநேய தரிசனம் கொண்ட உள்ளடக்கம் இதன் சிறப்பு.
           </p>
         </div>
-        <img src="/thiruvalluvar2.webp" alt="Thiruvalluvar statue" class="h-[240px] w-full rounded-[18px] object-cover" />
+        <img src="/thiruvalluvar2.jpg" alt="Thiruvalluvar statue" class="h-[240px] w-full rounded-[18px] object-cover" />
       </section>
 
       <section class="card-surface grid gap-6 rounded-[24px] p-5 sm:p-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-        <img src="/thiruvalluvar3.webp" alt="Tamil heritage illustration" class="h-[220px] w-full rounded-[18px] object-cover" />
+        <img src="/thiruvalluvar3.jpg" alt="Tamil heritage illustration" class="h-[220px] w-full rounded-[18px] object-cover" />
         <div class="space-y-4" id="section-language">
           <h2 class="font-serif-tamil text-2xl font-bold text-[#b8573b]">தமிழ் மொழி மற்றும் இலக்கிய மரபு</h2>
           <p class="text-sm leading-8 text-[#332d29] dark:text-[#ebe0d7] sm:text-base">
@@ -53,7 +53,7 @@ import Layout from '../layouts/Layout.astro';
             அச்சு முறை தோன்றுவதற்கு முன்பே, தமிழ் நூல்கள் பனை ஓலையில் செதுக்கப்பட்டு, மடிந்து, மூடப்பட்டு, தலைமுறை தலைமுறையாக காக்கப்பட்டன. ஓலைச் சுவடிகள் என்பது வாழ்வின் பதிவேடுகள்; சான்றாக நேரத்தைத் தாண்டி வந்த அறிவு. அவற்றின் வழியாகவே திருக்குறள், சங்க இலக்கியங்கள், சடங்குகள், நெறிகள் போன்றவையும் நமக்கு எட்டின. ஓலைச் சுவடியின் ஒவ்வொரு மடிப்பும், ஒரு தலைமுறையினரின் அர்ப்பணிப்பை நினைவூட்டும் கலைக்கூடம்.
           </p>
         </div>
-        <img src="/olai chuvadi.webp" alt="Palm leaf manuscripts" class="h-[240px] w-full rounded-[18px] object-cover" />
+        <img src="/olai-chuvadi.webp" alt="Palm leaf manuscripts" class="h-[240px] w-full rounded-[18px] object-cover" />
       </section>
     </div>
 
@@ -65,93 +65,83 @@ import Layout from '../layouts/Layout.astro';
     </section>
   </div>
 
-  <!-- Script to toggle translations based on the active language -->
-  <script is:inline>
-    const aboutLabels = {
-      ta: {
-        title: "இலக்கியப் பாரம்பரியம்",
-        subtitle: "திருவள்ளுவர், தமிழ் இலக்கிய மரபு மற்றும் ஓலைச்சுவடிகளின் வரலாறு.",
-        quote: '"அகர முதல எழுத்தெல்லாம் ஆதி பகவன் முதற்றே உலகு."',
-        author: `
-          <h2 class="text-xl sm:text-2xl font-bold font-serif-tamil text-terracotta">
-            திருவள்ளுவர் (Sage Thiruvalluvar)
-          </h2>
-          <p class="text-sm sm:text-base text-ink-bg/85 dark:text-paper-bg/85 leading-relaxed mt-3">
-            திருவள்ளுவர் சங்க காலத்தைச் சேர்ந்த ஒரு பெரும் தமிழ் நெறிக்கவிஞர் மற்றும் தத்துவஞானி ஆவார். இவரால் இயற்றப்பட்ட திருக்குறள் உலகப் பொதுமறை என்று போற்றப்படுகிறது. மதம், இனம், மொழி ஆகியவற்றைக் கடந்து மனித ஒழுக்கம், அறம், அன்பு, அரசியல் மற்றும் இல்லற வாழ்க்கைக்கான நெறிமுறைகளை 1,330 குறள்களில் அவர் வடித்துள்ளார். அவரது தத்துவங்கள் காலத்தைக் கடந்து இன்றும் எக்காலத்திற்கும் பொருந்தும் வாழ்வியல் உண்மைகளாக விளங்குகின்றன.
-          </p>
-        `,
-        language: `
-          <h2 class="text-xl sm:text-2xl font-bold font-serif-tamil text-terracotta">
-            தமிழ் மொழியும் இலக்கிய மரபும்
-          </h2>
-          <p class="text-sm sm:text-base text-ink-bg/85 dark:text-paper-bg/85 leading-relaxed mt-3">
-            உலகில் உள்ள மிகப்பழமையான மற்றும் செம்மொழிகளுள் ஒன்றான தமிழ், ஈராயிரம் ஆண்டுகளுக்கும் மேலான தொடர்ச்சியான இலக்கியப் பாரம்பரியத்தைக் கொண்டது. தமிழின் தனித்துவமான யாப்பிலக்கண மரபு, மிகக் குறுகிய அடிகளில் செறிவான கருத்துக்களைக் கூற உதவுகிறது. திருக்குறள் அதன் ஈரடி வெண்பா வடிவில், மிகக் குறைந்த சொற்களில் மிக ஆழமான மனித வாழ்வின் மெய்ப்பொருளை எடுத்துரைக்கும் இலக்கிய உன்னதத்திற்கு ஒரு சிறந்த எடுத்துக்காட்டாகும்.
-          </p>
-        `,
-        olai: `
-          <h2 class="text-xl sm:text-2xl font-bold font-serif-tamil text-terracotta">
-            ஓலைச் சுவடிகள் (Olai Chuvadi / Palm Leaf Manuscripts)
-          </h2>
-          <p class="text-sm sm:text-base text-ink-bg/85 dark:text-paper-bg/85 leading-relaxed mt-3">
-            அச்சு இயந்திரங்கள் கண்டுபிடிக்கப்படுவதற்கு முன்பே, திருக்குறள் போன்ற உன்னத தமிழ் நூல்கள் பனை ஓலைகளில் (ஓலைச் சுவடி) எழுத்தாணி கொண்டு செதுக்கப்பட்டு தலைமுறை தலைமுறையாகப் பாதுகாக்கப்பட்டன. பனை ஓலைகளைப் பதப்படுத்தி, எண்ணெயிட்டு, நூலால் கட்டி வைக்கும் இந்த நுட்பமான ஓலைச்சுவடி முறை இல்லாவிட்டால், தமிழின் பல அறிவுப் பொக்கிஷங்கள் நமக்குக் கிடைக்காமல் அழிந்திருக்கும். ஓலைச் சுவடிகள் மூலம் கடத்தப்பட்ட இந்த அறிவு, நமது மூதாதையர்களின் அர்ப்பணிப்புக்குச் சான்றாகும்.
-          </p>
-        `
-      },
-      en: {
-        title: "Literary Heritage",
-        subtitle: "The history of Sage Thiruvalluvar, the Tamil language, and palm-leaf manuscripts.",
-        quote: '"As all letters begin with A, so does the world begin with the Eternal Divine."',
-        author: `
-          <h2 class="text-xl sm:text-2xl font-bold font-serif-tamil text-terracotta">
-            Sage Thiruvalluvar
-          </h2>
-          <p class="text-sm sm:text-base text-ink-bg/85 dark:text-paper-bg/85 leading-relaxed mt-3 font-sans">
-            Thiruvalluvar was a legendary Tamil poet and philosopher who lived during the Sangam period. His magnum opus, the Thirukkural, is revered globally as the 'Universal Book of Ethics'. Across 1,330 couplets, he encapsulated timeless values of righteousness, wealth, politics, love, and domestic duty. His philosophy transcends geographical, religious, and temporal boundaries, offering practical guidance for human conduct that remains as relevant today as it was two millennia ago.
-          </p>
-        `,
-        language: `
-          <h2 class="text-xl sm:text-2xl font-bold font-serif-tamil text-terracotta">
-            The Tamil Language & Literary Tradition
-          </h2>
-          <p class="text-sm sm:text-base text-ink-bg/85 dark:text-paper-bg/85 leading-relaxed mt-3 font-sans">
-            Tamil is one of the world's longest-surviving classical languages, boasting a continuous literary history spanning over two thousand years. The unique structural grammar of Tamil allows for dense, poetic expression. The Thirukkural is a pinnacle of this literary excellence, written in the 'Kural Venba' meter—a two-line poetic form that uses minimal words to express the deepest truths of human existence.
-          </p>
-        `,
-        olai: `
-          <h2 class="text-xl sm:text-2xl font-bold font-serif-tamil text-terracotta">
-            Olai Chuvadi (Palm-Leaf Manuscripts)
-          </h2>
-          <p class="text-sm sm:text-base text-ink-bg/85 dark:text-paper-bg/85 leading-relaxed mt-3 font-sans">
-            Long before the invention of the printing press, classical Tamil literature was preserved on dried palm leaves (Olai Chuvadi). Scribes painstakingly etched the verses onto prepared leaves using iron styluses, rubbing them with charcoal or oil to make the text legible. Without this traditional manuscript culture, the wisdom of Thirukkural and hundreds of Sangam texts would have been lost to time. These palm leaves stand as a testament to the dedication of generations who protected Tamil's intellectual heritage.
-          </p>
-        `
-      }
-    };
+  <script>
+    import { initLangSync } from '../scripts/langSync.js';
 
-    function updateAboutPage(lang) {
-      const title = document.getElementById('about-title');
-      const subtitle = document.getElementById('about-subtitle');
-      const quote = document.getElementById('quote-line');
-      const auth = document.getElementById('section-author');
-      const langSec = document.getElementById('section-language');
-      const olai = document.getElementById('section-olai');
+    document.addEventListener('astro:page-load', () => {
+      if (!document.getElementById('section-author')) return;
 
-      if (title) title.textContent = aboutLabels[lang].title;
-      if (subtitle) subtitle.textContent = aboutLabels[lang].subtitle;
-      if (quote) quote.textContent = aboutLabels[lang].quote;
-      
-      if (auth) auth.innerHTML = aboutLabels[lang].author;
-      if (langSec) langSec.innerHTML = aboutLabels[lang].language;
-      if (olai) olai.innerHTML = aboutLabels[lang].olai;
-    }
+      const aboutLabels = {
+        ta: {
+          title: "இலக்கியப் பாரம்பரியம்",
+          subtitle: "திருவள்ளுவர், தமிழ் இலக்கிய மரபு மற்றும் ஓலைச்சுவடிகளின் வரலாறு.",
+          quote: '"அகர முதல எழுத்தெல்லாம் ஆதி பகவன் முதற்றே உலகு."',
+          author: `
+            <h2 class="text-xl sm:text-2xl font-bold font-serif-tamil text-terracotta">
+              திருவள்ளுவர் (Sage Thiruvalluvar)
+            </h2>
+            <p class="text-sm sm:text-base text-ink-bg/85 dark:text-paper-bg/85 leading-relaxed mt-3">
+              திருவள்ளுவர் சங்க காலத்தைச் சேர்ந்த ஒரு பெரும் தமிழ் நெறிக்கவிஞர் மற்றும் தத்துவஞானி ஆவார். இவரால் இயற்றப்பட்ட திருக்குறள் உலகப் பொதுமறை என்று போற்றப்படுகிறது. மதம், இனம், மொழி ஆகியவற்றைக் கடந்து மனித ஒழுக்கம், அறம், அன்பு, அரசியல் மற்றும் இல்லற வாழ்க்கைக்கான நெறிமுறைகளை 1,330 குறள்களில் அவர் வடித்துள்ளார். அவரது தத்துவங்கள் காலத்தைக் கடந்து இன்றும் எக்காலத்திற்கும் பொருந்தும் வாழ்வியல் உண்மைகளாக விளங்குகின்றன.
+            </p>
+          `,
+          language: `
+            <h2 class="text-xl sm:text-2xl font-bold font-serif-tamil text-terracotta">
+              தமிழ் மொழியும் இலக்கிய மரபும்
+            </h2>
+            <p class="text-sm sm:text-base text-ink-bg/85 dark:text-paper-bg/85 leading-relaxed mt-3">
+              உலகில் உள்ள மிகப்பழமையான மற்றும் செம்மொழிகளுள் ஒன்றான தமிழ், ஈராயிரம் ஆண்டுகளுக்கும் மேலான தொடர்ச்சியான இலக்கியப் பாரம்பரியத்தைக் கொண்டது. தமிழின் தனித்துவமான யாப்பிலக்கண மரபு, மிகக் குறுகிய அடிகளில் செறிவான கருத்துக்களைக் கூற உதவுகிறது. திருக்குறள் அதன் ஈரடி வெண்பா வடிவில், மிகக் குறைந்த சொற்களில் மிக ஆழமான மனித வாழ்வின் மெய்ப்பொருளை எடுத்துரைக்கும் இலக்கிய உன்னதத்திற்கு ஒரு சிறந்த எடுத்துக்காட்டாகும்.
+            </p>
+          `,
+          olai: `
+            <h2 class="text-xl sm:text-2xl font-bold font-serif-tamil text-terracotta">
+              ஓலைச் சுவடிகள் (Olai Chuvadi / Palm Leaf Manuscripts)
+            </h2>
+            <p class="text-sm sm:text-base text-ink-bg/85 dark:text-paper-bg/85 leading-relaxed mt-3">
+              அச்சு இயந்திரங்கள் கண்டுபிடிக்கப்படுவதற்கு முன்பே, திருக்குறள் போன்ற உன்னத தமிழ் நூல்கள் பனை ஓலைகளில் (ஓலைச் சுவடி) எழுத்தாணி கொண்டு செதுக்கப்பட்டு தலைமுறை தலைமுறையாகப் பாதுகாக்கப்பட்டன. பனை ஓலைகளைப் பதப்படுத்தி, எண்ணெயிட்டு, நூலால் கட்டி வைக்கும் இந்த நுட்பமான ஓலைச்சுவடி முறை இல்லாவிட்டால், தமிழின் பல அறிவுப் பொக்கிஷங்கள் நமக்குக் கிடைக்காமல் அழிந்திருக்கும். ஓலைச் சுவடிகள் மூலம் கடத்தப்பட்ட இந்த அறிவு, நமது மூதாதையர்களின் அர்ப்பணிப்புக்குச் சான்றாகும்.
+            </p>
+          `
+        },
+        en: {
+          title: "Literary Heritage",
+          subtitle: "The history of Sage Thiruvalluvar, the Tamil language, and palm-leaf manuscripts.",
+          quote: '"As all letters begin with A, so does the world begin with the Eternal Divine."',
+          author: `
+            <h2 class="text-xl sm:text-2xl font-bold font-serif-tamil text-terracotta">
+              Sage Thiruvalluvar
+            </h2>
+            <p class="text-sm sm:text-base text-ink-bg/85 dark:text-paper-bg/85 leading-relaxed mt-3 font-sans">
+              Thiruvalluvar was a legendary Tamil poet and philosopher who lived during the Sangam period. His magnum opus, the Thirukkural, is revered globally as the 'Universal Book of Ethics'. Across 1,330 couplets, he encapsulated timeless values of righteousness, wealth, politics, love, and domestic duty. His philosophy transcends geographical, religious, and temporal boundaries, offering practical guidance for human conduct that remains as relevant today as it was two millennia ago.
+            </p>
+          `,
+          language: `
+            <h2 class="text-xl sm:text-2xl font-bold font-serif-tamil text-terracotta">
+              The Tamil Language & Literary Tradition
+            </h2>
+            <p class="text-sm sm:text-base text-ink-bg/85 dark:text-paper-bg/85 leading-relaxed mt-3 font-sans">
+              Tamil is one of the world's longest-surviving classical languages, boasting a continuous literary history spanning over two thousand years. The unique structural grammar of Tamil allows for dense, poetic expression. The Thirukkural is a pinnacle of this literary excellence, written in the 'Kural Venba' meter—a two-line poetic form that uses minimal words to express the deepest truths of human existence.
+            </p>
+          `,
+          olai: `
+            <h2 class="text-xl sm:text-2xl font-bold font-serif-tamil text-terracotta">
+              Olai Chuvadi (Palm-Leaf Manuscripts)
+            </h2>
+            <p class="text-sm sm:text-base text-ink-bg/85 dark:text-paper-bg/85 leading-relaxed mt-3 font-sans">
+              Long before the invention of the printing press, classical Tamil literature was preserved on dried palm leaves (Olai Chuvadi). Scribes painstakingly etched the verses onto prepared leaves using iron styluses, rubbing them with charcoal or oil to make the text legible. Without this traditional manuscript culture, the wisdom of Thirukkural and hundreds of Sangam texts would have been lost to time. These palm leaves stand as a testament to the dedication of generations who protected Tamil's intellectual heritage.
+            </p>
+          `
+        }
+      };
 
-    // Initialize
-    const currentLang = localStorage.getItem('lang') || 'ta';
-    updateAboutPage(currentLang);
+      const aboutBindings = [
+        { elementId: 'about-title', ta: aboutLabels.ta.title, en: aboutLabels.en.title },
+        { elementId: 'about-subtitle', ta: aboutLabels.ta.subtitle, en: aboutLabels.en.subtitle },
+        { elementId: 'quote-line', ta: aboutLabels.ta.quote, en: aboutLabels.en.quote },
+        { elementId: 'section-author', ta: aboutLabels.ta.author, en: aboutLabels.en.author, attr: 'innerHTML' },
+        { elementId: 'section-language', ta: aboutLabels.ta.language, en: aboutLabels.en.language, attr: 'innerHTML' },
+        { elementId: 'section-olai', ta: aboutLabels.ta.olai, en: aboutLabels.en.olai, attr: 'innerHTML' }
+      ];
 
-    // Sync
-    window.addEventListener('lang-change', (e) => {
-      updateAboutPage(e.detail);
+      initLangSync(aboutBindings);
     });
   </script>
 </Layout>

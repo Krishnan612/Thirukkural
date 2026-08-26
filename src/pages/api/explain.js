@@ -22,6 +22,8 @@ export async function POST({ request }) {
       });
     }
 
+    const apiKey = import.meta.env.GEMINI_API_KEY || process.env.GEMINI_API_KEY;
+
     // 1. Server-side File Cache Check
     const cacheDir = path.join(process.cwd(), 'data', 'explanations');
     const cachePath = path.join(cacheDir, `${kuralId}-${language}.json`);
@@ -29,10 +31,13 @@ export async function POST({ request }) {
     try {
       const cachedData = await fs.readFile(cachePath, 'utf-8');
       const parsedCache = JSON.parse(cachedData);
+      // Never serve offline-demo cache entries; they can be stale placeholders.
+      if (!parsedCache.isOfflineDemo) {
       return new Response(JSON.stringify(parsedCache), {
         status: 200,
         headers: { "Content-Type": "application/json" }
       });
+      }
     } catch (cacheErr) {
       // Cache miss - proceed to generate
     }
@@ -51,15 +56,15 @@ export async function POST({ request }) {
       
       if (kural) {
         verifiedTamil = {
-          line1: kural.tamil?.line1 || kural.line1,
-          line2: kural.tamil?.line2 || kural.line2
+          line1: kural.tamil.line1,
+          line2: kural.tamil.line2
         };
         verifiedMeaning = {
-          tamil: kural.meaning?.tamil || kural.meaningTa,
-          english: kural.meaning?.english || kural.meaningEn
+          tamil: kural.meaning.tamil,
+          english: kural.meaning.english
         };
         verifiedThemes = kural.themes || [];
-        verifiedLifeApps = kural.lifeApplications || kural.lifeApps || [];
+        verifiedLifeApps = kural.lifeApplications || [];
       } else {
         return new Response(JSON.stringify({ error: "Kural not found in database" }), {
           status: 404,
@@ -68,30 +73,14 @@ export async function POST({ request }) {
       }
     }
 
-    const apiKey = process.env.GEMINI_API_KEY;
-
-    // 3. Fallback Mock Generation if API Key is missing
+    // 3. Require API key for generation
     if (!apiKey) {
-      const mockResult = {
-        kuralId,
-        language,
-        generatedAt: new Date().toISOString(),
-        narrative: language === 'ta'
-          ? `ஒரு இளம் மாணவன் தனது குருவின் குடிலில் அமர்ந்திருக்கிறான். வெளியே மழை கொட்டுகிறது. அவன் குருவிடம், 'நாம் ஏன் சில நல்ல காரியங்களைச் செய்தாலும் பலன் கிடைப்பதில்லை?' என்று கேட்கிறான். குரு மெதுவாக ஒரு விளக்கை ஏற்றி, 'நெருப்பை வைத்தால் அது சுடத்தான் செய்யும், ஆனால் நீ எரியும் விறகைக் கவனிக்க வேண்டும். அறமும் ஒழுக்கமும் உள்ள வீட்டில் எப்போதும் ஒரு அமைதியான வெளிச்சம் இருக்கும். அதுவே நம் வாழ்வின் அடிப்படை' என்கிறார். மாணவன் அந்த அமைதியில் உண்மையை உணர்கிறான்.`
-          : `An apprentice sits near a low hearth fire, watching the embers glow in the dark night. He asks the blacksmith why some steel shatters while others bends and holds. The blacksmith taps the iron anvil and replies, 'It is the core, boy. If the alignment of the metal is pure at the center, the sword never breaks. So it is with home and life—love and virtue are the twin tempers that hold a human together.' The apprentice realizes that foundations are what shape the end result.`,
-        takeaway: language === 'ta'
-          ? "அறமும் அன்பும் இணைந்த வாழ்வே தரம் வாய்ந்த அடித்தளத்தை உருவாக்குகிறது."
-          : "Love and virtue are the foundational elements that shape a resilient life.",
-        modelVersion: "gemini-1.5-flash-mock",
-        isOfflineDemo: true
-      };
-
-      // Write mock response to cache for development stability
-      await fs.mkdir(cacheDir, { recursive: true });
-      await fs.writeFile(cachePath, JSON.stringify(mockResult, null, 2), 'utf-8');
-
-      return new Response(JSON.stringify(mockResult), {
-        status: 200,
+      return new Response(JSON.stringify({
+        error: language === 'ta'
+          ? 'GEMINI_API_KEY காணப்படவில்லை. .env கோப்பில் சரியான API key அமைத்து சேவையகத்தை மறுதொடக்கம் செய்யவும்.'
+          : 'GEMINI_API_KEY is missing. Set a valid API key in .env and restart the server.'
+      }), {
+        status: 503,
         headers: { "Content-Type": "application/json" }
       });
     }
@@ -150,8 +139,9 @@ Return ONLY the following JSON structure (do not wrap in markdown code blocks or
     const userPrompt = "Generate the explanation now.";
 
     // 5. Call Gemini API
+    const modelName = "gemini-3.6-flash";
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`,
       {
         method: "POST",
         headers: {
@@ -202,7 +192,7 @@ Return ONLY the following JSON structure (do not wrap in markdown code blocks or
       generatedAt: new Date().toISOString(),
       narrative: parsed.narrative,
       takeaway: parsed.takeaway,
-      modelVersion: "gemini-1.5-flash"
+      modelVersion: modelName
     };
 
     // 6. Write to Cache Directory

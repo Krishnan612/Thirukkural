@@ -1,10 +1,11 @@
-UI UX skill /*
+.agents/
 
 # build output
 dist/
 # generated types
 .astro/
-
+.cache/
+.vscode/
 # dependencies
 node_modules/
 

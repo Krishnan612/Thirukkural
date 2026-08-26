@@ -28,7 +28,7 @@ const adhigarams = adhigaramsData.filter(ad => ad.paalId === paalId);
   description={paal.descriptionEnglish}
   breadcrumbs={[{ label: "அதிகாரங்கள் (Browse)", url: "/browse" }, { label: paal.nameTamil }]}
 >
-  <div class="space-y-10 animate-fade-in">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-10 animate-fade-in mb-20 md:mb-0">
     
     <!-- Paal Header Card -->
     <div class="p-6 sm:p-8 bg-paper-card dark:bg-ink-card border border-paper-border dark:border-ink-border rounded-2xl shadow-sm relative overflow-hidden">
@@ -46,7 +46,7 @@ const adhigarams = adhigaramsData.filter(ad => ad.paalId === paalId);
           <span class="text-xl sm:text-2xl font-sans text-ochre font-medium block mt-1">{paal.nameEnglish}</span>
         </h1>
         
-        <p class="text-sm sm:text-base text-ink-bg/80 dark:text-paper-bg/80 leading-relaxed font-sans-tamil" id="paal-desc">
+        <p class="text-sm sm:text-base text-ink-bg/80 dark:text-paper-bg/80 leading-relaxed font-sans-tamil" id="paal-desc" data-ta={paal.descriptionTamil} data-en={paal.descriptionEnglish}>
           {paal.descriptionTamil}
         </p>
 
@@ -104,17 +104,12 @@ const adhigarams = adhigaramsData.filter(ad => ad.paalId === paalId);
 
   </div>
 
-  <script is:inline define:vars={{ tamilDesc: paal.descriptionTamil, englishDesc: paal.descriptionEnglish }}>
-    function updatePaalLanguage(lang) {
-      const desc = document.getElementById('paal-desc');
-      if (desc) desc.textContent = lang === 'ta' ? tamilDesc : englishDesc;
-    }
+  <script>
+    import { initLangSync } from '../../scripts/langSync.js';
 
-    const currentLang = localStorage.getItem('lang') || 'ta';
-    updatePaalLanguage(currentLang);
-
-    window.addEventListener('lang-change', (e) => {
-      updatePaalLanguage(e.detail);
+    document.addEventListener('astro:page-load', () => {
+      if (!document.getElementById('paal-desc')) return;
+      initLangSync();
     });
   </script>
 </Layout>

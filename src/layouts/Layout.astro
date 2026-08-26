@@ -8,7 +8,7 @@ const {
   title = "திருக்குறள் | Thirukkural - Wisdom for Life", 
   description = "Explore all 1,330 Tamil verses of Thirukkural with English translation, simple explanations, themes, life applications, and an interactive AI explanation companion.",
   breadcrumbs = [],
-  ogImage = "/olai chuvadi.webp"
+  ogImage = "/favicon.svg"
 } = Astro.props;
 
 // Determine current URL for active nav styling
@@ -20,7 +20,8 @@ const currentPath = Astro.url.pathname;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/webp" href="/olai chuvadi.webp" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" type="image/webp" href="/olai-chuvadi.webp" />
     <meta name="generator" content={Astro.generator} />
     
     <!-- SEO Meta Tags -->
@@ -146,7 +147,7 @@ const currentPath = Astro.url.pathname;
     </style>
   </head>
   
-  <body class="min-h-screen flex flex-col selection:bg-terracotta/20 pb-16 md:pb-0 transition-colors duration-300">
+  <body class="min-h-screen flex flex-col overflow-x-hidden selection:bg-terracotta/20 pb-16 md:pb-0 transition-colors duration-300">
     
     <!-- Top Decorative Line -->
     <div class="h-1 bg-[#D2963B]"></div>
@@ -176,7 +177,7 @@ const currentPath = Astro.url.pathname;
 
           <!-- Controls -->
           <div class="flex items-center space-x-3">
-            <LanguageToggle client:load />
+            <LanguageToggle client:load transition:persist />
           </div>
         </div>
       </div>
@@ -267,97 +268,32 @@ const currentPath = Astro.url.pathname;
     </footer>
 
     <!-- AI Assistant Persistent Popup Island -->
-    <AIPopup client:load />
+    <AIPopup client:load transition:persist />
 
-    <!-- Script to handle language updates on layout layout elements -->
+    <!-- Script to handle language updates on layout elements and transition direction -->
     <script>
-      const labels = {
-        ta: {
-          home: "முகப்பு",
-          browse: "அதிகாரங்கள்",
-          search: "தேடல்",
-          favorites: "விருப்பங்கள்",
-          about: "பற்றி",
-          tagline: "1330 குறள்களும் வாழ்வியல் வழிகாட்டியும்",
-          rights: "அனைத்து உரிமைகளும் காப்பற்றப்பட்டன.",
-          breadcrumbHome: "முகப்பு",
-        },
-        en: {
-          home: "Home",
-          browse: "Browse",
-          search: "Search",
-          favorites: "Favorites",
-          about: "About",
-          tagline: "1330 verses of practical wisdom for life",
-          rights: "All rights reserved.",
-          breadcrumbHome: "Home",
-        }
-      };
+      import { initLangSync } from '../scripts/langSync.js';
 
-      function updateLayoutLanguage(lang) {
-        const navHome = document.querySelector('[data-nav="home"]');
-        const navBrowse = document.querySelector('[data-nav="browse"]');
-        const navSearch = document.querySelector('[data-nav="search"]');
-        const navFavorites = document.querySelector('[data-nav="favorites"]');
-        const navAbout = document.querySelector('[data-nav="about"]');
+      const layoutBindings = [
+        { selector: '[data-nav="home"]', ta: "முகப்பு", en: "Home" },
+        { selector: '[data-nav="browse"]', ta: "அதிகாரங்கள்", en: "Browse" },
+        { selector: '[data-nav="search"]', ta: "தேடல்", en: "Search" },
+        { selector: '[data-nav="favorites"]', ta: "விருப்பங்கள்", en: "Favorites" },
+        { selector: '[data-nav="about"]', ta: "பற்றி", en: "About" },
 
-        const mobHome = document.querySelector('[data-mob-nav="home"]');
-        const mobBrowse = document.querySelector('[data-mob-nav="browse"]');
-        const mobSearch = document.querySelector('[data-mob-nav="search"]');
-        const mobFavorites = document.querySelector('[data-mob-nav="favorites"]');
-        const mobAbout = document.querySelector('[data-mob-nav="about"]');
+        { selector: '[data-mob-nav="home"]', ta: "முகப்பு", en: "Home" },
+        { selector: '[data-mob-nav="browse"]', ta: "அதிகாரங்கள்", en: "Browse" },
+        { selector: '[data-mob-nav="search"]', ta: "தேடல்", en: "Search" },
+        { selector: '[data-mob-nav="favorites"]', ta: "விருப்பங்கள்", en: "Favorites" },
+        { selector: '[data-mob-nav="about"]', ta: "பற்றி", en: "About" },
 
-        const footerTagline = document.getElementById('footer-tagline');
-        const footerRights = document.getElementById('footer-rights');
-        const bcHome = document.getElementById('breadcrumb-home');
+        { elementId: 'footer-tagline', ta: "1330 குறள்களும் வாழ்வியல் வழிகாட்டியும்", en: "1330 verses of practical wisdom for life" },
+        { elementId: 'footer-rights', ta: "அனைத்து உரிமைகளும் காப்பற்றப்பட்டன.", en: "All rights reserved." },
+        { elementId: 'breadcrumb-home', ta: "முகப்பு", en: "Home" }
+      ];
 
-        if (lang === 'ta') {
-          if (navHome) navHome.textContent = labels.ta.home;
-          if (navBrowse) navBrowse.textContent = labels.ta.browse;
-          if (navSearch) navSearch.textContent = labels.ta.search;
-          if (navFavorites) navFavorites.textContent = labels.ta.favorites;
-          if (navAbout) navAbout.textContent = labels.ta.about;
-
-          if (mobHome) mobHome.textContent = labels.ta.home;
-          if (mobBrowse) mobBrowse.textContent = labels.ta.browse;
-          if (mobSearch) mobSearch.textContent = labels.ta.search;
-          if (mobFavorites) mobFavorites.textContent = labels.ta.favorites;
-          if (mobAbout) mobAbout.textContent = labels.ta.about;
-
-          if (footerTagline) footerTagline.textContent = labels.ta.tagline;
-          if (footerRights) footerRights.textContent = labels.ta.rights;
-          if (bcHome) bcHome.textContent = labels.ta.breadcrumbHome;
-        } else {
-          if (navHome) navHome.textContent = labels.en.home;
-          if (navBrowse) navBrowse.textContent = labels.en.browse;
-          if (navSearch) navSearch.textContent = labels.en.search;
-          if (navFavorites) navFavorites.textContent = labels.en.favorites;
-          if (navAbout) navAbout.textContent = labels.en.about;
-
-          if (mobHome) mobHome.textContent = labels.en.home;
-          if (mobBrowse) mobBrowse.textContent = labels.en.browse;
-          if (mobSearch) mobSearch.textContent = labels.en.search;
-          if (mobFavorites) mobFavorites.textContent = labels.en.favorites;
-          if (mobAbout) mobAbout.textContent = labels.en.about;
-
-          if (footerTagline) footerTagline.textContent = labels.en.tagline;
-          if (footerRights) footerRights.textContent = labels.en.rights;
-          if (bcHome) bcHome.textContent = labels.en.breadcrumbHome;
-        }
-      }
-
-      function initLayout() {
-        const currentLang = localStorage.getItem('lang') || 'ta';
-        updateLayoutLanguage(currentLang);
-      }
-
-      // Initialize on load/transitions
-      document.addEventListener('astro:page-load', initLayout);
-
-      // Listen to language changes from anywhere
-      window.addEventListener('lang-change', (e) => {
-        updateLayoutLanguage(e.detail);
-      });
+      // Centralized layout sync execution
+      initLangSync(layoutBindings);
 
       // Handle slide transition direction logic
       document.addEventListener('astro:before-preparation', (ev) => {

@@ -34,15 +34,6 @@ function ExplainPanelContent({ kuralId }) {
     setLoading(true);
     setError(null);
 
-    const cacheKey = `thirukkural_explain_${kuralId}_${currentLang}`;
-    const cached = localStorage.getItem(cacheKey);
-
-    if (cached) {
-      setExplanation(JSON.parse(cached));
-      setLoading(false);
-      return;
-    }
-
     try {
       const response = await fetch('/api/explain', {
         method: 'POST',
@@ -53,11 +44,23 @@ function ExplainPanelContent({ kuralId }) {
       });
 
       if (!response.ok) {
-        throw new Error(currentLang === 'ta' ? 'விளக்கத்தைப் பெறுவதில் பிழை ஏற்பட்டது.' : 'Failed to fetch explanation.');
+        let backendError = '';
+        try {
+          const errJson = await response.json();
+          backendError = errJson?.error || '';
+        } catch {
+          backendError = '';
+        }
+
+        throw new Error(
+          backendError ||
+          (currentLang === 'ta'
+            ? 'விளக்கத்தைப் பெறுவதில் பிழை ஏற்பட்டது.'
+            : 'Failed to fetch explanation.')
+        );
       }
 
       const data = await response.json();
-      localStorage.setItem(cacheKey, JSON.stringify(data));
       setExplanation(data);
     } catch (err) {
       console.error(err);
@@ -142,79 +145,17 @@ function ExplainPanelContent({ kuralId }) {
           {explanation && !loading && !error && (
             <div className="space-y-6">
               
-              {explanation.narrative ? (
+              {explanation.narrative && (
                 <div className="text-sm sm:text-base text-ink-bg/90 dark:text-paper-bg/90 leading-relaxed font-sans-tamil space-y-4">
-                  {explanation.narrative.split('\n').map((para, idx) => {
-                    if (!para.trim()) return null;
-                    return <p key={idx}>{para}</p>;
-                  })}
+                  {explanation.narrative.includes('\n') ? (
+                    explanation.narrative.split('\n').map((para, idx) => {
+                      if (!para.trim()) return null;
+                      return <p key={idx}>{para}</p>;
+                    })
+                  ) : (
+                    <p>{explanation.narrative}</p>
+                  )}
                 </div>
-              ) : (
-                <>
-                  {/* Hook */}
-                  {explanation.hook && (
-                    <p className="text-base sm:text-lg font-medium italic text-terracotta leading-relaxed border-l-4 border-terracotta/40 pl-4 py-1">
-                      "{explanation.hook}"
-                    </p>
-                  )}
-
-                  {/* Relatable Situation / Story */}
-                  {explanation.situation && (
-                    <div className="space-y-2">
-                      <h5 className="text-xs tracking-wider uppercase font-bold text-ochre">
-                        {lang === 'ta' ? '🎭 வாழ்வியல் சூழல் (The Situation)' : '🎭 The Situation'}
-                      </h5>
-                      <p className="text-sm sm:text-base text-ink-bg/90 dark:text-paper-bg/90 leading-relaxed font-sans-tamil">
-                        {explanation.situation}
-                      </p>
-                    </div>
-                  )}
-
-                  {/* Connection to Kural */}
-                  {explanation.connection && (
-                    <div className="space-y-2">
-                      <h5 className="text-xs tracking-wider uppercase font-bold text-ochre">
-                        {lang === 'ta' ? '🔗 குறளுடனான இணைப்பு (The Connection)' : '🔗 The Connection'}
-                      </h5>
-                      <p className="text-sm sm:text-base text-ink-bg/90 dark:text-paper-bg/90 leading-relaxed italic bg-paper-bg/40 dark:bg-ink-bg/40 p-4 rounded-lg border-l-2 border-terracotta">
-                        {explanation.connection}
-                      </p>
-                    </div>
-                  )}
-
-                  {/* Deeper Meaning */}
-                  {explanation.deeperMeaning && (
-                    <div className="space-y-2">
-                      <h5 className="text-xs tracking-wider uppercase font-bold text-ochre">
-                        {lang === 'ta' ? '🧠 ஆழமான பொருள் (Deeper Meaning)' : '🧠 Deeper Meaning'}
-                      </h5>
-                      <p className="text-sm sm:text-base text-ink-bg/90 dark:text-paper-bg/90 leading-relaxed font-sans-tamil">
-                        {explanation.deeperMeaning}
-                      </p>
-                    </div>
-                  )}
-
-                  {/* Modern Application */}
-                  {explanation.modernApplication && (
-                    <div className="space-y-2">
-                      <h5 className="text-xs tracking-wider uppercase font-bold text-ochre">
-                        {lang === 'ta' ? '🌱 நடைமுறைப் பயன்பாடு (Modern Application)' : '🌱 Modern Application'}
-                      </h5>
-                      <div className="text-sm sm:text-base text-ink-bg/90 dark:text-paper-bg/90 leading-relaxed space-y-2">
-                        {explanation.modernApplication.split('\n').map((line, i) => {
-                          const cleanLine = line.replace(/^[0-9*.\s-]+\s*/, '');
-                          if (!cleanLine.trim()) return null;
-                          return (
-                            <div key={i} className="flex items-start space-x-2">
-                              <span className="text-terracotta select-none mt-0.5">✓</span>
-                              <span>{cleanLine}</span>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  )}
-                </>
               )}
 
               {/* Memorable Takeaway */}

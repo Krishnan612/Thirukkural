@@ -17,7 +17,7 @@ const lightKurals = kurals.map(k => ({
   description="Your curated list of saved Thirukkural verses and wisdom passages."
   breadcrumbs={[{ label: "விருப்பங்கள் (Saved)" }]}
 >
-  <div class="space-y-6">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
     <div class="text-center max-w-2xl mx-auto space-y-2">
       <h1 class="font-serif-tamil text-3xl font-bold tracking-tight text-ink-bg dark:text-paper-bg" id="fav-title">
         விருப்பமான குறள்கள்
@@ -30,30 +30,18 @@ const lightKurals = kurals.map(k => ({
     <FavoritesList client:load kurals={lightKurals} />
   </div>
 
-  <script is:inline>
-    const favLabels = {
-      ta: {
-        title: "விருப்பமான குறள்கள்",
-        subtitle: "நீங்கள் சேமித்து வைத்த குறள்களின் தொகுப்பு."
-      },
-      en: {
-        title: "Saved Verses",
-        subtitle: "Your curated list of saved Thirukkural verses and wisdom passages."
-      }
-    };
+  <script>
+    import { initLangSync } from '../scripts/langSync.js';
 
-    function updateFavLanguage(lang) {
-      const title = document.getElementById('fav-title');
-      const subtitle = document.getElementById('fav-subtitle');
-      if (title) title.textContent = favLabels[lang].title;
-      if (subtitle) subtitle.textContent = favLabels[lang].subtitle;
-    }
+    document.addEventListener('astro:page-load', () => {
+      if (!document.getElementById('fav-title')) return;
 
-    const currentLang = localStorage.getItem('lang') || 'ta';
-    updateFavLanguage(currentLang);
+      const favBindings = [
+        { elementId: 'fav-title', ta: "விருப்பமான குறள்கள்", en: "Saved Verses" },
+        { elementId: 'fav-subtitle', ta: "நீங்கள் சேமித்து வைத்த குறள்களின் தொகுப்பு.", en: "Your curated list of saved Thirukkural verses and wisdom passages." }
+      ];
 
-    window.addEventListener('lang-change', (e) => {
-      updateFavLanguage(e.detail);
+      initLangSync(favBindings);
     });
   </script>
 </Layout>

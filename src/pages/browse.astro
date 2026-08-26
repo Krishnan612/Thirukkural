@@ -8,7 +8,7 @@ import { BrowseTree } from '../components/BrowseTree.jsx';
   description="Browse all 133 chapters of Thirukkural sorted hierarchically by Section (Paal) and Subsection (Iyal)."
   breadcrumbs={[{ label: "அதிகாரங்கள் (Browse)" }]}
 >
-  <div class="space-y-6">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
     <div class="text-center max-w-2xl mx-auto space-y-2">
       <h1 class="font-serif-tamil text-3xl font-bold tracking-tight text-ink-bg dark:text-paper-bg" id="browse-title">
         அதிகாரங்களை ஆராய்க
@@ -22,30 +22,18 @@ import { BrowseTree } from '../components/BrowseTree.jsx';
     <BrowseTree client:load />
   </div>
 
-  <script is:inline>
-    const browseLabels = {
-      ta: {
-        title: "அதிகாரங்களை ஆராய்க",
-        subtitle: "முப்பாலையும் அதன் இயல் மற்றும் அதிகாரங்களின் படி பிரித்து ஆராயும் கட்டமைப்பு."
-      },
-      en: {
-        title: "Browse Chapters",
-        subtitle: "Explore the structure of Thirukkural divided by the three Books (Paal) and Sections (Iyal)."
-      }
-    };
+  <script>
+    import { initLangSync } from '../scripts/langSync.js';
 
-    function updateBrowseLanguage(lang) {
-      const title = document.getElementById('browse-title');
-      const subtitle = document.getElementById('browse-subtitle');
-      if (title) title.textContent = browseLabels[lang].title;
-      if (subtitle) subtitle.textContent = browseLabels[lang].subtitle;
-    }
+    document.addEventListener('astro:page-load', () => {
+      if (!document.getElementById('browse-title')) return;
 
-    const currentLang = localStorage.getItem('lang') || 'ta';
-    updateBrowseLanguage(currentLang);
+      const browseBindings = [
+        { elementId: 'browse-title', ta: "அதிகாரங்களை ஆராய்க", en: "Browse Chapters" },
+        { elementId: 'browse-subtitle', ta: "முப்பாலையும் அதன் இயல் மற்றும் அதிகாரங்களின் படி பிரித்து ஆராயும் கட்டமைப்பு.", en: "Explore the structure of Thirukkural divided by the three Books (Paal) and Sections (Iyal)." }
+      ];
 
-    window.addEventListener('lang-change', (e) => {
-      updateBrowseLanguage(e.detail);
+      initLangSync(browseBindings);
     });
   </script>
 </Layout>

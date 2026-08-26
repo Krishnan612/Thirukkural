@@ -23,7 +23,7 @@ const lightKurals = kurals.map(k => ({
   description="Search for verses in Thirukkural using words, numbers, themes, or life applications in English and Tamil."
   breadcrumbs={[{ label: "தேடல் (Search)" }]}
 >
-  <div class="space-y-6">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
     <SearchEngine client:load kurals={lightKurals} />
   </div>
 </Layout>

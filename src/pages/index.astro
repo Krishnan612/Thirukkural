@@ -45,18 +45,18 @@ const kural1Narrative = {
         muted 
         loop 
         playsinline 
-        poster="/olai chuvadi.webp" 
-        class="absolute inset-0 h-full w-full object-cover opacity-55 contrast-110 saturate-80"
+        poster="/olai-chuvadi.webp" 
+        class="absolute inset-0 h-full w-full object-cover contrast-110 saturate-80 hero-video"
       >
         <source src="/cinematic.mp4" type="video/mp4" />
       </video>
       <div class="absolute inset-0 bg-gradient-to-r from-[#21170f]/88 via-[#21170f]/76 to-[#21170f]/68"></div>
-      <div class="relative z-10 grid min-h-[calc(100vh-96px)] items-center px-4 py-8 sm:px-6 md:grid-cols-[1.2fr_0.8fr] md:px-10 lg:px-14">
+      <div class="relative z-10 grid min-h-[calc(100vh-96px)] items-center px-4 py-8 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] md:px-10 lg:px-14">
         <div class="max-w-2xl text-[#F9F0CF]">
           <div class="mb-5 inline-flex items-center rounded-full border border-[#E6B24F]/50 bg-[#6F3D12]/25 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#F1CC6F]">
             Tamil Literary Heritage
           </div>
-          <h1 id="hero-title" class="font-serif-tamil text-4xl font-bold leading-[1.1] tracking-tight text-[#F9F0CF] sm:text-5xl md:text-6xl">
+          <h1 id="hero-title" class="font-serif-tamil text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-[#F9F0CF]">
             வார்த்தைகள் அல்ல, <span class="text-[#E6B24F]">வாழ்க்கைக்கான வழிகாட்டி</span>
           </h1>
           <p id="hero-description" class="mt-5 max-w-xl text-sm leading-7 text-[#F2DD9D] sm:text-base">
@@ -69,7 +69,7 @@ const kural1Narrative = {
             </button>
           </form>
         </div>
-        <div class="relative mt-8 md:mt-0">
+        <div class="relative mt-8 lg:mt-0">
           <div class="card-surface rounded-[24px] border border-[#D2963B]/40 bg-[#201712]/85 p-5 text-[#F9F0CF] shadow-[0_24px_42px_rgba(32,22,18,0.22)] backdrop-blur-sm">
             <div class="flex items-center justify-between border-b border-[#D2963B]/30 pb-3">
               <div>
@@ -89,7 +89,7 @@ const kural1Narrative = {
       </div>
     </section>
 
-    <section class="card-surface max-w-3xl mx-auto rounded-[26px] p-6 sm:p-8">
+    <section class="card-surface max-w-3xl mx-4 sm:mx-6 md:mx-auto rounded-[26px] p-6 sm:p-8">
       <div class="text-center">
         <p class="text-[10px] font-semibold uppercase tracking-[0.26em] text-[#9e6d2e]">Featured verse</p>
         <h2 class="mt-3 font-serif-tamil text-3xl font-bold text-[#1f1a16] dark:text-[#f6efe6]">குறள் 1</h2>
@@ -110,7 +110,7 @@ const kural1Narrative = {
     </div>
 
     <!-- Kural 1 Showcase (Featured AI Narrative Explanation) -->
-    <section class="max-w-3xl mx-auto space-y-6">
+    <section class="max-w-3xl mx-4 sm:mx-6 md:mx-auto space-y-6">
       <div class="text-center space-y-2">
         <h2 class="text-2xl font-serif-tamil font-bold text-ink-bg dark:text-paper-bg" id="showcase-title">
           விளக்கங்கள் எவ்வாறிருக்கும்?
@@ -178,129 +178,71 @@ const kural1Narrative = {
 
   </div>
 
+  <div id="home-data" 
+       class="hidden" 
+       data-kural1={JSON.stringify(kural1Narrative)}
+       data-daily-meaning-ta={dailyKural.meaning.tamil}
+       data-daily-meaning-en={dailyKural.meaning.english}
+       data-daily-chapter-ta={dailyAdhigaram ? dailyAdhigaram.nameTamil : 'அதிகாரம்'}
+       data-daily-chapter-en={dailyAdhigaram ? dailyAdhigaram.nameEnglish : 'Chapter'}
+  ></div>
+
   <!-- Dynamic script to handle English/Tamil translation for static homepage elements -->
-  <script is:inline define:vars={{ kural1Narrative }}>
-    const homeLabels = {
-      ta: {
-        title: 'வார்த்தைகள் அல்ல, <span class="text-terracotta">வாழ்க்கைக்கான வழிகாட்டி</span>',
-        description: "திருக்குறளின் 1,330 வாழ்வியல் நெறிமுறைகளை வெறும் தகவல்களாக அல்லாமல், நம் அன்றாட வாழ்வில் சிந்தித்துப் பயன்படுத்தும் வகையில் வடிவமைக்கப்பட்ட கவித்துவக் தளம்.",
-        searchPlaceholder: "சொல், குறள் எண் கொண்டு தேடுக...",
-        searchBtn: "தேடுக",
-        dailyTitle: "இன்றைய குறள் / Today's Kural",
-        dailyRead: "விளக்கம் வாசிக்க ➔",
-        dailyChapterLabel: "அதிகாரம் / Chapter:",
-        dailyMeaningLabel: "விளக்கம் / Meaning:",
-        showcaseTitle: "விளக்கங்கள் எவ்வாறிருக்கும்?",
-        showcaseSub: "வள்ளுவரின் குறள் 1-ஐ வைத்து ஒரு மாதிரி விளக்கக் கண்ணோட்டம் (Cinematic Narrative Showcase)",
-        showcaseSitLabel: "🎭 வாழ்வியல் சூழல் (The Situation)",
-        showcaseConnLabel: "🔗 குறளுடனான இணைப்பு (The Connection)",
-        showcaseDeepLabel: "🧠 ஆழமான பொருள் (Deeper Meaning)",
-        showcaseAppLabel: "🌱 நடைமுறைப் பயன்பாடு (Modern Application)",
-        showcaseTakeawayLabel: "💭 முக்கியக் கருத்து (Takeaway)"
-      },
-      en: {
-        title: 'Not Words, But <span class="text-terracotta">A Guide to Life</span>',
-        description: "A poetry-first, quiet space designed to help you discover, digest, and apply the 1,330 life principles of Thirukkural directly to your modern life, step-by-step.",
-        searchPlaceholder: "Search by word or Kural number...",
-        searchBtn: "Search",
-        dailyTitle: "Today's Kural / இன்றைய குறள்",
-        dailyRead: "Explore Explanation ➔",
-        dailyChapterLabel: "Chapter / அதிகாரம்:",
-        dailyMeaningLabel: "Meaning / விளக்கம்:",
-        showcaseTitle: "How Do Explanations Work?",
-        showcaseSub: "A narrative preview showcasing the structure using Verse 1",
-        showcaseSitLabel: "🎭 The Situation",
-        showcaseConnLabel: "🔗 The Connection",
-        showcaseDeepLabel: "🧠 Deeper Meaning",
-        showcaseAppLabel: "🌱 Modern Application",
-        showcaseTakeawayLabel: "💭 Takeaway"
-      }
-    };
+  <script>
+    import { initLangSync } from '../scripts/langSync.js';
 
-    function updateHomeLanguage(lang) {
-      const heroTitle = document.getElementById('hero-title');
-      const heroDesc = document.getElementById('hero-description');
-      const searchInput = document.getElementById('hero-search-input');
-      const searchBtn = document.getElementById('hero-search-btn');
+    document.addEventListener('astro:page-load', () => {
+      const dataEl = document.getElementById('home-data');
+      if (!dataEl) return;
 
-      const dailyTitle = document.getElementById('daily-kural-title');
-      const dailyRead = document.getElementById('daily-kural-read');
-      const dailyMeaning = document.getElementById('daily-kural-meaning');
-      const dailyMeaningLabel = document.getElementById('daily-kural-meaning-label');
-      const dailyChapterLabel = document.getElementById('daily-kural-chapter-label');
-      const dailyChapterLink = document.getElementById('daily-kural-chapter-link');
+      const kural1Narrative = JSON.parse(dataEl.getAttribute('data-kural1') || '{}');
 
-      const showcaseTitle = document.getElementById('showcase-title');
-      const showcaseSub = document.getElementById('showcase-sub');
-      const showcaseHook = document.getElementById('showcase-hook');
-      const showcaseSituation = document.getElementById('showcase-situation');
-      const showcaseConnection = document.getElementById('showcase-connection');
-      const showcaseDeeper = document.getElementById('showcase-deeper');
-      const showcaseApplication = document.getElementById('showcase-application');
-      const showcaseTakeaway = document.getElementById('showcase-takeaway');
+      const homeBindings = [
+        { elementId: 'hero-title', ta: 'வார்த்தைகள் அல்ல, <span class="text-[#E6B24F]">வாழ்க்கைக்கான வழிகாட்டி</span>', en: 'Not Words, But <span class="text-[#E6B24F]">A Guide to Life</span>', attr: 'innerHTML' },
+        { elementId: 'hero-description', ta: "திருக்குறளின் 1,330 வாழ்வியல் நெறிமுறைகளை வெறும் தகவல்களாக அல்லாமல், நம் அன்றாட வாழ்வில் சிந்தித்துப் பயன்படுத்தும் வகையில் வடிவமைக்கப்பட்ட கவித்துவக் தளம்.", en: "A poetry-first, quiet space designed to help you discover, digest, and apply the 1,330 life principles of Thirukkural directly to your modern life, step-by-step." },
+        { elementId: 'hero-search-input', ta: "சொல், குறள் எண் கொண்டு தேடுக...", en: "Search by word or Kural number...", attr: 'placeholder' },
+        { elementId: 'hero-search-btn', ta: "தேடுக", en: "Search" },
+        { elementId: 'daily-kural-title', ta: "இன்றைய குறள் / Today's Kural", en: "Today's Kural / இன்றைய குறள்" },
+        { elementId: 'daily-kural-read', ta: "விளக்கம் வாசிக்க ➔", en: "Explore Explanation ➔" },
+        { elementId: 'daily-kural-meaning-label', ta: "விளக்கம் / Meaning:", en: "Meaning / விளக்கம்:" },
+        { elementId: 'daily-kural-chapter-label', ta: "அதிகாரம் / Chapter:", en: "Chapter / அதிகாரம்:" },
+        
+        { elementId: 'showcase-title', ta: "விளக்கங்கள் எவ்வாறிருக்கும்?", en: "How Do Explanations Work?" },
+        { elementId: 'showcase-sub', ta: "வள்ளுவரின் குறள் 1-ஐ வைத்து ஒரு மாதிரி விளக்கக் கண்ணோட்டம் (Cinematic Narrative Showcase)", en: "A narrative preview showcasing the structure using Verse 1" },
+        
+        { elementId: 'showcase-sit-label', ta: "🎭 வாழ்வியல் சூழல் (The Situation)", en: "🎭 The Situation" },
+        { elementId: 'showcase-conn-label', ta: "🔗 குறளுடனான இணைப்பு (The Connection)", en: "🔗 The Connection" },
+        { elementId: 'showcase-deep-label', ta: "🧠 ஆழமான பொருள் (Deeper Meaning)", en: "🧠 Deeper Meaning" },
+        { elementId: 'showcase-app-label', ta: "🌱 நடைமுறைப் பயன்பாடு (Modern Application)", en: "🌱 Modern Application" },
+        { elementId: 'showcase-takeaway-label', ta: "💭 முக்கியக் கருத்து (Takeaway)", en: "💭 Takeaway" },
 
-      const showcaseSitLabel = document.getElementById('showcase-sit-label');
-      const showcaseConnLabel = document.getElementById('showcase-conn-label');
-      const showcaseDeepLabel = document.getElementById('showcase-deep-label');
-      const showcaseAppLabel = document.getElementById('showcase-app-label');
-      const showcaseTakeawayLabel = document.getElementById('showcase-takeaway-label');
+        { elementId: 'daily-kural-meaning', ta: dataEl.getAttribute('data-daily-meaning-ta') || '', en: dataEl.getAttribute('data-daily-meaning-en') || '' },
+        { elementId: 'daily-kural-chapter-link', ta: dataEl.getAttribute('data-daily-chapter-ta') || '', en: dataEl.getAttribute('data-daily-chapter-en') || '' },
 
-      // Update Hero Content
-      if (heroTitle) heroTitle.innerHTML = homeLabels[lang].title;
-      if (heroDesc) heroDesc.textContent = homeLabels[lang].description;
-      if (searchInput) searchInput.placeholder = homeLabels[lang].searchPlaceholder;
-      if (searchBtn) searchBtn.textContent = homeLabels[lang].searchBtn;
+        { elementId: 'showcase-hook', ta: `"${kural1Narrative.ta?.hook || ''}"`, en: `"${kural1Narrative.en?.hook || ''}"` },
+        { elementId: 'showcase-situation', ta: kural1Narrative.ta?.situation || '', en: kural1Narrative.en?.situation || '' },
+        { elementId: 'showcase-connection', ta: kural1Narrative.ta?.connection || '', en: kural1Narrative.en?.connection || '' },
+        { elementId: 'showcase-deeper', ta: kural1Narrative.ta?.deeperMeaning || '', en: kural1Narrative.en?.deeperMeaning || '' },
+        { elementId: 'showcase-takeaway', ta: kural1Narrative.ta?.takeaway || '', en: kural1Narrative.en?.takeaway || '' },
+        {
+          elementId: 'showcase-application',
+          ta: (kural1Narrative.ta?.modernApplication || '').split('\n').map(line => `
+            <div class="flex items-start space-x-2">
+              <span class="text-terracotta select-none mt-0.5">✓</span>
+              <span>${line.replace(/^[0-9*.\s-]+\s*/, '')}</span>
+            </div>
+          `).join(''),
+          en: (kural1Narrative.en?.modernApplication || '').split('\n').map(line => `
+            <div class="flex items-start space-x-2">
+              <span class="text-terracotta select-none mt-0.5">✓</span>
+              <span>${line.replace(/^[0-9*.\s-]+\s*/, '')}</span>
+            </div>
+          `).join(''),
+          attr: 'innerHTML'
+        }
+      ];
 
-      // Update Daily Kural
-      if (dailyTitle) dailyTitle.textContent = homeLabels[lang].dailyTitle;
-      if (dailyRead) dailyRead.textContent = homeLabels[lang].dailyRead;
-      if (dailyMeaningLabel) dailyMeaningLabel.textContent = homeLabels[lang].dailyMeaningLabel;
-      if (dailyChapterLabel) dailyChapterLabel.textContent = homeLabels[lang].dailyChapterLabel;
-      
-      if (dailyMeaning) {
-        const taMean = dailyMeaning.getAttribute('data-meaning-ta');
-        const enMean = dailyMeaning.getAttribute('data-meaning-en');
-        dailyMeaning.textContent = lang === 'ta' ? taMean : enMean;
-      }
-      if (dailyChapterLink) {
-        const taName = dailyChapterLink.getAttribute('data-name-ta');
-        const enName = dailyChapterLink.getAttribute('data-name-en');
-        dailyChapterLink.textContent = lang === 'ta' ? taName : enName;
-      }
-
-      // Update Showcase Section
-      if (showcaseTitle) showcaseTitle.textContent = homeLabels[lang].showcaseTitle;
-      if (showcaseSub) showcaseSub.textContent = homeLabels[lang].showcaseSub;
-      
-      if (showcaseHook) showcaseHook.textContent = `"${kural1Narrative[lang].hook}"`;
-      if (showcaseSituation) showcaseSituation.textContent = kural1Narrative[lang].situation;
-      if (showcaseConnection) showcaseConnection.textContent = kural1Narrative[lang].connection;
-      if (showcaseDeeper) showcaseDeeper.textContent = kural1Narrative[lang].deeperMeaning;
-      if (showcaseTakeaway) showcaseTakeaway.textContent = kural1Narrative[lang].takeaway;
-
-      if (showcaseSitLabel) showcaseSitLabel.textContent = homeLabels[lang].showcaseSitLabel;
-      if (showcaseConnLabel) showcaseConnLabel.textContent = homeLabels[lang].showcaseConnLabel;
-      if (showcaseDeepLabel) showcaseDeepLabel.textContent = homeLabels[lang].showcaseDeepLabel;
-      if (showcaseAppLabel) showcaseAppLabel.textContent = homeLabels[lang].showcaseAppLabel;
-      if (showcaseTakeawayLabel) showcaseTakeawayLabel.textContent = homeLabels[lang].showcaseTakeawayLabel;
-
-      if (showcaseApplication) {
-        const lines = kural1Narrative[lang].modernApplication.split('\n');
-        showcaseApplication.innerHTML = lines.map(line => `
-          <div class="flex items-start space-x-2">
-            <span class="text-terracotta select-none mt-0.5">✓</span>
-            <span>${line.replace(/^[0-9*.\s-]+\s*/, '')}</span>
-          </div>
-        `).join('');
-      }
-    }
-
-    // Initialize
-    const currentLang = localStorage.getItem('lang') || 'ta';
-    updateHomeLanguage(currentLang);
-
-    window.addEventListener('lang-change', (e) => {
-      updateHomeLanguage(e.detail);
+      initLangSync(homeBindings);
     });
   </script>
   

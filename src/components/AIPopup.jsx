@@ -18,14 +18,14 @@ function AIPopupContent() {
 
   const shouldReduceMotion = useReducedMotion();
   const popupRef = useRef(null);
+  const fabRef = useRef(null);
+  const prevIsOpenRef = useRef(isOpen);
 
   // Close popup on click outside
   useEffect(() => {
     function handleClickOutside(event) {
       if (popupRef.current && !popupRef.current.contains(event.target)) {
-        // Do not close if clicking the floating action button itself
-        const fab = document.getElementById('ai-fab-button');
-        if (fab && fab.contains(event.target)) return;
+        if (fabRef.current && fabRef.current.contains(event.target)) return;
         setIsOpen(false);
       }
     }
@@ -35,6 +35,61 @@ function AIPopupContent() {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
+  }, [isOpen]);
+
+  // Accessibility: Escape key close and focus trapping
+  useEffect(() => {
+    function handleKeyDown(event) {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+      }
+      
+      if (event.key === 'Tab' && popupRef.current) {
+        const focusableElements = popupRef.current.querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusableElements.length === 0) return;
+        
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+        
+        if (event.shiftKey) {
+          if (document.activeElement === firstElement) {
+            lastElement.focus();
+            event.preventDefault();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            firstElement.focus();
+            event.preventDefault();
+          }
+        }
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleKeyDown);
+      // Move focus inside the popup immediately when opened
+      setTimeout(() => {
+        if (popupRef.current) {
+          popupRef.current.focus();
+        }
+      }, 50);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen]);
+
+  // Accessibility: Return focus to trigger button when closed
+  useEffect(() => {
+    if (prevIsOpenRef.current && !isOpen) {
+      if (fabRef.current) {
+        fabRef.current.focus();
+      }
+    }
+    prevIsOpenRef.current = isOpen;
   }, [isOpen]);
 
   // Static FAQ Content Map for Site Guide Mode
@@ -115,15 +170,6 @@ function AIPopupContent() {
     setLoading(true);
     setStep('kural-result');
 
-    // 1. Check local storage cache first
-    const cacheKey = `thirukkural_explain_${num}_${chatLang}`;
-    const cached = localStorage.getItem(cacheKey);
-    if (cached) {
-      setExplanation(JSON.parse(cached));
-      setLoading(false);
-      return;
-    }
-
     try {
       // 2. Fetch Kural metadata
       const kuralRes = await fetch(`/api/kural/${num}`);
@@ -154,7 +200,6 @@ function AIPopupContent() {
       }
 
       const parsed = await explainRes.json();
-      localStorage.setItem(cacheKey, JSON.stringify(parsed));
       setExplanation(parsed);
 
     } catch (err) {
@@ -178,16 +223,17 @@ function AIPopupContent() {
     : { type: 'spring', stiffness: 350, damping: 28 };
 
   return (
-    <div className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 font-sans-tamil select-none">
+    <div className="fixed right-3 bottom-[calc(4.75rem+env(safe-area-inset-bottom))] sm:right-5 sm:bottom-[calc(5rem+env(safe-area-inset-bottom))] md:bottom-8 md:right-8 z-50 font-sans-tamil select-none">
       
       {/* Floating Action Button */}
       <motion.button
         id="ai-fab-button"
+        ref={fabRef}
         onPointerDown={() => setIsOpen(!isOpen)}
         whileTap={{ scale: 0.90 }}
         whileHover={{ scale: 1.08 }}
         transition={{ type: 'spring', stiffness: 500, damping: 15 }}
-        className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-terracotta text-white flex items-center justify-center shadow-lg hover:shadow-xl cursor-pointer border-2 border-paper-bg focus:outline-none overflow-hidden relative"
+        className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-terracotta text-white flex items-center justify-center shadow-lg hover:shadow-xl cursor-pointer border-2 border-paper-bg focus:outline-none overflow-hidden relative"
         aria-label="Open AI assistant"
       >
         <img 
@@ -203,11 +249,14 @@ function AIPopupContent() {
         {isOpen && (
           <motion.div
             ref={popupRef}
+            role="dialog"
+            aria-modal="true"
+            tabIndex={-1}
             initial={{ opacity: 0, scale: 0.85, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 15 }}
             transition={transitionConfig}
-            className="absolute bottom-18 right-0 md:bottom-20 w-80 sm:w-96 max-w-[90vw] bg-paper-card/95 dark:bg-ink-card/95 backdrop-blur-md border border-terracotta/40 rounded-2xl shadow-2xl flex flex-col max-h-[500px] overflow-hidden text-ink-bg dark:text-paper-bg"
+            className="absolute bottom-18 right-0 md:bottom-20 w-80 sm:w-96 max-w-[90vw] bg-paper-card/95 dark:bg-ink-card/95 backdrop-blur-md border border-terracotta/40 rounded-2xl shadow-2xl flex flex-col max-h-[500px] overflow-hidden text-ink-bg dark:text-paper-bg focus:outline-none"
           >
             
             {/* Header */}

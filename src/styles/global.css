@@ -44,7 +44,7 @@ body {
   font-family: var(--font-sans-tamil);
   background:
     linear-gradient(rgba(249, 240, 207, 0.88), rgba(243, 228, 186, 0.9)),
-    url('/olai chuvadi.webp') center top / cover fixed no-repeat;
+    url('/olai-chuvadi.webp') center top / cover fixed no-repeat;
   color: var(--page-ink);
   min-height: 100vh;
   overflow-x: hidden;
@@ -53,7 +53,7 @@ body {
 html.dark body {
   background:
     linear-gradient(rgba(29, 19, 14, 0.82), rgba(36, 26, 20, 0.88)),
-    url('/olai chuvadi.webp') center top / cover fixed no-repeat;
+    url('/olai-chuvadi.webp') center top / cover fixed no-repeat;
   color: var(--page-ink);
 }
 
@@ -107,4 +107,18 @@ main, .page-shell {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(184, 87, 59, 0.68);
+}
+
+.hero-video {
+  opacity: 0;
+  animation: fade-in-video 1s ease-out 0.4s forwards;
+}
+
+@keyframes fade-in-video {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.55;
+  }
 }

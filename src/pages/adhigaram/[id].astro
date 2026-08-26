@@ -41,7 +41,7 @@ const nextAdhigaram = nextId ? adhigarams.find(a => a.id === nextId) : null;
     { label: adhigaram.nameTamil }
   ]}
 >
-  <div class="space-y-10 animate-fade-in font-sans-tamil">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-10 animate-fade-in font-sans-tamil mb-20 md:mb-0">
     
     <!-- Chapter Info Header -->
     <div class="p-6 sm:p-8 bg-paper-card dark:bg-ink-card border border-paper-border dark:border-ink-border rounded-2xl shadow-sm text-center space-y-4">
@@ -54,7 +54,7 @@ const nextAdhigaram = nextId ? adhigarams.find(a => a.id === nextId) : null;
         <span class="text-lg sm:text-xl font-sans text-ochre font-medium block mt-1">{adhigaram.nameEnglish}</span>
       </h1>
       
-      <p class="text-xs sm:text-sm text-ink-bg/70 dark:text-paper-bg/70 leading-relaxed max-w-xl mx-auto italic" id="adhigaram-desc">
+      <p class="text-xs sm:text-sm text-ink-bg/70 dark:text-paper-bg/70 leading-relaxed max-w-xl mx-auto italic" id="adhigaram-desc" data-ta={adhigaram.descriptionTamil} data-en={adhigaram.descriptionEnglish}>
         {adhigaram.descriptionTamil}
       </p>
     </div>
@@ -134,26 +134,12 @@ const nextAdhigaram = nextId ? adhigarams.find(a => a.id === nextId) : null;
 
   </div>
 
-  <script is:inline define:vars={{ tamilDesc: adhigaram.descriptionTamil, englishDesc: adhigaram.descriptionEnglish }}>
-    function updateAdhigaramLanguage(lang) {
-      // Update description
-      const desc = document.getElementById('adhigaram-desc');
-      if (desc) desc.textContent = lang === 'ta' ? tamilDesc : englishDesc;
+  <script>
+    import { initLangSync } from '../../scripts/langSync.js';
 
-      // Update Kural meanings
-      const meanings = document.querySelectorAll('[data-meaning-ta]');
-      meanings.forEach(m => {
-        const ta = m.getAttribute('data-meaning-ta');
-        const en = m.getAttribute('data-meaning-en');
-        m.textContent = lang === 'ta' ? ta : en;
-      });
-    }
-
-    const currentLang = localStorage.getItem('lang') || 'ta';
-    updateAdhigaramLanguage(currentLang);
-
-    window.addEventListener('lang-change', (e) => {
-      updateAdhigaramLanguage(e.detail);
+    document.addEventListener('astro:page-load', () => {
+      if (!document.getElementById('adhigaram-desc')) return;
+      initLangSync();
     });
   </script>
 </Layout>

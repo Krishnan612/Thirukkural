@@ -40,7 +40,7 @@ const nextId = kuralId < 1330 ? kuralId + 1 : null;
     { label: `குறள் ${kural.id}` }
   ]}
 >
-  <div class="max-w-2xl mx-auto space-y-8 animate-fade-in font-sans-tamil mb-24 md:mb-0">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 space-y-8 animate-fade-in font-sans-tamil mb-32 md:mb-0">
     
     <!-- Kural Verse Card -->
     <article class="p-6 sm:p-8 bg-paper-card dark:bg-ink-card border border-paper-border dark:border-ink-border rounded-2xl shadow-sm space-y-6">
@@ -74,14 +74,14 @@ const nextId = kuralId < 1330 ? kuralId + 1 : null;
         
         <div class="space-y-1">
           <span class="text-xs font-bold text-ochre tracking-wide block uppercase">உரை / Meaning:</span>
-          <p class="text-ink-bg/85 dark:text-paper-bg/85 font-sans-tamil italic leading-relaxed" id="kural-meaning">
+          <p class="text-ink-bg/85 dark:text-paper-bg/85 font-sans-tamil italic leading-relaxed" id="kural-meaning" data-ta={kural.meaning.tamil} data-en={kural.meaning.english}>
             {kural.meaning.tamil}
           </p>
         </div>
         
         <div class="space-y-1 pt-3 border-t border-paper-border/30 dark:border-ink-border/30">
-          <span class="text-xs font-bold text-ochre tracking-wide block uppercase" id="understand-label">புரிதல் / Understand:</span>
-          <p class="text-ink-bg/85 dark:text-paper-bg/85 leading-relaxed font-sans-tamil" id="kural-explanation">
+          <span class="text-xs font-bold text-ochre tracking-wide block uppercase" id="understand-label" data-ta="புரிதல் / Understand:" data-en="Understand:">புரிதல் / Understand:</span>
+          <p class="text-ink-bg/85 dark:text-paper-bg/85 leading-relaxed font-sans-tamil" id="kural-explanation" data-ta={kural.explanation.simple.tamil} data-en={kural.explanation.simple.english}>
             {kural.explanation.simple.tamil}
           </p>
         </div>
@@ -90,7 +90,7 @@ const nextId = kuralId < 1330 ? kuralId + 1 : null;
 
       <!-- Themes & Life Applications Section -->
       <div class="border-t border-paper-border/60 dark:border-ink-border/60 pt-4 space-y-3">
-        <span class="text-xs font-bold text-ochre tracking-wide block uppercase" id="apply-label">வாழ்வியல் பயன்பாடு / Apply This Wisdom:</span>
+        <span class="text-xs font-bold text-ochre tracking-wide block uppercase" id="apply-label" data-ta="வாழ்வியல் பயன்பாடு / Apply This Wisdom:" data-en="Apply This Wisdom:">வாழ்வியல் பயன்பாடு / Apply This Wisdom:</span>
         <div class="flex flex-wrap gap-2">
           {kural.themes.map(theme => (
             <a 
@@ -184,29 +184,12 @@ const nextId = kuralId < 1330 ? kuralId + 1 : null;
 
   </div>
 
-  <script is:inline define:vars={{ tamilMeaning: kural.meaning.tamil, englishMeaning: kural.meaning.english, tamilExp: kural.explanation.simple.tamil, englishExp: kural.explanation.simple.english }}>
-    function updateKuralLanguage(lang) {
-      const meaning = document.getElementById('kural-meaning');
-      const exp = document.getElementById('kural-explanation');
-      const understandLabel = document.getElementById('understand-label');
-      const applyLabel = document.getElementById('apply-label');
+  <script>
+    import { initLangSync } from '../../scripts/langSync.js';
 
-      if (meaning) meaning.textContent = lang === 'ta' ? tamilMeaning : englishMeaning;
-      if (exp) exp.textContent = lang === 'ta' ? tamilExp : englishExp;
-      
-      if (understandLabel) {
-        understandLabel.textContent = lang === 'ta' ? 'புரிதல் / Understand:' : 'Understand:';
-      }
-      if (applyLabel) {
-        applyLabel.textContent = lang === 'ta' ? 'வாழ்வியல் பயன்பாடு / Apply This Wisdom:' : 'Apply This Wisdom:';
-      }
-    }
-
-    const currentLang = localStorage.getItem('lang') || 'ta';
-    updateKuralLanguage(currentLang);
-
-    window.addEventListener('lang-change', (e) => {
-      updateKuralLanguage(e.detail);
+    document.addEventListener('astro:page-load', () => {
+      if (!document.getElementById('kural-meaning')) return;
+      initLangSync();
     });
   </script>
 </Layout>
