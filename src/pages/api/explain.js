@@ -195,9 +195,16 @@ Return ONLY the following JSON structure (do not wrap in markdown code blocks or
       modelVersion: modelName
     };
 
-    // 6. Write to Cache Directory
-    await fs.mkdir(cacheDir, { recursive: true });
-    await fs.writeFile(cachePath, JSON.stringify(result, null, 2), 'utf-8');
+    // 6. Write to Cache Directory (best-effort; serverless filesystems may be read-only)
+    try {
+      await fs.mkdir(cacheDir, { recursive: true });
+      await fs.writeFile(cachePath, JSON.stringify(result, null, 2), 'utf-8');
+    } catch (writeErr) {
+      console.error(
+        "Cache write skipped (read-only filesystem, expected on serverless):",
+        writeErr.message
+      );
+    }
 
     return new Response(JSON.stringify(result), {
       status: 200,
