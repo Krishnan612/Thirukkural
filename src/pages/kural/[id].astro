@@ -40,6 +40,24 @@ const nextId = kuralId < 1330 ? kuralId + 1 : null;
     { label: `குறள் ${kural.id}` }
   ]}
 >
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": `Thirukkural ${kural.id}`,
+    "inLanguage": ["ta", "en"],
+    "author": {
+      "@type": "Person",
+      "name": "Thiruvalluvar"
+    },
+    "text": `${kural.tamil.line1} ${kural.tamil.line2}`,
+    "description": kural.meaning.english,
+    "isPartOf": {
+      "@type": "Book",
+      "name": "Thirukkural"
+    },
+    "url": Astro.url.href
+  })} />
+
   <div class="max-w-2xl mx-auto px-4 sm:px-6 space-y-8 animate-fade-in font-sans-tamil mb-32 md:mb-0">
     
     <!-- Kural Verse Card -->

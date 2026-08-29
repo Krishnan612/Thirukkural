@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://thirukkural-to-life.vercel.app/sitemap-index.xml
